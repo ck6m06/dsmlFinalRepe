@@ -1,3 +1,9 @@
+# Note!!
+這邊主要是用 "Distinguishing Ignorance from Error in LLM Hallucinations" 這篇的程式碼。
+就不把第一篇的程式碼放上來，以免搞混。
+程式碼操做，再麻煩看資料夾裡面的 [README](Distinguishing_Ignorance_from_Error_in_LLM_Hallucinations/README.md) 操作。
+
+
 # Hallucination Mitigation
 
 This repository includes code implementations for two research papers that explore hallucination detection and

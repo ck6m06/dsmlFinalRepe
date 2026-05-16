@@ -1,3 +1,29 @@
+# Note!!
+
+環境:就參考他原本 readme 寫的就好了。
+
+這邊主要是用他的程式碼，去產生資料集。
+```bash
+python RunAllSteps.py --model_name model_name  meta-llama/Llama-3.2-1B-Instruct --threshold 1 
+--dataset_name trivia_qa_no_context --run_dataset_creation True  
+```
+(資料及的部分我也有推上去了 [datasets](datasets/))
+
+接這是跑 hidden state 取向量的部分
+這邊程式碼好像有稍微改過，我記得。
+```bash
+python RunAllSteps.py --run_initial_test --model_name meta-llama/Llama-3.2-1B-Instruct --dataset_name trivia_qa_no_context --threshold 1.0 --dataset_size 1000
+```
+跑完的結果會存到資料夾  [results](results/)) 這邊沒有推上來，因為檔案有點大，如果有需要我再傳到群組。
+
+找幻覺向量:
+```bash
+python experiment/analyze_hallucination_direction.py --task both --eval_samples_per_class 32 --save_model_outputs 
+```
+--vector_type mlp (attention/residual/heads)
+
+
+
 # Distinguishing Ignorance from Error in LLM Hallucinations
 
 # Abstract

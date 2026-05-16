@@ -1,0 +1,14 @@
+# Ignore numpy binary files in any `results` directory
+# 不要將 `results` 資料夾裡的 .npy 檔案推上 Git
+**/results/*.npy
+**/results/**/*.npy
+
+# Ignore Python cache directories and bytecode
+# 不要將 Python 的快取目錄與編譯檔推上 Git
+**/__pycache__/
+**/*__pycache__/
+**/*.pyc
+
+**/direction_outputs/*.npy
+**/direction_outputs/**/*.npy
+

@@ -17,7 +17,15 @@ class InnerStatesUsingWrapper():
 
     def __init__(self, MODEL_NAME):
         self.MODEL_NAME = MODEL_NAME
-        self.model = AutoModelForCausalLM.from_pretrained(MODEL_NAME).to(device)
+        # Load model using half precision when CUDA is available to reduce memory
+        if torch.cuda.is_available():
+            self.model = AutoModelForCausalLM.from_pretrained(
+                MODEL_NAME,
+                device_map="auto",
+                torch_dtype=torch.float16,
+            )
+        else:
+            self.model = AutoModelForCausalLM.from_pretrained(MODEL_NAME)
         self.model.eval()
 
         model_creator = get_model_config()

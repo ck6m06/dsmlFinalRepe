@@ -4,7 +4,7 @@
 
 這邊主要是用他的程式碼，去產生資料集。
 ```bash
-python RunAllSteps.py --model_name model_name  meta-llama/Llama-3.2-1B-Instruct --threshold 1 
+python RunAllSteps.py --model_name model_name  meta-llama/Llama-3.2-8b-Instruct --threshold 1 
 --dataset_name trivia_qa_no_context --run_dataset_creation  
 ```
 (資料及的部分我也有推上去了 [datasets](datasets/))

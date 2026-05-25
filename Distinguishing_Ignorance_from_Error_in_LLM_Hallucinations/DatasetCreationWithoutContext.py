@@ -35,8 +35,8 @@ class CreateDataset():
         print(f"{self.threshold}=")
         print(
             f"1:{torch.cuda.memory_allocated(0)/1024/1024/1024=}  {torch.cuda.memory_reserved(0)/1024/1024/1024=} {torch.cuda.max_memory_reserved(0) / 1024 / 1024 / 1024} {psutil.Process().memory_info().rss/1024**3=}")
-        if "70B" in model_name or "27b" in model_name:
-            self.model = AutoModelForCausalLM.from_pretrained(MODEL_NAME, device_map="auto")
+        if torch.cuda.is_available():
+            self.model = AutoModelForCausalLM.from_pretrained(MODEL_NAME, device_map="auto", dtype=torch.float16)
         else:
             self.model = AutoModelForCausalLM.from_pretrained(MODEL_NAME, device_map="auto")
         print(
@@ -206,16 +206,14 @@ class CreateDataset():
             "question: How many planets are there in our solar system?\nanswer: 9\n",
         ]
         static_dataset = []
-        i = 0
         random.seed(42)
-        for point in initial_dataset:
-            if i % 1000 == 0:
+        for idx, point in enumerate(initial_dataset):
+            if idx % 1000 == 0:
                 # save the dataset
                 self.static_final_dataset = static_dataset
                 self.save_data(self.static_final_dataset, self.static_path)
                 print(
-                    f"finished creating final dataset with {len(static_dataset)=} using {i} points from the initial dataset\n\n")
-            i += 1
+                    f"finished creating final dataset with {len(static_dataset)=} using {idx} points from the initial dataset\n\n")
             prompt = point[0]
             prompt = prompt
             old_target = point[1]
@@ -236,10 +234,11 @@ class CreateDataset():
             if len(wrong_target) > 0 and old_target.lower() in wrong_target.lower() or wrong_target.lower() in old_target.lower() or " " == wrong_target:
                 print(f"the new target is the same as the old target")
                 continue
+            # include original index to allow tracing back to the initial dataset
             fact_info = (prompt, old_target, wrong_target, old_token, wrong_tokens,
                          bad_shot + prompt, -1,
-                         -1
-                         )
+                         -1,
+                         idx)
             print(f"{fact_info=}")
             # it is not hallucinate if the most prefer token is the same as the old token else it is hallucinate
             static_dataset.append(fact_info)
@@ -392,7 +391,7 @@ class CreateDataset():
         count_hall_prefer_parametric = 0
         count_nonhall_prefer_parametric = 0
         know_hall = 0
-        for fact in static_final_dataset:
+        for i, fact in enumerate(static_final_dataset):
             if i % 100 == 0:
                 torch.cuda.empty_cache()
                 print(
@@ -407,7 +406,6 @@ class CreateDataset():
                 self.save_data(self.non_hall_dataset, self.non_hall_save_path)
                 self.save_data(self.hall_dataset, self.hall_save_path)
                 self.save_data(self.general_dataset, self.general_save_path)
-            i += 1
 
             prompt = fact[0]
             prompt = prompt
@@ -449,10 +447,11 @@ class CreateDataset():
                 count_know += 1
             if count_know == 6:
                 know_answer = True
+            # append original index so each record can be traced back to the static dataset
             fact_info = (prompt, old_target, wrong_target, old_token, wrong_tokens,
                          (bad_shot + prompt), count_know,
-                         -1
-                         )
+                         -1,
+                         i)
 
             # it is not hallucinate if the most prefer token is the same as the old token else it is hallucinate
             if know_answer and (

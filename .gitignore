@@ -2,7 +2,14 @@
 # 不要將 `results` 資料夾裡的 .npy 檔案推上 Git
 **/results/*.npy
 **/results/**/*.npy
+
+# Ignore all numpy binary files everywhere (do not push any .npy files)
+# 忽略所有 .npy 檔案
 **/*.npy
+
+# Ignore generated evaluation outputs
+Distinguishing_Ignorance_from_Error_in_LLM_Hallucinations/experiment/eval_results_experiment/
+Distinguishing_Ignorance_from_Error_in_LLM_Hallucinations/experiment/eval_results_experiment_without_instruction/
 
 # Ignore Python cache directories and bytecode
 # 不要將 Python 的快取目錄與編譯檔推上 Git

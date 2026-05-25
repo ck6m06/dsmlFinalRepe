@@ -22,7 +22,7 @@ class InnerStatesUsingWrapper():
             self.model = AutoModelForCausalLM.from_pretrained(
                 MODEL_NAME,
                 device_map="auto",
-                torch_dtype=torch.float16,
+                dtype=torch.float16,
             )
         else:
             self.model = AutoModelForCausalLM.from_pretrained(MODEL_NAME)

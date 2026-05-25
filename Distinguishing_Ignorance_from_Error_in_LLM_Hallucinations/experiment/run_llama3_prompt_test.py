@@ -69,11 +69,17 @@ def main() -> None:
         raise SystemExit(f"No prompts found in {prompt_path}")
 
     tokenizer = AutoTokenizer.from_pretrained(args.model_name)
-    model = AutoModelForCausalLM.from_pretrained(
-        args.model_name,
-        device_map="auto",
-        torch_dtype="auto",
-    )
+    if torch.cuda.is_available():
+        model = AutoModelForCausalLM.from_pretrained(
+            args.model_name,
+            device_map="auto",
+            dtype=torch.float16,
+        )
+    else:
+        model = AutoModelForCausalLM.from_pretrained(
+            args.model_name,
+            device_map="auto",
+        )
     model.eval()
 
     output_path.parent.mkdir(parents=True, exist_ok=True)

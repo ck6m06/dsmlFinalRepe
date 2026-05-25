@@ -457,13 +457,19 @@ def load_model_and_tokenizer(model_name: str):
     if tokenizer.pad_token is None:
         tokenizer.pad_token = tokenizer.eos_token
     tokenizer.padding_side = "left"
-
-    model = AutoModelForCausalLM.from_pretrained(
-        model_name,
-        device_map="auto",
-        torch_dtype="auto",
-        low_cpu_mem_usage=True,
-    )
+    if torch.cuda.is_available():
+        model = AutoModelForCausalLM.from_pretrained(
+            model_name,
+            device_map="auto",
+            dtype=torch.float16,
+            low_cpu_mem_usage=True,
+        )
+    else:
+        model = AutoModelForCausalLM.from_pretrained(
+            model_name,
+            device_map="auto",
+            low_cpu_mem_usage=True,
+        )
     model.eval()
     return model, tokenizer
 

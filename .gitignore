@@ -2,6 +2,7 @@
 # 不要將 `results` 資料夾裡的 .npy 檔案推上 Git
 **/results/*.npy
 **/results/**/*.npy
+**/*.npy
 
 # Ignore Python cache directories and bytecode
 # 不要將 Python 的快取目錄與編譯檔推上 Git

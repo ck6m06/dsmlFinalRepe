@@ -1,4 +1,4 @@
-"""Add a no-instruction prompt field to an existing open-book JSON file.
+"""Add no-instruction prompt fields to an existing open-book JSON file.
 
 This script does not call a model. It reads an existing JSON list of records,
 reconstructs a prompt that removes the instruction preamble, and writes the
@@ -104,11 +104,27 @@ def build_without_instruction_prompt(record: dict[str, Any]) -> str:
     return "\n".join(parts)
 
 
+def build_full_without_instruction_prompt(record: dict[str, Any]) -> str:
+    context = str(record.get("generated_context", "")).strip()
+    prompt_text = str(record.get("prompt", ""))
+    question = extract_question(prompt_text)
+    few_shots = extract_few_shots(record, question)
+
+    parts: list[str] = []
+    if context:
+        parts.append(context)
+    if few_shots:
+        parts.append(few_shots)
+    parts.append(f"{question}\nanswer:")
+    return "\n".join(parts)
+
+
 def augment_records(records: list[dict[str, Any]]) -> list[dict[str, Any]]:
     augmented: list[dict[str, Any]] = []
     for record in records:
         augmented_record = dict(record)
         augmented_record["without_instruction_prompt"] = build_without_instruction_prompt(record)
+        augmented_record["full_without_instruct_prompt"] = build_full_without_instruction_prompt(record)
         augmented.append(augmented_record)
     return augmented
 

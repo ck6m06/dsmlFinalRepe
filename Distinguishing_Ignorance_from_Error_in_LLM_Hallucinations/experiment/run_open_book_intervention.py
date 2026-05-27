@@ -210,9 +210,15 @@ def run_generation_rows(
     layer_idx: int | None = None,
     alpha: float = 0.0,
     token_position: str = "last",
+    progress_label: str = "",
+    progress_every: int = 10,
 ) -> list[dict[str, Any]]:
     rows: list[dict[str, Any]] = []
     hook_handle = None
+    total_records = len(records)
+
+    if progress_label:
+        print(f"[{progress_label}] start: {total_records} samples")
 
     if direction is not None:
         if layer_idx is None:
@@ -254,9 +260,15 @@ def run_generation_rows(
                     "correct": answer_matches(response, reference_answer),
                 }
             )
+
+            if progress_label and (index == 1 or index == total_records or index % max(1, progress_every) == 0):
+                print(f"[{progress_label}] processed {index}/{total_records}")
     finally:
         if hook_handle is not None:
             hook_handle.remove()
+
+    if progress_label:
+        print(f"[{progress_label}] done: {len(rows)}/{total_records}")
 
     return rows
 
@@ -450,6 +462,12 @@ def main() -> None:
     parser.add_argument("--top_p", type=float, default=1.0)
     parser.add_argument("--limit", type=int, default=0, help="Optional sample limit. Use 0 for all records.")
     parser.add_argument(
+        "--progress_every",
+        type=int,
+        default=10,
+        help="Print progress every N samples while generating baseline/intervention rows.",
+    )
+    parser.add_argument(
         "--output_json",
         type=str,
         default="",
@@ -542,6 +560,8 @@ def main() -> None:
         max_new_tokens=args.max_new_tokens,
         temperature=args.temperature,
         top_p=args.top_p,
+        progress_label="baseline",
+        progress_every=args.progress_every,
     )
     intervention_rows = run_generation_rows(
         model=model,
@@ -555,6 +575,8 @@ def main() -> None:
         layer_idx=best_layer,
         alpha=args.alpha,
         token_position=args.token_position,
+        progress_label="intervention",
+        progress_every=args.progress_every,
     )
 
     baseline_accuracy = summarize(baseline_rows, "correct")
@@ -563,6 +585,37 @@ def main() -> None:
     regression_rate = float(np.mean([b["correct"] and not i["correct"] for b, i in zip(baseline_rows, intervention_rows)])) if baseline_rows else float("nan")
     baseline_correct_count = int(np.sum([1 if r.get("correct") else 0 for r in baseline_rows]))
     intervention_correct_count = int(np.sum([1 if r.get("correct") else 0 for r in intervention_rows]))
+
+    baseline_false_count = 0
+    baseline_true_count = 0
+    baseline_false_intervention_correct = 0
+    baseline_true_intervention_correct = 0
+    recovered_indices: list[int] = []
+    regressed_indices: list[int] = []
+
+    for baseline_row, intervention_row in zip(baseline_rows, intervention_rows):
+        baseline_is_correct = bool(baseline_row.get("correct", False))
+        intervention_is_correct = bool(intervention_row.get("correct", False))
+        index = int(baseline_row.get("index", 0))
+
+        if baseline_is_correct:
+            baseline_true_count += 1
+            if intervention_is_correct:
+                baseline_true_intervention_correct += 1
+            else:
+                regressed_indices.append(index)
+        else:
+            baseline_false_count += 1
+            if intervention_is_correct:
+                baseline_false_intervention_correct += 1
+                recovered_indices.append(index)
+
+    baseline_false_intervention_accuracy = (
+        baseline_false_intervention_correct / baseline_false_count if baseline_false_count > 0 else float("nan")
+    )
+    baseline_true_intervention_accuracy = (
+        baseline_true_intervention_correct / baseline_true_count if baseline_true_count > 0 else float("nan")
+    )
 
     summary = {
         "dataset": str(eval_path),

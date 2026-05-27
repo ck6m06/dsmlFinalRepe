@@ -110,7 +110,7 @@ def main() -> None:
     parser.add_argument(
         "--prompt_field",
         type=str,
-        default="generated_context_prompt",
+        default="full_without_instruct_prompt",
         help="Record field to evaluate, such as generated_context_prompt or without_instruction_prompt.",
     )
     parser.add_argument("--limit", type=int, default=0, help="Optional sample limit. Use 0 for all records.")

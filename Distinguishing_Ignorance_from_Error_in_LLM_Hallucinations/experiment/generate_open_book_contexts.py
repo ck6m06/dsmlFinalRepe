@@ -167,6 +167,47 @@ def generate_context(
     return generated
 
 
+def generate_context_batch(
+    model,
+    tokenizer: AutoTokenizer,
+    questions: list[str],
+    answers: list[str],
+    max_new_tokens: int,
+    temperature: float,
+    top_p: float,
+) -> list[str]:
+    import torch
+
+    if len(questions) != len(answers):
+        raise ValueError("questions and answers must have the same length")
+
+    generation_prompts = [build_generation_prompt(question, answer) for question, answer in zip(questions, answers)]
+    formatted_prompts = [format_prompt(tokenizer, prompt) for prompt in generation_prompts]
+    device = get_model_input_device(model)
+    inputs = tokenizer(formatted_prompts, return_tensors="pt", padding=True)
+    inputs = {key: value.to(device) for key, value in inputs.items()}
+    input_len = inputs["input_ids"].shape[-1]
+
+    generate_kwargs: dict[str, Any] = {
+        "max_new_tokens": max_new_tokens,
+        "do_sample": temperature > 0,
+        "pad_token_id": tokenizer.eos_token_id,
+        "eos_token_id": tokenizer.eos_token_id,
+    }
+    if temperature > 0:
+        generate_kwargs["temperature"] = temperature
+        generate_kwargs["top_p"] = top_p
+
+    with torch.no_grad():
+        output_ids = model.generate(**inputs, **generate_kwargs)
+
+    generated_texts: list[str] = []
+    for index in range(len(formatted_prompts)):
+        generated = tokenizer.decode(output_ids[index][int(input_len):], skip_special_tokens=True).strip()
+        generated_texts.append(generated)
+    return generated_texts
+
+
 def answer_mentioned(context: str, answer: str) -> bool:
     normalized_answer = normalize_text(answer)
     normalized_context = normalize_text(context)
@@ -180,6 +221,7 @@ def augment_records(
     max_new_tokens: int,
     temperature: float,
     top_p: float,
+    batch_size: int,
 ) -> list[dict[str, Any]]:
     try:
         from tqdm import tqdm
@@ -188,90 +230,103 @@ def augment_records(
             return iterable
 
     augmented: list[dict[str, Any]] = []
-    for record in tqdm(records, desc="Generating contexts"):
-        prompt_text = str(record.get("prompt", ""))
-        few_shots = str(record.get("few_shot_prompt", ""))[:str(record.get("few_shot_prompt", "")).rfind(prompt_text)]
-        answer = str(record.get("reference_answer", "")).strip()
-        question = extract_question(prompt_text)
+    total = len(records)
+    batch_size = max(1, int(batch_size))
 
-        context = generate_context(
+    for batch_start in tqdm(range(0, total, batch_size), desc="Generating contexts"):
+        batch_records = records[batch_start:batch_start + batch_size]
+        questions: list[str] = []
+        answers: list[str] = []
+        few_shots_list: list[str] = []
+        for record in batch_records:
+            prompt_text = str(record.get("prompt", ""))
+            few_shot_prompt = str(record.get("few_shot_prompt", ""))
+            few_shots = few_shot_prompt[:few_shot_prompt.rfind(prompt_text)]
+            answer = str(record.get("reference_answer", "")).strip()
+            question = extract_question(prompt_text)
+            questions.append(question)
+            answers.append(answer)
+            few_shots_list.append(few_shots)
+
+        contexts = generate_context_batch(
             model=model,
             tokenizer=tokenizer,
-            question=question,
-            answer=answer,
+            questions=questions,
+            answers=answers,
             max_new_tokens=max_new_tokens,
             temperature=temperature,
             top_p=top_p,
         )
 
-        # If the model omitted the answer entirely, do one stronger retry.
-        if not answer_mentioned(context, answer):
-            stronger_context = generate_context(
-                model=model,
-                tokenizer=tokenizer,
-                question=question,
-                answer=answer,
-                max_new_tokens=max_new_tokens,
-                temperature=0.0,
-                top_p=1.0,
-            )
-            if answer_mentioned(stronger_context, answer):
-                context = stronger_context
+        for record, question, answer, few_shots, context in zip(batch_records, questions, answers, few_shots_list, contexts):
+            # If the model omitted the answer entirely, do one stronger retry.
+            if not answer_mentioned(context, answer):
+                stronger_context = generate_context(
+                    model=model,
+                    tokenizer=tokenizer,
+                    question=question,
+                    answer=answer,
+                    max_new_tokens=max_new_tokens,
+                    temperature=0.0,
+                    top_p=1.0,
+                )
+                if answer_mentioned(stronger_context, answer):
+                    context = stronger_context
 
-        augmented_record = dict(record)
-        augmented_record["generated_context"] = context
-        augmented_record["generated_context_model"] = model.config._name_or_path if hasattr(model, "config") else "unknown"
-        # Build an evaluation-style prompt that wraps the generated context into numbered evidence
-        # and asks the downstream model to answer using only that context.
-        # Split the generated context into 2-3 sentence context items.
-        sentences = [s.strip() for s in re.split(r'(?<=[.!?])\s+', context) if s.strip()]
-        if not sentences:
-            sentences = [context.strip()] if context.strip() else [""]
-        # take up to 1 context sentence (prefer a sentence that contains the answer)
-        max_ctx = 1  # start with 1 sentence; can try 2-3 later
-        ctx_lines = []
-        if max_ctx == 1:
-            # prefer a sentence that contains the answer; fall back to the first sentence
-            chosen_idx = None
-            for i, s in enumerate(sentences):
-                if answer_mentioned(s, answer):
-                    chosen_idx = i
-                    break
-            if chosen_idx is None:
-                chosen_idx = 0
-            s = sentences[chosen_idx]
-            s_clean = s.replace('\n', ' ').strip()
-            ctx_lines.append(f"[1] {s_clean}")
-        else:
-            for i, s in enumerate(sentences[:max_ctx]):
-                # ensure no stray newlines
+            augmented_record = dict(record)
+            augmented_record["generated_context"] = context
+            augmented_record["generated_context_model"] = model.config._name_or_path if hasattr(model, "config") else "unknown"
+            # Build an evaluation-style prompt that wraps the generated context into numbered evidence
+            # and asks the downstream model to answer using only that context.
+            # Split the generated context into 2-3 sentence context items.
+            sentences = [s.strip() for s in re.split(r'(?<=[.!?])\s+', context) if s.strip()]
+            if not sentences:
+                sentences = [context.strip()] if context.strip() else [""]
+            # take up to 1 context sentence (prefer a sentence that contains the answer)
+            max_ctx = 1  # start with 1 sentence; can try 2-3 later
+            ctx_lines = []
+            if max_ctx == 1:
+                # prefer a sentence that contains the answer; fall back to the first sentence
+                chosen_idx = None
+                for i, s in enumerate(sentences):
+                    if answer_mentioned(s, answer):
+                        chosen_idx = i
+                        break
+                if chosen_idx is None:
+                    chosen_idx = 0
+                s = sentences[chosen_idx]
                 s_clean = s.replace('\n', ' ').strip()
-                ctx_lines.append(f"[{i+1}] {s_clean}")
+                ctx_lines.append(f"[1] {s_clean}")
+            else:
+                for i, s in enumerate(sentences[:max_ctx]):
+                    # ensure no stray newlines
+                    s_clean = s.replace('\n', ' ').strip()
+                    ctx_lines.append(f"[{i+1}] {s_clean}")
 
-        eval_prompt = (
-            "Instruction:\n"
-            "Answer the final question using only the provided context. Do NOT use outside knowledge.\n"
-            "If the answer cannot be determined from the context, reply exactly: \"I don't know\".\n\n"
-            "### Context:\n"
-            + "\n".join(ctx_lines)
-            + "\n\n"
-            "### Examples:\n"
-            f"{few_shots}\n\n"
-            "### Question:\n"
-            f"{question}\n\n"
-            "### Answer:"
-        )
+            eval_prompt = (
+                "Instruction:\n"
+                "Answer the final question using only the provided context. Do NOT use outside knowledge.\n"
+                "If the answer cannot be determined from the context, reply exactly: \"I don't know\".\n\n"
+                "### Context:\n"
+                + "\n".join(ctx_lines)
+                + "\n\n"
+                "### Examples:\n"
+                f"{few_shots}\n\n"
+                "### Question:\n"
+                f"{question}\n\n"
+                "### Answer:"
+            )
 
-        without_instruct_prompt = build_without_instruct_prompt(
-            context_lines=ctx_lines,
-            few_shots=few_shots,
-            question=question,
-        )
+            without_instruct_prompt = build_without_instruct_prompt(
+                context_lines=ctx_lines,
+                few_shots=few_shots,
+                question=question,
+            )
 
-        augmented_record["generated_context_prompt"] = eval_prompt
-        augmented_record["without_instruct_prompt"] = without_instruct_prompt
-        augmented_record["generated_context_contains_answer"] = answer_mentioned(context, answer)
-        augmented.append(augmented_record)
+            augmented_record["generated_context_prompt"] = eval_prompt
+            augmented_record["without_instruct_prompt"] = without_instruct_prompt
+            augmented_record["generated_context_contains_answer"] = answer_mentioned(context, answer)
+            augmented.append(augmented_record)
 
     return augmented
 
@@ -301,11 +356,24 @@ def main() -> None:
     parser.add_argument("--max_new_tokens", type=int, default=160)
     parser.add_argument("--temperature", type=float, default=0.25)
     parser.add_argument("--top_p", type=float, default=0.9)
+    parser.add_argument("--batch_size", type=int, default=8, help="Number of records to generate per batch.")
     parser.add_argument(
         "--limit",
         type=int,
-        default=0,
+        default=800,
         help="Optional limit for quick testing. Use 0 to process the whole file.",
+    )
+    parser.add_argument(
+        "--start_index",
+        type=int,
+        default=1,
+        help="1-based start index for slicing records before generation.",
+    )
+    parser.add_argument(
+        "--end_index",
+        type=int,
+        default=0,
+        help="1-based inclusive end index for slicing records before generation. Use 0 for the end of the file.",
     )
     args = parser.parse_args()
 
@@ -317,8 +385,24 @@ def main() -> None:
 
     records = load_records(input_path)
     print(f"Loaded {len(records)} records from {input_path}")
+
+    start_index = max(1, int(args.start_index))
+    end_index = int(args.end_index)
+    if end_index > 0 and end_index < start_index:
+        raise ValueError("end_index must be greater than or equal to start_index")
+
+    if start_index != 1 or end_index > 0:
+        slice_start = start_index - 1
+        slice_end = end_index if end_index > 0 else None
+        records = records[slice_start:slice_end]
+        print(
+            f"Sliced records to 1-based range {start_index}"
+            + (f"-{end_index}" if end_index > 0 else "-end")
+            + f"; now {len(records)} records"
+        )
     if args.limit and args.limit > 0:
         records = records[: args.limit]
+        print(f"Limited to first {len(records)} records after slicing")
 
     model, tokenizer = load_model_and_tokenizer(args.model_name)
     augmented = augment_records(
@@ -328,6 +412,7 @@ def main() -> None:
         max_new_tokens=args.max_new_tokens,
         temperature=args.temperature,
         top_p=args.top_p,
+        batch_size=args.batch_size,
     )
 
     with output_path.open("w", encoding="utf-8") as handle:

@@ -118,7 +118,7 @@ def main() -> None:
     parser.add_argument("--eval_results", type=str, required=True, help="Path to open_book_eval_results.json")
     parser.add_argument("--model_name", type=str, default="", help="Model for hidden-state extraction")
     parser.add_argument("--prompt_field", type=str, default="prompt", help="Field containing prompt text")
-    parser.add_argument("--output_dir", type=str, default="experiment/eval_results_experiment_without_instruction", help="Directory for output .npy files")
+    parser.add_argument("--output_dir", type=str, default="experiment/type2_results", help="Directory for output .npy files")
     parser.add_argument("--limit_true", type=int, default=0, help="Optional cap for correct=True samples")
     parser.add_argument("--limit_false", type=int, default=0, help="Optional cap for correct=False samples")
     parser.add_argument("--seed", type=int, default=42)

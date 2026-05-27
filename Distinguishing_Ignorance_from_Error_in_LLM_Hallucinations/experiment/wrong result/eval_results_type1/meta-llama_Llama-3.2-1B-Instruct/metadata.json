@@ -1,0 +1,36 @@
+{
+  "true_results": "D:\\dsmlFinalRepe\\Distinguishing_Ignorance_from_Error_in_LLM_Hallucinations\\datasets\\NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+  "false_results": "D:\\dsmlFinalRepe\\Distinguishing_Ignorance_from_Error_in_LLM_Hallucinations\\datasets\\GeneralTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+  "model_name": "meta-llama/Llama-3.2-1B-Instruct",
+  "true_prompt_field": "prompt",
+  "false_prompt_field": "prompt",
+  "prompt_field": "prompt",
+  "prompt_fields": {
+    "correct": "prompt",
+    "incorrect": "prompt"
+  },
+  "sampling": {
+    "limit_true": 1000,
+    "limit_false": 1000,
+    "sample_mode": "first",
+    "seed": 42
+  },
+  "correct_count": 1000,
+  "incorrect_count": 1000,
+  "files": {
+    "correct": {
+      "mlp": "all_mlp_vector_correct.npy",
+      "attention": "all_attention_vector_correct.npy",
+      "heads": "heads_vectors_correct_no_projection.npy",
+      "residual": "all_residual_vectors_correct.npy",
+      "indices": "indices_correct.npy"
+    },
+    "incorrect": {
+      "mlp": "all_mlp_vector_incorrect.npy",
+      "attention": "all_attention_vector_incorrect.npy",
+      "heads": "heads_vectors_incorrect_no_projection.npy",
+      "residual": "all_residual_vectors_incorrect.npy",
+      "indices": "indices_incorrect.npy"
+    }
+  }
+}

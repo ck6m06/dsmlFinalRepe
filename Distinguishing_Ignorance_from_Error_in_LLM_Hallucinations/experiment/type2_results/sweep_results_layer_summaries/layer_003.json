@@ -1,0 +1,12 @@
+{
+  "layer": 3,
+  "baseline_accuracy": 0.8533333333333334,
+  "intervention_accuracy": 0.819,
+  "delta_accuracy": -0.03433333333333344,
+  "recovery_rate": 0.021666666666666667,
+  "regression_rate": 0.056,
+  "baseline_correct_count": 2560,
+  "intervention_correct_count": 2457,
+  "baseline_total": 3000,
+  "intervention_total": 3000
+}

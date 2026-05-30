@@ -1,0 +1,658 @@
+{
+  "vector_type": "residual",
+  "train_counts": {
+    "correct": 1774,
+    "incorrect": 325
+  },
+  "val_counts": {
+    "correct": 394,
+    "incorrect": 56
+  },
+  "test_counts": {
+    "correct": 386,
+    "incorrect": 64
+  },
+  "decision_threshold": 0.5,
+  "layers": [
+    {
+      "layer": 0,
+      "direction_norm": 1.0,
+      "train": {
+        "accuracy": 0.9780848022868033,
+        "f1": 0.9339080459770115,
+        "confusion_matrix": [
+          [
+            1728,
+            46
+          ],
+          [
+            0,
+            325
+          ]
+        ],
+        "decision_threshold": 0.5,
+        "positive_rate": 0.17675083373034778,
+        "mean_positive_probability": 0.2207124475430872,
+        "auc": 0.9993079524759345
+      },
+      "val": {
+        "accuracy": 0.7244444444444444,
+        "f1": 0.24390243902439024,
+        "confusion_matrix": [
+          [
+            306,
+            88
+          ],
+          [
+            36,
+            20
+          ]
+        ],
+        "decision_threshold": 0.5,
+        "positive_rate": 0.24,
+        "mean_positive_probability": 0.2517848260288164,
+        "auc": 0.5774111675126904
+      }
+    },
+    {
+      "layer": 1,
+      "direction_norm": 1.0,
+      "train": {
+        "accuracy": 0.9961886612672701,
+        "f1": 0.9878419452887538,
+        "confusion_matrix": [
+          [
+            1766,
+            8
+          ],
+          [
+            0,
+            325
+          ]
+        ],
+        "decision_threshold": 0.5,
+        "positive_rate": 0.1586469747498809,
+        "mean_positive_probability": 0.19874844152850762,
+        "auc": 1.0
+      },
+      "val": {
+        "accuracy": 0.7155555555555555,
+        "f1": 0.2,
+        "confusion_matrix": [
+          [
+            306,
+            88
+          ],
+          [
+            40,
+            16
+          ]
+        ],
+        "decision_threshold": 0.5,
+        "positive_rate": 0.2311111111111111,
+        "mean_positive_probability": 0.23445560225009499,
+        "auc": 0.594407179115301
+      }
+    },
+    {
+      "layer": 2,
+      "direction_norm": 1.0,
+      "train": {
+        "accuracy": 0.9995235826584088,
+        "f1": 0.9984639016897081,
+        "confusion_matrix": [
+          [
+            1773,
+            1
+          ],
+          [
+            0,
+            325
+          ]
+        ],
+        "decision_threshold": 0.5,
+        "positive_rate": 0.15531205335874226,
+        "mean_positive_probability": 0.18704666472634593,
+        "auc": 1.0
+      },
+      "val": {
+        "accuracy": 0.7733333333333333,
+        "f1": 0.3013698630136986,
+        "confusion_matrix": [
+          [
+            326,
+            68
+          ],
+          [
+            34,
+            22
+          ]
+        ],
+        "decision_threshold": 0.5,
+        "positive_rate": 0.2,
+        "mean_positive_probability": 0.21377103285470708,
+        "auc": 0.6254079042784625
+      }
+    },
+    {
+      "layer": 3,
+      "direction_norm": 1.0,
+      "train": {
+        "accuracy": 1.0,
+        "f1": 1.0,
+        "confusion_matrix": [
+          [
+            1774,
+            0
+          ],
+          [
+            0,
+            325
+          ]
+        ],
+        "decision_threshold": 0.5,
+        "positive_rate": 0.15483563601715103,
+        "mean_positive_probability": 0.18036099011116577,
+        "auc": 1.0
+      },
+      "val": {
+        "accuracy": 0.7666666666666667,
+        "f1": 0.2857142857142857,
+        "confusion_matrix": [
+          [
+            324,
+            70
+          ],
+          [
+            35,
+            21
+          ]
+        ],
+        "decision_threshold": 0.5,
+        "positive_rate": 0.20222222222222222,
+        "mean_positive_probability": 0.21896273979719885,
+        "auc": 0.6467548948513415
+      }
+    },
+    {
+      "layer": 4,
+      "direction_norm": 0.9999999403953552,
+      "train": {
+        "accuracy": 1.0,
+        "f1": 1.0,
+        "confusion_matrix": [
+          [
+            1774,
+            0
+          ],
+          [
+            0,
+            325
+          ]
+        ],
+        "decision_threshold": 0.5,
+        "positive_rate": 0.15483563601715103,
+        "mean_positive_probability": 0.17535060114264545,
+        "auc": 1.0
+      },
+      "val": {
+        "accuracy": 0.7511111111111111,
+        "f1": 0.2727272727272727,
+        "confusion_matrix": [
+          [
+            317,
+            77
+          ],
+          [
+            35,
+            21
+          ]
+        ],
+        "decision_threshold": 0.5,
+        "positive_rate": 0.21777777777777776,
+        "mean_positive_probability": 0.22805289787784527,
+        "auc": 0.6093183466279912
+      }
+    },
+    {
+      "layer": 5,
+      "direction_norm": 0.9999999403953552,
+      "train": {
+        "accuracy": 1.0,
+        "f1": 1.0,
+        "confusion_matrix": [
+          [
+            1774,
+            0
+          ],
+          [
+            0,
+            325
+          ]
+        ],
+        "decision_threshold": 0.5,
+        "positive_rate": 0.15483563601715103,
+        "mean_positive_probability": 0.17408029104498543,
+        "auc": 1.0
+      },
+      "val": {
+        "accuracy": 0.7422222222222222,
+        "f1": 0.2839506172839506,
+        "confusion_matrix": [
+          [
+            311,
+            83
+          ],
+          [
+            33,
+            23
+          ]
+        ],
+        "decision_threshold": 0.5,
+        "positive_rate": 0.23555555555555555,
+        "mean_positive_probability": 0.23318481583006898,
+        "auc": 0.5835750543872371
+      }
+    },
+    {
+      "layer": 6,
+      "direction_norm": 1.0,
+      "train": {
+        "accuracy": 1.0,
+        "f1": 1.0,
+        "confusion_matrix": [
+          [
+            1774,
+            0
+          ],
+          [
+            0,
+            325
+          ]
+        ],
+        "decision_threshold": 0.5,
+        "positive_rate": 0.15483563601715103,
+        "mean_positive_probability": 0.17015840251066572,
+        "auc": 1.0
+      },
+      "val": {
+        "accuracy": 0.7711111111111111,
+        "f1": 0.32679738562091504,
+        "confusion_matrix": [
+          [
+            322,
+            72
+          ],
+          [
+            31,
+            25
+          ]
+        ],
+        "decision_threshold": 0.5,
+        "positive_rate": 0.21555555555555556,
+        "mean_positive_probability": 0.22889001804295978,
+        "auc": 0.6715917331399566
+      }
+    },
+    {
+      "layer": 7,
+      "direction_norm": 1.0,
+      "train": {
+        "accuracy": 1.0,
+        "f1": 1.0,
+        "confusion_matrix": [
+          [
+            1774,
+            0
+          ],
+          [
+            0,
+            325
+          ]
+        ],
+        "decision_threshold": 0.5,
+        "positive_rate": 0.15483563601715103,
+        "mean_positive_probability": 0.1685995946448547,
+        "auc": 1.0
+      },
+      "val": {
+        "accuracy": 0.7688888888888888,
+        "f1": 0.3157894736842105,
+        "confusion_matrix": [
+          [
+            322,
+            72
+          ],
+          [
+            32,
+            24
+          ]
+        ],
+        "decision_threshold": 0.5,
+        "positive_rate": 0.21333333333333335,
+        "mean_positive_probability": 0.2302651825999949,
+        "auc": 0.6634336475707033
+      }
+    },
+    {
+      "layer": 8,
+      "direction_norm": 1.0000001192092896,
+      "train": {
+        "accuracy": 1.0,
+        "f1": 1.0,
+        "confusion_matrix": [
+          [
+            1774,
+            0
+          ],
+          [
+            0,
+            325
+          ]
+        ],
+        "decision_threshold": 0.5,
+        "positive_rate": 0.15483563601715103,
+        "mean_positive_probability": 0.1675357062041181,
+        "auc": 1.0
+      },
+      "val": {
+        "accuracy": 0.7844444444444445,
+        "f1": 0.3660130718954248,
+        "confusion_matrix": [
+          [
+            325,
+            69
+          ],
+          [
+            28,
+            28
+          ]
+        ],
+        "decision_threshold": 0.5,
+        "positive_rate": 0.21555555555555556,
+        "mean_positive_probability": 0.23702952900383037,
+        "auc": 0.7100253807106599
+      }
+    },
+    {
+      "layer": 9,
+      "direction_norm": 1.0,
+      "train": {
+        "accuracy": 1.0,
+        "f1": 1.0,
+        "confusion_matrix": [
+          [
+            1774,
+            0
+          ],
+          [
+            0,
+            325
+          ]
+        ],
+        "decision_threshold": 0.5,
+        "positive_rate": 0.15483563601715103,
+        "mean_positive_probability": 0.16749040505005705,
+        "auc": 1.0
+      },
+      "val": {
+        "accuracy": 0.7755555555555556,
+        "f1": 0.3221476510067114,
+        "confusion_matrix": [
+          [
+            325,
+            69
+          ],
+          [
+            32,
+            24
+          ]
+        ],
+        "decision_threshold": 0.5,
+        "positive_rate": 0.20666666666666667,
+        "mean_positive_probability": 0.2149419175080757,
+        "auc": 0.7117929659173313
+      }
+    },
+    {
+      "layer": 10,
+      "direction_norm": 0.9999999403953552,
+      "train": {
+        "accuracy": 1.0,
+        "f1": 1.0,
+        "confusion_matrix": [
+          [
+            1774,
+            0
+          ],
+          [
+            0,
+            325
+          ]
+        ],
+        "decision_threshold": 0.5,
+        "positive_rate": 0.15483563601715103,
+        "mean_positive_probability": 0.16712267001322753,
+        "auc": 1.0
+      },
+      "val": {
+        "accuracy": 0.7733333333333333,
+        "f1": 0.34615384615384615,
+        "confusion_matrix": [
+          [
+            321,
+            73
+          ],
+          [
+            29,
+            27
+          ]
+        ],
+        "decision_threshold": 0.5,
+        "positive_rate": 0.2222222222222222,
+        "mean_positive_probability": 0.22498991448357383,
+        "auc": 0.7354060913705583
+      }
+    },
+    {
+      "layer": 11,
+      "direction_norm": 1.0,
+      "train": {
+        "accuracy": 1.0,
+        "f1": 1.0,
+        "confusion_matrix": [
+          [
+            1774,
+            0
+          ],
+          [
+            0,
+            325
+          ]
+        ],
+        "decision_threshold": 0.5,
+        "positive_rate": 0.15483563601715103,
+        "mean_positive_probability": 0.16703258136033156,
+        "auc": 1.0
+      },
+      "val": {
+        "accuracy": 0.8044444444444444,
+        "f1": 0.3888888888888889,
+        "confusion_matrix": [
+          [
+            334,
+            60
+          ],
+          [
+            28,
+            28
+          ]
+        ],
+        "decision_threshold": 0.5,
+        "positive_rate": 0.19555555555555557,
+        "mean_positive_probability": 0.20394676211915524,
+        "auc": 0.729967367657723
+      }
+    },
+    {
+      "layer": 12,
+      "direction_norm": 1.0,
+      "train": {
+        "accuracy": 1.0,
+        "f1": 1.0,
+        "confusion_matrix": [
+          [
+            1774,
+            0
+          ],
+          [
+            0,
+            325
+          ]
+        ],
+        "decision_threshold": 0.5,
+        "positive_rate": 0.15483563601715103,
+        "mean_positive_probability": 0.16520705381117515,
+        "auc": 1.0
+      },
+      "val": {
+        "accuracy": 0.8177777777777778,
+        "f1": 0.4142857142857143,
+        "confusion_matrix": [
+          [
+            339,
+            55
+          ],
+          [
+            27,
+            29
+          ]
+        ],
+        "decision_threshold": 0.5,
+        "positive_rate": 0.18666666666666668,
+        "mean_positive_probability": 0.20317434031558068,
+        "auc": 0.7459209572153735
+      }
+    },
+    {
+      "layer": 13,
+      "direction_norm": 1.0000001192092896,
+      "train": {
+        "accuracy": 1.0,
+        "f1": 1.0,
+        "confusion_matrix": [
+          [
+            1774,
+            0
+          ],
+          [
+            0,
+            325
+          ]
+        ],
+        "decision_threshold": 0.5,
+        "positive_rate": 0.15483563601715103,
+        "mean_positive_probability": 0.16464085074413284,
+        "auc": 1.0
+      },
+      "val": {
+        "accuracy": 0.7977777777777778,
+        "f1": 0.38095238095238093,
+        "confusion_matrix": [
+          [
+            331,
+            63
+          ],
+          [
+            28,
+            28
+          ]
+        ],
+        "decision_threshold": 0.5,
+        "positive_rate": 0.20222222222222222,
+        "mean_positive_probability": 0.21298049087359894,
+        "auc": 0.7663161711385063
+      }
+    },
+    {
+      "layer": 14,
+      "direction_norm": 1.0,
+      "train": {
+        "accuracy": 1.0,
+        "f1": 1.0,
+        "confusion_matrix": [
+          [
+            1774,
+            0
+          ],
+          [
+            0,
+            325
+          ]
+        ],
+        "decision_threshold": 0.5,
+        "positive_rate": 0.15483563601715103,
+        "mean_positive_probability": 0.16390104353455967,
+        "auc": 1.0
+      },
+      "val": {
+        "accuracy": 0.7822222222222223,
+        "f1": 0.3875,
+        "confusion_matrix": [
+          [
+            321,
+            73
+          ],
+          [
+            25,
+            31
+          ]
+        ],
+        "decision_threshold": 0.5,
+        "positive_rate": 0.2311111111111111,
+        "mean_positive_probability": 0.23299178460976883,
+        "auc": 0.744017403915881
+      }
+    },
+    {
+      "layer": 15,
+      "direction_norm": 1.0,
+      "train": {
+        "accuracy": 1.0,
+        "f1": 1.0,
+        "confusion_matrix": [
+          [
+            1774,
+            0
+          ],
+          [
+            0,
+            325
+          ]
+        ],
+        "decision_threshold": 0.5,
+        "positive_rate": 0.15483563601715103,
+        "mean_positive_probability": 0.1642488499791272,
+        "auc": 1.0
+      },
+      "val": {
+        "accuracy": 0.7866666666666666,
+        "f1": 0.3684210526315789,
+        "confusion_matrix": [
+          [
+            326,
+            68
+          ],
+          [
+            28,
+            28
+          ]
+        ],
+        "decision_threshold": 0.5,
+        "positive_rate": 0.21333333333333335,
+        "mean_positive_probability": 0.2253836539227894,
+        "auc": 0.6886330674401742
+      }
+    }
+  ]
+}

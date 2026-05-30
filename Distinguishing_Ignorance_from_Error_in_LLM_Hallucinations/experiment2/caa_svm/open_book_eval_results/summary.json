@@ -1,0 +1,72 @@
+{
+  "split_root": "D:\\dsmlFinalRepe\\Distinguishing_Ignorance_from_Error_in_LLM_Hallucinations\\experiment2\\hidden_vectors\\open_book_eval_results",
+  "output_dir": "D:\\dsmlFinalRepe\\Distinguishing_Ignorance_from_Error_in_LLM_Hallucinations\\experiment2\\caa_svm\\open_book_eval_results",
+  "seed": 42,
+  "positive_label": "incorrect",
+  "vector_types": [
+    "residual"
+  ],
+  "results": {
+    "residual": {
+      "best_layer": 12,
+      "best_layer_metrics": {
+        "train": {
+          "accuracy": 1.0,
+          "f1": 1.0,
+          "confusion_matrix": [
+            [
+              1774,
+              0
+            ],
+            [
+              0,
+              325
+            ]
+          ],
+          "decision_threshold": 0.5,
+          "positive_rate": 0.15483563601715103,
+          "mean_positive_probability": 0.16520705381117515,
+          "auc": 1.0
+        },
+        "val": {
+          "accuracy": 0.8177777777777778,
+          "f1": 0.4142857142857143,
+          "confusion_matrix": [
+            [
+              339,
+              55
+            ],
+            [
+              27,
+              29
+            ]
+          ],
+          "decision_threshold": 0.5,
+          "positive_rate": 0.18666666666666668,
+          "mean_positive_probability": 0.20317434031558068,
+          "auc": 0.7459209572153735
+        },
+        "test": {
+          "accuracy": 0.7644444444444445,
+          "f1": 0.36904761904761907,
+          "confusion_matrix": [
+            [
+              313,
+              73
+            ],
+            [
+              33,
+              31
+            ]
+          ],
+          "decision_threshold": 0.5,
+          "positive_rate": 0.2311111111111111,
+          "mean_positive_probability": 0.23244038494345923,
+          "auc": 0.700898639896373
+        }
+      },
+      "layer_metrics_file": "D:\\dsmlFinalRepe\\Distinguishing_Ignorance_from_Error_in_LLM_Hallucinations\\experiment2\\caa_svm\\open_book_eval_results\\residual\\layer_metrics.json",
+      "best_layer_summary_file": "D:\\dsmlFinalRepe\\Distinguishing_Ignorance_from_Error_in_LLM_Hallucinations\\experiment2\\caa_svm\\open_book_eval_results\\residual\\best_layer_summary.json"
+    }
+  }
+}

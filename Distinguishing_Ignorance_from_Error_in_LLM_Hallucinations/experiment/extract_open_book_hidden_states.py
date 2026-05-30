@@ -4,7 +4,7 @@ This script reads `open_book_eval_results.json` (or equivalent), splits samples
 by `correct` (True/False), and extracts last-token vectors using
 `InnerStatesUsingWrapper` for each prompt.
 
-python experiment/extract_open_book_hidden_states.py --eval_results experiment/eval_results_experiment/open_book_eval_results.json --model_name meta-llama/Llama-3.2-1B-Instruct
+python experiment/extract_open_book_hidden_states.py --eval_results experiment/type2_results/all445/open_book_eval_results_445.json --model_name meta-llama/Llama-3.2-1B-Instruct
 
 Saved arrays per group:
 - all_mlp_vector_<group>.npy
@@ -118,7 +118,7 @@ def main() -> None:
     parser.add_argument("--eval_results", type=str, required=True, help="Path to open_book_eval_results.json")
     parser.add_argument("--model_name", type=str, default="", help="Model for hidden-state extraction")
     parser.add_argument("--prompt_field", type=str, default="prompt", help="Field containing prompt text")
-    parser.add_argument("--output_dir", type=str, default="experiment/type2_results", help="Directory for output .npy files")
+    parser.add_argument("--output_dir", type=str, default="experiment/type2_results/all445", help="Directory for output .npy files")
     parser.add_argument("--limit_true", type=int, default=0, help="Optional cap for correct=True samples")
     parser.add_argument("--limit_false", type=int, default=0, help="Optional cap for correct=False samples")
     parser.add_argument("--seed", type=int, default=42)

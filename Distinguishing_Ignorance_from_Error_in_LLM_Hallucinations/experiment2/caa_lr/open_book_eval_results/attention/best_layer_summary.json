@@ -1,0 +1,60 @@
+{
+  "vector_type": "attention",
+  "best_layer": 2,
+  "positive_label": "incorrect",
+  "decision_threshold": 0.5,
+  "train": {
+    "accuracy": 0.9933301572177228,
+    "f1": 0.9789156626506024,
+    "confusion_matrix": [
+      [
+        1760,
+        14
+      ],
+      [
+        0,
+        325
+      ]
+    ],
+    "decision_threshold": 0.5,
+    "positive_rate": 0.1615054787994283,
+    "mean_positive_probability": 0.19902606501314316,
+    "auc": 1.0
+  },
+  "val": {
+    "accuracy": 0.7866666666666666,
+    "f1": 0.3333333333333333,
+    "confusion_matrix": [
+      [
+        330,
+        64
+      ],
+      [
+        32,
+        24
+      ]
+    ],
+    "decision_threshold": 0.5,
+    "positive_rate": 0.19555555555555557,
+    "mean_positive_probability": 0.21121896248594635,
+    "auc": 0.6229151559100797
+  },
+  "test": {
+    "accuracy": 0.7466666666666667,
+    "f1": 0.2597402597402597,
+    "confusion_matrix": [
+      [
+        316,
+        70
+      ],
+      [
+        44,
+        20
+      ]
+    ],
+    "decision_threshold": 0.5,
+    "positive_rate": 0.2,
+    "mean_positive_probability": 0.22151405251782755,
+    "auc": 0.5973121761658031
+  }
+}

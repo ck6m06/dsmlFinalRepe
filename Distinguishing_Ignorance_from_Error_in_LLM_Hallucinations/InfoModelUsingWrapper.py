@@ -22,7 +22,7 @@ class InnerStatesUsingWrapper():
             self.model = AutoModelForCausalLM.from_pretrained(
                 MODEL_NAME,
                 device_map="auto",
-                dtype=torch.float16,
+                # dtype=torch.float16,
             )
         else:
             self.model = AutoModelForCausalLM.from_pretrained(MODEL_NAME)
@@ -208,7 +208,8 @@ class InnerStatesUsingWrapper():
                 head_output = concated_heads_wihtout_projection[dim_head * head_idx:dim_head * (
                         head_idx + 1)]
                 head_output_projected = head_output
-                layer_heads.append(np.array(head_output_projected))
+                # Convert BF16/FP16 tensors to float32 on CPU before creating numpy arrays.
+                layer_heads.append(head_output_projected.detach().cpu().float().numpy())
             heads_outputs_for_all_the_layers_using_the_last_token.append(layer_heads)
 
         return np.array(heads_outputs_for_all_the_layers_using_the_last_token)

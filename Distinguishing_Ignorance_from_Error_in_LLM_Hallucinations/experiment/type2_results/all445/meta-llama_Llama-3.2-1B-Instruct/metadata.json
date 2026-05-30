@@ -1,0 +1,23 @@
+{
+  "eval_results": "D:\\dsmlFinalRepe\\Distinguishing_Ignorance_from_Error_in_LLM_Hallucinations\\experiment\\type2_results\\all445\\open_book_eval_results_445.json",
+  "model_name": "meta-llama/Llama-3.2-1B-Instruct",
+  "prompt_field": "prompt",
+  "correct_count": 445,
+  "incorrect_count": 445,
+  "files": {
+    "correct": {
+      "mlp": "all_mlp_vector_correct.npy",
+      "attention": "all_attention_vector_correct.npy",
+      "heads": "heads_vectors_correct_no_projection.npy",
+      "residual": "all_residual_vectors_correct.npy",
+      "indices": "indices_correct.npy"
+    },
+    "incorrect": {
+      "mlp": "all_mlp_vector_incorrect.npy",
+      "attention": "all_attention_vector_incorrect.npy",
+      "heads": "heads_vectors_incorrect_no_projection.npy",
+      "residual": "all_residual_vectors_incorrect.npy",
+      "indices": "indices_incorrect.npy"
+    }
+  }
+}

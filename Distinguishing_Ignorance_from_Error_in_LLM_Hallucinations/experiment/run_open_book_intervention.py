@@ -192,10 +192,110 @@ def load_direction(
     return directions
 
 
+def load_lr_probe(directions_dir: Path, vector_type: str) -> tuple[np.ndarray, int]:
+    summary_path = directions_dir / "summary.json"
+    if not summary_path.exists():
+        raise FileNotFoundError(summary_path)
+
+    with summary_path.open("r", encoding="utf-8") as handle:
+        summary = json.load(handle)
+
+    results = summary.get("results", {}) if isinstance(summary, dict) else {}
+    vector_summary = results.get(vector_type)
+    if not isinstance(vector_summary, dict):
+        raise ValueError(f"Missing vector_type '{vector_type}' in {summary_path}")
+
+    best_layer = int(vector_summary["best_layer"])
+    direction_path = directions_dir / f"direction_{vector_type}_lr_best_layer.npy"
+    if not direction_path.exists():
+        raise FileNotFoundError(direction_path)
+
+    direction = np.load(direction_path, allow_pickle=True)
+    if direction.ndim != 1:
+        raise ValueError(f"Expected a 1D direction vector, got {direction.shape}")
+    return direction, best_layer
+
+
 def summarize(rows: list[dict[str, Any]], key: str) -> float:
     if not rows:
         return float("nan")
     return float(np.mean([bool(row.get(key, False)) for row in rows]))
+
+
+def write_json_file(path: Path, payload: dict[str, Any]) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    with path.open("w", encoding="utf-8") as handle:
+        json.dump(payload, handle, ensure_ascii=False, indent=2)
+        handle.write("\n")
+
+
+def build_run_summary(
+    baseline_rows: list[dict[str, Any]],
+    intervention_rows: list[dict[str, Any]],
+    layer_idx: int,
+    alpha_value: float,
+) -> dict[str, Any]:
+    baseline_accuracy = summarize(baseline_rows, "correct")
+    intervention_accuracy = summarize(intervention_rows, "correct")
+    recovery_rate = float(np.mean([not b["correct"] and i["correct"] for b, i in zip(baseline_rows, intervention_rows)])) if baseline_rows else float("nan")
+    regression_rate = float(np.mean([b["correct"] and not i["correct"] for b, i in zip(baseline_rows, intervention_rows)])) if baseline_rows else float("nan")
+    baseline_correct_count = int(np.sum([1 if r.get("correct") else 0 for r in baseline_rows]))
+    intervention_correct_count = int(np.sum([1 if r.get("correct") else 0 for r in intervention_rows]))
+
+    baseline_false_count = 0
+    baseline_true_count = 0
+    baseline_false_intervention_correct = 0
+    baseline_true_intervention_correct = 0
+    recovered_indices: list[int] = []
+    regressed_indices: list[int] = []
+
+    for baseline_row, intervention_row in zip(baseline_rows, intervention_rows):
+        baseline_is_correct = bool(baseline_row.get("correct", False))
+        intervention_is_correct = bool(intervention_row.get("correct", False))
+        index = int(baseline_row.get("index", 0))
+
+        if baseline_is_correct:
+            baseline_true_count += 1
+            if intervention_is_correct:
+                baseline_true_intervention_correct += 1
+            else:
+                regressed_indices.append(index)
+        else:
+            baseline_false_count += 1
+            if intervention_is_correct:
+                baseline_false_intervention_correct += 1
+                recovered_indices.append(index)
+
+    baseline_false_intervention_accuracy = (
+        baseline_false_intervention_correct / baseline_false_count if baseline_false_count > 0 else float("nan")
+    )
+    baseline_true_intervention_accuracy = (
+        baseline_true_intervention_correct / baseline_true_count if baseline_true_count > 0 else float("nan")
+    )
+
+    return {
+        "layer": layer_idx,
+        "alpha": alpha_value,
+        "baseline_accuracy": baseline_accuracy,
+        "intervention_accuracy": intervention_accuracy,
+        "delta_accuracy": intervention_accuracy - baseline_accuracy,
+        "recovery_rate": recovery_rate,
+        "regression_rate": regression_rate,
+        "baseline_correct_count": baseline_correct_count,
+        "intervention_correct_count": intervention_correct_count,
+        "baseline_total": len(baseline_rows),
+        "intervention_total": len(intervention_rows),
+        "baseline_false_count": baseline_false_count,
+        "baseline_false_intervention_correct": baseline_false_intervention_correct,
+        "baseline_false_intervention_accuracy": baseline_false_intervention_accuracy,
+        "baseline_true_count": baseline_true_count,
+        "baseline_true_intervention_correct": baseline_true_intervention_correct,
+        "baseline_true_intervention_accuracy": baseline_true_intervention_accuracy,
+        "recovered_indices": recovered_indices,
+        "regressed_indices": regressed_indices,
+        "recovered_count": len(recovered_indices),
+        "regressed_count": len(regressed_indices),
+    }
 
 
 def run_generation_rows(
@@ -421,6 +521,12 @@ def main() -> None:
         default="",
         help="Directory containing direction_*.npy files. Defaults to <eval_results_dir>/directions.",
     )
+    parser.add_argument(
+        "--probe_summary",
+        type=str,
+        default="",
+        help="Optional summary.json from experiment2/train_caa_svm.py for LR-based intervention.",
+    )
     parser.add_argument("--vector_type", type=str, choices=["mlp", "attention", "residual", "heads"], default="attention")
     parser.add_argument("--method", type=str, choices=["mean_diff", "pca"], default="mean_diff")
     parser.add_argument(
@@ -433,7 +539,7 @@ def main() -> None:
         "--layer",
         type=str,
         default="auto",
-        help="Layer index to inject, or 'auto' to search for the best layer.",
+        help="Layer index to inject, 'auto' to search for the best layer, or 'sweep' to evaluate every layer.",
     )
     parser.add_argument(
         "--layer_search_metric",
@@ -479,6 +585,18 @@ def main() -> None:
         default="",
         help="Optional path to save per-sample intervention results as JSONL.",
     )
+    parser.add_argument(
+        "--extra_test",
+        type=str,
+        default="",
+        help="Optional additional test JSON to run the saved best_layer on (will run baseline+intervention).",
+    )
+    parser.add_argument(
+        "--extra_output_json",
+        type=str,
+        default="",
+        help="Optional path to save the extra test results JSON. Defaults next to extra test file.",
+    )
     args = parser.parse_args()
 
     eval_path = Path(args.eval_results).resolve()
@@ -492,16 +610,25 @@ def main() -> None:
         raise ValueError("Model name is required. Pass --model_name or include model_name in eval JSON.")
 
     directions_dir = Path(args.directions_dir).resolve() if args.directions_dir else (eval_path.parent / "directions")
-    direction_stack = load_direction(
-        directions_dir=directions_dir,
-        vector_type=args.vector_type,
-        method=args.method,
-        variant=args.direction_variant,
-    )
+    probe_summary_path = Path(args.probe_summary).resolve() if args.probe_summary else None
+    if probe_summary_path is not None:
+        direction, loaded_best_layer = load_lr_probe(
+            directions_dir=directions_dir,
+            vector_type=args.vector_type,
+        )
+        direction_stack = np.expand_dims(direction, axis=0)
+    else:
+        loaded_best_layer = None
+        direction_stack = load_direction(
+            directions_dir=directions_dir,
+            vector_type=args.vector_type,
+            method=args.method,
+            variant=args.direction_variant,
+        )
 
     layer_arg = args.layer.strip().lower()
     search_records: list[dict[str, Any]] = []
-    if layer_arg == "auto":
+    if layer_arg in {"auto", "sweep"}:
         # choose subset for layer search
         subset = args.layer_search_subset.lower()
         if subset == "incorrect":
@@ -517,17 +644,105 @@ def main() -> None:
     print(f"eval_results: {eval_path}")
     print(f"model_name: {model_name}")
     print(f"directions_dir: {directions_dir}")
+    print(f"probe_summary: {probe_summary_path if probe_summary_path is not None else 'none'}")
     print(f"vector_type: {args.vector_type}")
     print(f"method: {args.method}")
     print(f"direction_variant: {args.direction_variant}")
-    print(f"layer: {'auto' if layer_arg == 'auto' else args.layer}")
+    print(f"layer: {'from_probe' if probe_summary_path is not None else ('auto' if layer_arg == 'auto' else ('sweep' if layer_arg == 'sweep' else args.layer))}")
     print(f"direction_shape: {direction_stack.shape}")
     print(f"samples: {len(records)}")
 
     model, tokenizer = load_model_and_tokenizer(model_name)
 
+    baseline_rows = run_generation_rows(
+        model=model,
+        tokenizer=tokenizer,
+        records=records,
+        prompt_field=args.prompt_field,
+        max_new_tokens=args.max_new_tokens,
+        temperature=args.temperature,
+        top_p=args.top_p,
+        progress_label="baseline",
+        progress_every=args.progress_every,
+    )
+
     best_search_summary: dict[str, float] = {}
-    if layer_arg == "auto":
+    layer_sweep_summaries: list[dict[str, Any]] = []
+    layer_sweep_rows: dict[tuple[int, float], list[dict[str, Any]]] = {}
+    if probe_summary_path is not None:
+        best_layer = int(loaded_best_layer)
+    elif layer_arg == "sweep":
+        print(f"search_records: {len(records)} (full records sweep)")
+
+        sweep_alphas = [1.0, -1.0]
+        for layer_idx in range(direction_stack.shape[0]):
+            for alpha_sign in sweep_alphas:
+                alpha_value = float(alpha_sign)
+                intervention_rows = run_generation_rows(
+                    model=model,
+                    tokenizer=tokenizer,
+                    records=records,
+                    prompt_field=args.prompt_field,
+                    max_new_tokens=args.max_new_tokens,
+                    temperature=args.temperature,
+                    top_p=args.top_p,
+                    direction=direction_stack[layer_idx],
+                    layer_idx=layer_idx,
+                    alpha=alpha_value,
+                    token_position=args.token_position,
+                )
+
+                run_summary = build_run_summary(
+                    baseline_rows=baseline_rows,
+                    intervention_rows=intervention_rows,
+                    layer_idx=layer_idx,
+                    alpha_value=alpha_value,
+                )
+                layer_sweep_summaries.append(run_summary)
+                layer_sweep_rows[(layer_idx, alpha_value)] = intervention_rows
+                print(
+                    json.dumps(
+                        {
+                            "layer": layer_idx,
+                            "alpha": alpha_value,
+                            "baseline_accuracy": run_summary["baseline_accuracy"],
+                            "intervention_accuracy": run_summary["intervention_accuracy"],
+                            "delta_accuracy": run_summary["delta_accuracy"],
+                            "recovery_rate": run_summary["recovery_rate"],
+                            "regression_rate": run_summary["regression_rate"],
+                            "baseline_false_count": run_summary["baseline_false_count"],
+                            "baseline_false_intervention_correct": run_summary["baseline_false_intervention_correct"],
+                            "baseline_false_intervention_accuracy": run_summary["baseline_false_intervention_accuracy"],
+                            "baseline_true_count": run_summary["baseline_true_count"],
+                            "baseline_true_intervention_correct": run_summary["baseline_true_intervention_correct"],
+                            "baseline_true_intervention_accuracy": run_summary["baseline_true_intervention_accuracy"],
+                            "recovered_count": run_summary["recovered_count"],
+                            "regressed_count": run_summary["regressed_count"],
+                        },
+                        ensure_ascii=False,
+                    )
+                )
+
+        if args.output_json:
+            output_path = Path(args.output_json).resolve()
+            sweep_dir = output_path.parent / f"{output_path.stem}_layer_summaries"
+            for layer_summary in layer_sweep_summaries:
+                layer_path = sweep_dir / f"layer_{layer_summary['layer']:03d}_alpha_{layer_summary['alpha']:+.0f}.json"
+                write_json_file(layer_path, layer_summary)
+            write_json_file(
+                sweep_dir / "layer_sweep_index.json",
+                {
+                    "runs": [
+                        {"layer": row["layer"], "alpha": row["alpha"]}
+                        for row in layer_sweep_summaries
+                    ]
+                },
+            )
+
+        best_run_index = int(max(range(len(layer_sweep_summaries)), key=lambda i: layer_sweep_summaries[i]["delta_accuracy"]))
+        best_search_summary = layer_sweep_summaries[best_run_index]
+        best_layer = int(best_search_summary["layer"])
+    elif layer_arg == "auto":
         print(f"search_records: {len(search_records)}")
         best_layer, _, best_search_summary = search_best_layer(
             model=model,
@@ -549,35 +764,29 @@ def main() -> None:
     else:
         best_layer = int(layer_arg)
 
-    baseline_rows: list[dict[str, Any]] = []
     intervention_rows: list[dict[str, Any]] = []
+    intervention_direction = direction_stack[0] if probe_summary_path is not None else direction_stack[best_layer]
 
-    baseline_rows = run_generation_rows(
-        model=model,
-        tokenizer=tokenizer,
-        records=records,
-        prompt_field=args.prompt_field,
-        max_new_tokens=args.max_new_tokens,
-        temperature=args.temperature,
-        top_p=args.top_p,
-        progress_label="baseline",
-        progress_every=args.progress_every,
-    )
-    intervention_rows = run_generation_rows(
-        model=model,
-        tokenizer=tokenizer,
-        records=records,
-        prompt_field=args.prompt_field,
-        max_new_tokens=args.max_new_tokens,
-        temperature=args.temperature,
-        top_p=args.top_p,
-        direction=direction_stack[best_layer],
-        layer_idx=best_layer,
-        alpha=args.alpha,
-        token_position=args.token_position,
-        progress_label="intervention",
-        progress_every=args.progress_every,
-    )
+    if layer_arg == "sweep":
+        intervention_rows = layer_sweep_rows[(best_layer, best_search_summary.get("alpha", 1.0))]
+    else:
+        intervention_rows = run_generation_rows(
+            model=model,
+            tokenizer=tokenizer,
+            records=records,
+            prompt_field=args.prompt_field,
+            max_new_tokens=args.max_new_tokens,
+            temperature=args.temperature,
+            top_p=args.top_p,
+            direction=intervention_direction,
+            layer_idx=best_layer,
+            alpha=args.alpha,
+            token_position=args.token_position,
+            progress_label="intervention",
+            progress_every=args.progress_every,
+        )
+
+    selected_alpha = float(best_search_summary.get("alpha", 1.0)) if layer_arg == "sweep" else float(args.alpha)
 
     baseline_accuracy = summarize(baseline_rows, "correct")
     intervention_accuracy = summarize(intervention_rows, "correct")
@@ -621,6 +830,7 @@ def main() -> None:
         "dataset": str(eval_path),
         "model_name": model_name,
         "directions_dir": str(directions_dir),
+        "probe_summary": str(probe_summary_path) if probe_summary_path is not None else "",
         "vector_type": args.vector_type,
         "method": args.method,
         "direction_variant": args.direction_variant,
@@ -628,7 +838,7 @@ def main() -> None:
         "layer_search_metric": args.layer_search_metric if layer_arg == "auto" else "manual",
         "layer_search_limit": args.layer_search_limit if layer_arg == "auto" else 0,
         "layer_search_subset": args.layer_search_subset if layer_arg == "auto" else "manual",
-        "alpha": args.alpha,
+        "alpha": selected_alpha,
         "samples": len(records),
         "baseline_accuracy": baseline_accuracy,
         "baseline_correct_count": baseline_correct_count,
@@ -650,6 +860,7 @@ def main() -> None:
         "baseline_rows": baseline_rows,
         "intervention_rows": intervention_rows,
         "layer_search_summary": best_search_summary if layer_arg == "auto" else {},
+        "layer_sweep_summaries": layer_sweep_summaries if layer_arg == "sweep" else [],
     }
 
     print("\n=== Summary ===")
@@ -662,6 +873,13 @@ def main() -> None:
 
     print(f"baseline_false_count: {baseline_false_count} recovered: {baseline_false_intervention_correct} (acc {baseline_false_intervention_accuracy:.4f} if not nan)")
     print(f"baseline_true_count: {baseline_true_count} regressed: {len(regressed_indices)} (acc after {baseline_true_intervention_accuracy:.4f} if not nan)")
+
+    if layer_arg == "sweep":
+        print(f"sweep_runs: {len(layer_sweep_summaries)}")
+        print(f"best_layer_by_delta_accuracy: {best_layer}")
+        print(f"best_alpha: {best_search_summary.get('alpha', 1.0)}")
+        print(f"baseline_false_count: {baseline_false_count} recovered: {baseline_false_intervention_correct} (acc {baseline_false_intervention_accuracy:.4f} if not nan)")
+        print(f"baseline_true_count: {baseline_true_count} regressed: {len(regressed_indices)} (acc after {baseline_true_intervention_accuracy:.4f} if not nan)")
 
     if args.output_jsonl:
         output_path = Path(args.output_jsonl).resolve()
@@ -688,11 +906,74 @@ def main() -> None:
 
     if args.output_json:
         output_path = Path(args.output_json).resolve()
-        output_path.parent.mkdir(parents=True, exist_ok=True)
-        with output_path.open("w", encoding="utf-8") as handle:
-            json.dump(summary, handle, ensure_ascii=False, indent=2)
-            handle.write("\n")
+        write_json_file(output_path, summary)
         print(f"saved: {output_path}")
+
+    # If provided, run the same best-layer intervention on an extra test JSON
+    if args.extra_test:
+        extra_eval_path = Path(args.extra_test).resolve()
+        print(f"extra_eval_results: {extra_eval_path}")
+        extra_records = load_records(extra_eval_path)
+        if args.limit and args.limit > 0:
+            extra_records = extra_records[: args.limit]
+
+        # Run baseline and intervention on the extra test using the selected best layer
+        print(f"Running baseline on extra test: {len(extra_records)} samples")
+        baseline_extra = run_generation_rows(
+            model=model,
+            tokenizer=tokenizer,
+            records=extra_records,
+            prompt_field=args.prompt_field,
+            max_new_tokens=args.max_new_tokens,
+            temperature=args.temperature,
+            top_p=args.top_p,
+            progress_label="baseline_extra",
+            progress_every=args.progress_every,
+        )
+
+        print(f"Running intervention on extra test with best_layer={best_layer}")
+        print(f"Using alpha={selected_alpha} for extra test intervention")
+        intervention_extra = run_generation_rows(
+            model=model,
+            tokenizer=tokenizer,
+            records=extra_records,
+            prompt_field=args.prompt_field,
+            max_new_tokens=args.max_new_tokens,
+            temperature=args.temperature,
+            top_p=args.top_p,
+            direction=intervention_direction,
+            layer_idx=best_layer,
+            alpha=selected_alpha,
+            token_position=args.token_position,
+            progress_label="intervention_extra",
+            progress_every=args.progress_every,
+        )
+
+        extra_summary = {
+            "dataset": str(extra_eval_path),
+            "model_name": model_name,
+            "directions_dir": str(directions_dir),
+            "probe_summary": str(probe_summary_path) if probe_summary_path is not None else "",
+            "vector_type": args.vector_type,
+            "method": args.method,
+            "direction_variant": args.direction_variant,
+            "layer": best_layer,
+            "alpha": selected_alpha,
+            "samples": len(extra_records),
+            "baseline_accuracy": summarize(baseline_extra, "correct"),
+            "intervention_accuracy": summarize(intervention_extra, "correct"),
+            "delta_accuracy": summarize(intervention_extra, "correct") - summarize(baseline_extra, "correct"),
+            "baseline_rows": baseline_extra,
+            "intervention_rows": intervention_extra,
+        }
+
+        if args.extra_output_json:
+            extra_output_path = Path(args.extra_output_json).resolve()
+        else:
+            extra_output_path = extra_eval_path.parent / f"{extra_eval_path.stem}_best_layer_{best_layer}_results.json"
+
+        write_json_file(extra_output_path, extra_summary)
+        print(f"saved extra test results: {extra_output_path}")
 
     del model
     del tokenizer

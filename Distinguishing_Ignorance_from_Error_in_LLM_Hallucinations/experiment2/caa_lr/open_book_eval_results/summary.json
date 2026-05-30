@@ -1,0 +1,258 @@
+{
+  "split_root": "D:\\dsmlFinalRepe\\Distinguishing_Ignorance_from_Error_in_LLM_Hallucinations\\experiment2\\hidden_vectors\\open_book_eval_results",
+  "output_dir": "D:\\dsmlFinalRepe\\Distinguishing_Ignorance_from_Error_in_LLM_Hallucinations\\experiment2\\caa_lr\\open_book_eval_results",
+  "seed": 42,
+  "positive_label": "incorrect",
+  "vector_types": [
+    "mlp",
+    "attention",
+    "residual",
+    "heads"
+  ],
+  "results": {
+    "mlp": {
+      "best_layer": 13,
+      "best_layer_metrics": {
+        "train": {
+          "accuracy": 1.0,
+          "f1": 1.0,
+          "confusion_matrix": [
+            [
+              1774,
+              0
+            ],
+            [
+              0,
+              325
+            ]
+          ],
+          "decision_threshold": 0.5,
+          "positive_rate": 0.15483563601715103,
+          "mean_positive_probability": 0.16419506060419814,
+          "auc": 1.0
+        },
+        "val": {
+          "accuracy": 0.7977777777777778,
+          "f1": 0.38095238095238093,
+          "confusion_matrix": [
+            [
+              331,
+              63
+            ],
+            [
+              28,
+              28
+            ]
+          ],
+          "decision_threshold": 0.5,
+          "positive_rate": 0.20222222222222222,
+          "mean_positive_probability": 0.20971398058633473,
+          "auc": 0.7415246555474981
+        },
+        "test": {
+          "accuracy": 0.7711111111111111,
+          "f1": 0.3522012578616352,
+          "confusion_matrix": [
+            [
+              319,
+              67
+            ],
+            [
+              36,
+              28
+            ]
+          ],
+          "decision_threshold": 0.5,
+          "positive_rate": 0.2111111111111111,
+          "mean_positive_probability": 0.22324972226037448,
+          "auc": 0.7022344559585492
+        }
+      },
+      "layer_metrics_file": "D:\\dsmlFinalRepe\\Distinguishing_Ignorance_from_Error_in_LLM_Hallucinations\\experiment2\\caa_lr\\open_book_eval_results\\mlp\\layer_metrics.json",
+      "best_layer_summary_file": "D:\\dsmlFinalRepe\\Distinguishing_Ignorance_from_Error_in_LLM_Hallucinations\\experiment2\\caa_lr\\open_book_eval_results\\mlp\\best_layer_summary.json"
+    },
+    "attention": {
+      "best_layer": 2,
+      "best_layer_metrics": {
+        "train": {
+          "accuracy": 0.9933301572177228,
+          "f1": 0.9789156626506024,
+          "confusion_matrix": [
+            [
+              1760,
+              14
+            ],
+            [
+              0,
+              325
+            ]
+          ],
+          "decision_threshold": 0.5,
+          "positive_rate": 0.1615054787994283,
+          "mean_positive_probability": 0.19902606501314316,
+          "auc": 1.0
+        },
+        "val": {
+          "accuracy": 0.7866666666666666,
+          "f1": 0.3333333333333333,
+          "confusion_matrix": [
+            [
+              330,
+              64
+            ],
+            [
+              32,
+              24
+            ]
+          ],
+          "decision_threshold": 0.5,
+          "positive_rate": 0.19555555555555557,
+          "mean_positive_probability": 0.21121896248594635,
+          "auc": 0.6229151559100797
+        },
+        "test": {
+          "accuracy": 0.7466666666666667,
+          "f1": 0.2597402597402597,
+          "confusion_matrix": [
+            [
+              316,
+              70
+            ],
+            [
+              44,
+              20
+            ]
+          ],
+          "decision_threshold": 0.5,
+          "positive_rate": 0.2,
+          "mean_positive_probability": 0.22151405251782755,
+          "auc": 0.5973121761658031
+        }
+      },
+      "layer_metrics_file": "D:\\dsmlFinalRepe\\Distinguishing_Ignorance_from_Error_in_LLM_Hallucinations\\experiment2\\caa_lr\\open_book_eval_results\\attention\\layer_metrics.json",
+      "best_layer_summary_file": "D:\\dsmlFinalRepe\\Distinguishing_Ignorance_from_Error_in_LLM_Hallucinations\\experiment2\\caa_lr\\open_book_eval_results\\attention\\best_layer_summary.json"
+    },
+    "residual": {
+      "best_layer": 12,
+      "best_layer_metrics": {
+        "train": {
+          "accuracy": 1.0,
+          "f1": 1.0,
+          "confusion_matrix": [
+            [
+              1774,
+              0
+            ],
+            [
+              0,
+              325
+            ]
+          ],
+          "decision_threshold": 0.5,
+          "positive_rate": 0.15483563601715103,
+          "mean_positive_probability": 0.16520705381117515,
+          "auc": 1.0
+        },
+        "val": {
+          "accuracy": 0.8177777777777778,
+          "f1": 0.4142857142857143,
+          "confusion_matrix": [
+            [
+              339,
+              55
+            ],
+            [
+              27,
+              29
+            ]
+          ],
+          "decision_threshold": 0.5,
+          "positive_rate": 0.18666666666666668,
+          "mean_positive_probability": 0.20317434031558068,
+          "auc": 0.7459209572153735
+        },
+        "test": {
+          "accuracy": 0.7644444444444445,
+          "f1": 0.36904761904761907,
+          "confusion_matrix": [
+            [
+              313,
+              73
+            ],
+            [
+              33,
+              31
+            ]
+          ],
+          "decision_threshold": 0.5,
+          "positive_rate": 0.2311111111111111,
+          "mean_positive_probability": 0.23244038494345923,
+          "auc": 0.700898639896373
+        }
+      },
+      "layer_metrics_file": "D:\\dsmlFinalRepe\\Distinguishing_Ignorance_from_Error_in_LLM_Hallucinations\\experiment2\\caa_lr\\open_book_eval_results\\residual\\layer_metrics.json",
+      "best_layer_summary_file": "D:\\dsmlFinalRepe\\Distinguishing_Ignorance_from_Error_in_LLM_Hallucinations\\experiment2\\caa_lr\\open_book_eval_results\\residual\\best_layer_summary.json"
+    },
+    "heads": {
+      "best_layer": 13,
+      "best_layer_metrics": {
+        "train": {
+          "accuracy": 1.0,
+          "f1": 1.0,
+          "confusion_matrix": [
+            [
+              1774,
+              0
+            ],
+            [
+              0,
+              325
+            ]
+          ],
+          "decision_threshold": 0.5,
+          "positive_rate": 0.15483563601715103,
+          "mean_positive_probability": 0.1650098081637813,
+          "auc": 1.0
+        },
+        "val": {
+          "accuracy": 0.8155555555555556,
+          "f1": 0.4195804195804196,
+          "confusion_matrix": [
+            [
+              337,
+              57
+            ],
+            [
+              26,
+              30
+            ]
+          ],
+          "decision_threshold": 0.5,
+          "positive_rate": 0.19333333333333333,
+          "mean_positive_probability": 0.21611809043230745,
+          "auc": 0.7787345902828136
+        },
+        "test": {
+          "accuracy": 0.7311111111111112,
+          "f1": 0.2389937106918239,
+          "confusion_matrix": [
+            [
+              310,
+              76
+            ],
+            [
+              45,
+              19
+            ]
+          ],
+          "decision_threshold": 0.5,
+          "positive_rate": 0.2111111111111111,
+          "mean_positive_probability": 0.2114847583383934,
+          "auc": 0.6203448834196892
+        }
+      },
+      "layer_metrics_file": "D:\\dsmlFinalRepe\\Distinguishing_Ignorance_from_Error_in_LLM_Hallucinations\\experiment2\\caa_lr\\open_book_eval_results\\heads\\layer_metrics.json",
+      "best_layer_summary_file": "D:\\dsmlFinalRepe\\Distinguishing_Ignorance_from_Error_in_LLM_Hallucinations\\experiment2\\caa_lr\\open_book_eval_results\\heads\\best_layer_summary.json"
+    }
+  }
+}

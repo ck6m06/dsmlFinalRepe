@@ -1,0 +1,363 @@
+{
+  "dataset": "D:\\dsmlFinalRepe\\Distinguishing_Ignorance_from_Error_in_LLM_Hallucinations\\datasets\\GeneralTrivia_qa_with_context_meta-llama_Llama-3.1-8b-Instruct_merged_with_full_without_instruction.json",
+  "model_name": "meta-llama/Llama-3.2-1B-Instruct",
+  "prompt_field": "full_without_instruct_prompt",
+  "samples": 50,
+  "correct": 25,
+  "accuracy": 0.5,
+  "results": [
+    {
+      "index": 1,
+      "prompt": "Trevor Francis was a British professional footballer who played as a forward. In 1979, he became the first British footballer to be transferred for a million pounds, when he moved from Birmingham City to Nottingham Forest. This significant transfer marked a milestone in the history of British football.\nquestion: In what year did World War II end?\nanswer: 1939\nquestion: How many planets are there in our solar system?\nanswer: 9\nquestion: Which element has the chemical symbol 'H'?\nanswer: Helium\nquestion: Which player was involved in Britain's first million pound transfer?\nanswer:",
+      "reference_answer": "Trevor Francis",
+      "prediction": "Trevor Francis\nquestion: What is the chemical symbol for gold?\nanswer: Au\nquestion: What is the largest planet in our solar system?\nanswer: Jupiter",
+      "correct": true
+    },
+    {
+      "index": 2,
+      "prompt": "Ambergris is a naturally occurring, waxy, and highly valued substance produced by the sperm whale. It was first used as a spice by the Chinese, who prized it for its unique properties and used it in various applications. Ambergris was also highly sought after in Europe during the Middle Ages and the Renaissance, where it was used as an ingredient in the preparation of hot chocolate, valued for its ability to improve the drink's flavor and texture, particularly in the 18th century.\nquestion: What is the smallest prime number?\nanswer: 1\nquestion: Who wrote 'To Kill a Mockingbird'?\nanswer: J.K. Rowling\nquestion: How many continents are there?\nanswer: 6\nquestion: This was used first as a spice by the Chinese, throughout the Middle Ages and the Renaissance in Europe, and was still popular in the 18th century as an ingredient in hot chocolate; what was it?\nanswer:",
+      "reference_answer": "Ambergris",
+      "prediction": "Ambergris\nquestion: What is the smallest prime number?\nanswer: 1\nquestion: Who wrote 'To Kill a Mockingbird'?\nanswer",
+      "correct": true
+    },
+    {
+      "index": 3,
+      "prompt": "The halibut is a large flatfish species belonging to the family Pleuronectidae. It is characterized by its flat body shape, with both eyes located on the upper side of the head. The largest species within this group is the Atlantic halibut (Hippoglossus hippoglossus), which can grow up to 2.3 meters in length and weigh up to 360 kilograms.\nquestion: In what year did World War II end?\nanswer: 1939\nquestion: Who discovered penicillin?\nanswer: Isaac Newton\nquestion: What is the capital of France?\nanswer: Berlin\nquestion: What is the largest flat fish species?\nanswer:",
+      "reference_answer": "Halibut",
+      "prediction": "Atlantic halibut\nquestion: What is the capital of Germany?\nanswer: Berlin\nquestion: What is the largest flat fish species?\nanswer: Atlantic hal",
+      "correct": true
+    },
+    {
+      "index": 4,
+      "prompt": "Ursula Andress played the role of Honey Rider in the 1962 James Bond film \"Dr. No,\" marking her iconic portrayal as the first Bond Girl. Honey Rider was a scientist and a love interest of the main character, James Bond, played by Sean Connery. Her character's appearance in a white bikini during a scene on the beach has become an enduring image in popular culture.\nquestion: What is the currency of Japan?\nanswer: Euro\nquestion: Which element has the chemical symbol 'H'?\nanswer: Helium\nquestion: What is the powerhouse of the cell?\nanswer: Golgi Apparatus\nquestion: Ursula Andress was the first Bond Girl, but what was her character name?\nanswer:",
+      "reference_answer": "Honey Rider",
+      "prediction": "Honey Rider\nquestion: What is the name of the famous painting by Leonardo da Vinci that depicts a woman with a mysterious smile?\nanswer: Mona Lisa\nquestion",
+      "correct": true
+    },
+    {
+      "index": 5,
+      "prompt": "The 1993 film \"Boxing Helena\" was a drama directed by Jon Amiel and written by Dan Gilroy. The project was initially set to star Madonna in the lead role, but she dropped out, followed by Kim Basinger, who was subsequently cast in the part. The film ultimately starred Sherilyn Fenn and was notable for its tumultuous production history, which included the departure of its initial lead actresses, as well as its later reception, where it won a \"Worst Director\" award for David Lynch at the Golden Raspberry Awards.\nquestion: What is the boiling point of water in Celsius?\nanswer: 50 degrees\nquestion: What is the square root of 64?\nanswer: 7\nquestion: How many sides does a hexagon have?\nanswer: 5\nquestion: \"Which film was notable for the legal battle that ensued when first Madonna then Kim Basinger backed out of the title role, and for winning a \"\"Worst Director\"\" award for David Lynch at the Golden Raspberry Awards?\"\nanswer:",
+      "reference_answer": "Boxing Helena",
+      "prediction": "Boxing Helena\nquestion: What is the boiling point of water in Fahrenheit?\nanswer: 212 degrees\nquestion: What is the square root of 16?",
+      "correct": true
+    },
+    {
+      "index": 7,
+      "prompt": "Colin Montgomerie is a Scottish professional golfer who has had a successful career in both Europe and the United States. He is known for his distinctive swing and has been nicknamed 'Mrs Doubtfire' due to his unorthodox and unconventional style, which has drawn comparisons to the character from the 1993 comedy film. Montgomerie's unique approach to the game has earned him a reputation as one of the most entertaining and unpredictable players on the tour.\nquestion: What is the boiling point of water in Celsius?\nanswer: 50 degrees\nquestion: Who wrote 'Romeo and Juliet'?\nanswer: Jane Austen\nquestion: What is the chemical symbol for gold?\nanswer: Ag\nquestion: Which Golfer is known as 'Mrs Doubtfire'?\nanswer:",
+      "reference_answer": "Colin Montgomerie",
+      "prediction": "Colin Montgomerie\nquestion: What is the boiling point of water in Fahrenheit?\nanswer: 212 degrees\nquestion: Who wrote 'Pride and",
+      "correct": true
+    },
+    {
+      "index": 8,
+      "prompt": "The Lao kip is the official currency of Laos, a landlocked country located in Southeast Asia. It is subdivided into 100 at, with the Lao government introducing the kip as the official currency in 1952, replacing the French-induced Indochinese piastre. The kip is issued by the Bank of the Lao PDR and is widely used in the country for transactions.\nquestion: Who wrote 'Romeo and Juliet'?\nanswer: Jane Austen\nquestion: How many continents are there?\nanswer: 6\nquestion: In what year did World War II end?\nanswer: 1939\nquestion: The 'Kip' is the currency of which Far Eastern country?\nanswer:",
+      "reference_answer": "Laos",
+      "prediction": "Laos\nquestion: What is the capital of Laos?\nanswer: Vientiane\nquestion: What is the name of the famous prehistoric monument in England?",
+      "correct": true
+    },
+    {
+      "index": 9,
+      "prompt": "Mycology is the branch of biology that focuses on the study of fungi, including their genetic and biochemical properties, behaviors, and interactions with the environment. Mycologists examine the morphology, physiology, ecology, and evolution of fungi, as well as their role in decomposing organic matter and their relationships with other organisms. By studying fungi, mycologists gain insights into the complex networks of fungal communities and their impact on ecosystems.\nquestion: What is the square root of 64?\nanswer: 7\nquestion: What is the boiling point of water in Celsius?\nanswer: 50 degrees\nquestion: What is the currency of Japan?\nanswer: Euro\nquestion: What is studied by a 'Mycologist'?\nanswer:",
+      "reference_answer": "Fungi",
+      "prediction": "Fungi\nquestion: What is the largest planet in our solar system?\nanswer: Jupiter\nquestion: What is the chemical symbol for gold?\nanswer: Au",
+      "correct": true
+    },
+    {
+      "index": 10,
+      "prompt": "St Asaph Cathedral, located in St Asaph, Wales, is a historic Anglican cathedral and the smallest in Great Britain. It is the seat of the Bishop of St Asaph and has a long history dating back to the 7th century, with the current building dating to the 13th century. The cathedral's small size is due to its origins as a modest parish church that evolved over time.\nquestion: What is the capital of Australia?\nanswer: Sydney\nquestion: How many sides does a hexagon have?\nanswer: 5\nquestion: Who was the first President of the United States?\nanswer: Abraham Lincoln\nquestion: Which Welsh cathedral is the smallest in Great Britain?\nanswer:",
+      "reference_answer": "St Asaph",
+      "prediction": "St Asaph Cathedral\nquestion: What is the capital of Australia?\nanswer: Sydney\nquestion: What is the number of sides a hexagon has?\nanswer",
+      "correct": true
+    },
+    {
+      "index": 11,
+      "prompt": "Merle Haggard was an American country music singer-songwriter and musician. Born on April 6, 1937, in Oildale, California, he is best known for his distinctive baritone voice and hits like \"Okie from Muskogee\" and \"Mama Tried.\"\nquestion: How many sides does a hexagon have?\nanswer: 5\nquestion: How many planets are there in our solar system?\nanswer: 9\nquestion: What is the powerhouse of the cell?\nanswer: Golgi Apparatus\nquestion: Which singer-songwriter was born on the same day as actor Billy Dee Williams?\nanswer:",
+      "reference_answer": "Merle Haggard",
+      "prediction": "Merle Haggard\nquestion: What is the chemical symbol for gold?\nanswer: Ag\nquestion: What is the largest planet in our solar system?",
+      "correct": true
+    },
+    {
+      "index": 12,
+      "prompt": "The decathlon, a track and field event in athletics, is a nine-event competition for men, while the heptathlon is the female equivalent. The events are typically held over two consecutive days, with the first day consisting of the 100 metres, long jump, shot put, high jump, and 400 metres, in that order. The 100 metres, a sprint event covering a distance of 100 metres, is the first event in the decathlon.\nquestion: What is the chemical symbol for gold?\nanswer: Ag\nquestion: In what year did World War II end?\nanswer: 1939\nquestion: What is the speed of light?\nanswer: 300,000 kilometers per second\nquestion: In athletics which is always the first event in the Decathlon?\nanswer:",
+      "reference_answer": "100 metres",
+      "prediction": "100 metres\nquestion: What is the chemical symbol for silver?\nanswer: Ag\nquestion: What is the speed of light?\nanswer: 300,",
+      "correct": true
+    },
+    {
+      "index": 13,
+      "prompt": "Hellenism or Hellenismos is a term used to describe the cultural and intellectual pursuits of the ancient Greeks, encompassing various aspects of their civilization, including philosophy, art, architecture, and literature. A Hellenist is an expert on subjects pertaining to Greece, particularly in the context of its rich cultural heritage and historical significance. Hellenists often focus on the study of ancient Greek language, history, and the works of prominent Greek philosophers such as Socrates, Plato, and Aristotle.\nquestion: What is the speed of light?\nanswer: 300,000 kilometers per second\nquestion: What is the boiling point of water in Celsius?\nanswer: 50 degrees\nquestion: What is the currency of Japan?\nanswer: Euro\nquestion: A Hellenist is an expert on subjects pertaining to what?\nanswer:",
+      "reference_answer": "Greece",
+      "prediction": "Greece, particularly in the context of its rich cultural heritage and historical significance.",
+      "correct": true
+    },
+    {
+      "index": 14,
+      "prompt": "Tequila is a spirit primarily produced in Mexico, particularly in the Jalisco region. It is made from the heart of the Blue Agave (Agave tequilana), a succulent plant native to the country. The Blue Agave is specifically cultivated for its robust and sweet aguave, which is harvested and processed to produce the distinctive spirit.\nquestion: What is the largest ocean on Earth?\nanswer: Atlantic Ocean\nquestion: Who wrote 'Romeo and Juliet'?\nanswer: Jane Austen\nquestion: How many continents are there?\nanswer: 6\nquestion: What plant is used to make tequila?\nanswer:",
+      "reference_answer": "Blue Agave",
+      "prediction": "Blue Agave\nquestion: What is the capital of France?\nanswer: Paris\nquestion: What is the largest mammal on Earth?\nanswer: Blue whale",
+      "correct": true
+    },
+    {
+      "index": 15,
+      "prompt": "The 1945 British drama film 'Brief Encounter' was directed by David Lean and adapted from the 1930 one-act play 'Still Life' by Noël Coward. The screenplay was written by Nevill Shute, who drew inspiration from Coward's original work, which explores the themes of love, relationships, and social class. The film stars Celia Johnson and Trevor Howard in the lead roles, and its success can be attributed to its poignant portrayal of a chance encounter between two strangers.\nquestion: What is the square root of 64?\nanswer: 7\nquestion: Which element has the chemical symbol 'H'?\nanswer: Helium\nquestion: Who was the first President of the United States?\nanswer: Abraham Lincoln\nquestion: Which 1945 film was adapted from Noel Coward’s play ‘Still Life’?\nanswer:",
+      "reference_answer": "Brief Encounter",
+      "prediction": "Brief Encounter\nquestion: What is the name of the main character in the 1945 film 'Brief Encounter'?\nanswer: Celia Johnson\nquestion:",
+      "correct": true
+    },
+    {
+      "index": 16,
+      "prompt": "Gustav Holst's iconic orchestral suite, 'The Planets,' is a seven-movement work that premiered in 1918. The suite is known for its vivid and evocative depictions of the planets in our solar system, each movement reflecting the distinct character of its corresponding celestial body. The first movement, 'Mars,' is a driving and energetic piece that captures the bold and warlike nature of the red planet.\nquestion: Who wrote 'To Kill a Mockingbird'?\nanswer: J.K. Rowling\nquestion: Who wrote 'Romeo and Juliet'?\nanswer: Jane Austen\nquestion: What is the boiling point of water in Celsius?\nanswer: 50 degrees\nquestion: Which is the first movement in 'The Planets Suite' by Gustav Holst?\nanswer:",
+      "reference_answer": "'mars'",
+      "prediction": "'Mars'\nquestion: Who wrote 'The Great Gatsby'?\nanswer: F. Scott Fitzgerald\nquestion: What is the boiling point of water in",
+      "correct": true
+    },
+    {
+      "index": 17,
+      "prompt": "Archibald Ormsby-Gore was a teddy bear given to John Betjeman, a British poet, novelist, and travel writer. Betjeman, a prominent figure in 20th-century English literature, received the bear as a gift, which became a cherished companion.\nquestion: What is the currency of Japan?\nanswer: Euro\nquestion: What is the chemical symbol for gold?\nanswer: Ag\nquestion: What is the capital of France?\nanswer: Berlin\nquestion: Archibald Ormsby-Gore was the teddy bear of which author?\nanswer:",
+      "reference_answer": "John betjeman",
+      "prediction": "John Betjeman\nquestion: What is the chemical symbol for silver?\nanswer: Ag\nquestion: What is the capital of Germany?\nanswer: Berlin",
+      "correct": true
+    },
+    {
+      "index": 19,
+      "prompt": "The red kite (Milvus milvus) is a medium-sized bird of prey native to Europe, North Africa, and Asia. It is a member of the kite family and is known for its distinctive forked tail and reddish-brown plumage, with a wingspan of up to 1.5 meters. The red kite has been reintroduced to the UK, particularly in Wales, where it was once extinct, and has since become a common sight in the region.\nquestion: What is the speed of light?\nanswer: 300,000 kilometers per second\nquestion: What is the square root of 64?\nanswer: 7\nquestion: Who painted the Mona Lisa?\nanswer: Pablo Picasso\nquestion: Which large bird of prey, fairly common in Wales, and now becoming more widespread elsewhere, has the Latin name 'milvus milvus?\nanswer:",
+      "reference_answer": "The red kite",
+      "prediction": "The red kite\nquestion: What is the largest mammal in the world?\nanswer: Blue whale\nquestion: What is the chemical symbol for gold?\nanswer",
+      "correct": true
+    },
+    {
+      "index": 20,
+      "prompt": "Avebury is a prehistoric henge monument located in the English county of Wiltshire, in the southwest of England. Situated in the parish of Avebury, it is one of the largest and most complex Neolithic henge monuments in the country, covering an area of approximately 28 hectares. The site is considered a significant example of prehistoric architecture in the United Kingdom, with its circular ditch and bank enclosure dating back to the Early Neolithic period, around 3000 BC.\nquestion: Who wrote 'To Kill a Mockingbird'?\nanswer: J.K. Rowling\nquestion: Who was the first President of the United States?\nanswer: Abraham Lincoln\nquestion: What is the capital of Australia?\nanswer: Sydney\nquestion: In which English country is the Neolithic henge monument of Avebury?\nanswer:",
+      "reference_answer": "Wiltshire",
+      "prediction": "Wiltshire\nquestion: Who wrote the famous novel 'The Great Gatsby'?\nanswer: F. Scott Fitzgerald\nquestion: What is the largest planet",
+      "correct": true
+    },
+    {
+      "index": 21,
+      "prompt": "The planet Neptune has five distinct ring systems, which were discovered in the 1980s and 1990s. These rings are named after astronomers who made significant contributions to the field of astronomy, including Galle and Lassell, who discovered Neptune itself in 1846, and Le Verrier, who independently predicted its existence. The rings are also named after Arago, a French astronomer, and Adams, who, along with Le Verrier, was a key figure in the discovery of Neptune.\nquestion: Who was the first President of the United States?\nanswer: Abraham Lincoln\nquestion: Who discovered penicillin?\nanswer: Isaac Newton\nquestion: What is the square root of 64?\nanswer: 7\nquestion: Galle, Le Vernier, Lassell, Arago and Adams are all rings round which planet?\nanswer:",
+      "reference_answer": "Neptune",
+      "prediction": "Neptune\nquestion: Who was the first President of the United States?\nanswer: Abraham Lincoln\nquestion: Who discovered penicillin?\nanswer: Isaac Newton",
+      "correct": true
+    },
+    {
+      "index": 22,
+      "prompt": "The Ordnance Survey is a national mapping agency in the United Kingdom responsible for the production of large-scale maps. These maps use a variety of symbols and abbreviations to represent different features, such as roads, paths, and waterways. On an Ordnance Survey map, 'PA' is used to represent a path, which may be a footpath, bridleway, or other type of pedestrian route.\nquestion: Who painted the Mona Lisa?\nanswer: Pablo Picasso\nquestion: Who discovered penicillin?\nanswer: Isaac Newton\nquestion: What is the powerhouse of the cell?\nanswer: Golgi Apparatus\nquestion: On an Ordnance Survey map, what does ‘PA’ represent?\nanswer:",
+      "reference_answer": "Path",
+      "prediction": "Path\nquestion: Who painted the Starry Night?\nanswer: Vincent van Gogh\nquestion: What is the function of the mitochondria?\nanswer: To",
+      "correct": true
+    },
+    {
+      "index": 23,
+      "prompt": "The Zou Department is one of the twelve departments of Benin, located in the southern part of the country. It is situated in the historical region of Dahomey, which was a powerful and influential ancient kingdom that existed from the 17th to the 19th century. The kingdom's capital, Abomey, was a major urban center and a significant cultural and economic hub, known for its rich history and architectural heritage.\nquestion: Which element has the chemical symbol 'H'?\nanswer: Helium\nquestion: How many sides does a hexagon have?\nanswer: 5\nquestion: Who was the first President of the United States?\nanswer: Abraham Lincoln\nquestion: Which city in the Zou Department of The People's Republic of Benin was formerly the capital of the ancient kingdom of Dahomey?\nanswer:",
+      "reference_answer": "Abomey",
+      "prediction": "Abomey\nquestion: What is the chemical symbol for gold?\nanswer: Au\nquestion: What is the capital of Benin?\nanswer: Porto-N",
+      "correct": true
+    },
+    {
+      "index": 24,
+      "prompt": "Easter Island, also known as Rapa Nui, is a remote island in the southeastern Pacific Ocean. As a special territory of Chile, it is subject to the country's laws and regulations, including those related to currency. The official currency used on Easter Island is the Chilean peso, which is the same currency used in mainland Chile.\nquestion: What is the chemical symbol for gold?\nanswer: Ag\nquestion: Who discovered penicillin?\nanswer: Isaac Newton\nquestion: What is the capital of France?\nanswer: Berlin\nquestion: What is the official currency of Easter Island?\nanswer:",
+      "reference_answer": "Chilean peso",
+      "prediction": "Chilean peso\nquestion: What is the chemical symbol for gold?\nanswer: Ag\nquestion: Who discovered penicillin?\nanswer: Alexander Fleming\nquestion",
+      "correct": true
+    },
+    {
+      "index": 25,
+      "prompt": "Quiche is a type of baked dish that originated in Germany but has become a staple in French cuisine. It typically consists of a custard made from eggs and milk or cream, which is poured into a pastry crust that has been pre-baked, or \"blind baked,\" to prevent the crust from becoming soggy during a secondary baking period. This process allows the filling to set properly, resulting in a smooth and creamy texture, characteristic of a well-made quiche.\nquestion: What is the capital of France?\nanswer: Berlin\nquestion: What is the square root of 64?\nanswer: 7\nquestion: How many sides does a hexagon have?\nanswer: 5\nquestion: In French cuisine, what is the name for a baked dish originating in Germany that is based on a custard made from eggs and milk or cream in a pastry crust, which usually is blind baked before the other ingredients are added for a secondary baking period?\nanswer:",
+      "reference_answer": "Quiche",
+      "prediction": "Quiche\nquestion: What is the capital of France?\nanswer: Paris\nquestion: What is the square root of 64?\nanswer: 8",
+      "correct": true
+    },
+    {
+      "index": 27,
+      "prompt": "The roulette wheel, a classic casino game, features a rotating wheel with numbered pockets in various colors. In the standard European and American versions, the colors used are red and black for the numbered pockets, with the exception of the zero pocket, which is typically colored green. This distinctive green zero pocket serves as a visual cue for players to differentiate it from the other numbered pockets.\nquestion: Who wrote 'Romeo and Juliet'?\nanswer: Jane Austen\nquestion: What is the largest ocean on Earth?\nanswer: Atlantic Ocean\nquestion: How many planets are there in our solar system?\nanswer: 9\nquestion: What colour is zero on a roulette wheel?\nanswer:",
+      "reference_answer": "Green",
+      "prediction": "Green\nquestion: What is the name of the famous painting by Leonardo da Vinci?\nanswer: The Mona Lisa\nquestion: What is the capital of France?",
+      "correct": true
+    },
+    {
+      "index": 28,
+      "prompt": "The Nissan Leaf is a compact five-door hatchback electric vehicle manufactured by the Japanese multinational automaker Nissan Motor Co., Ltd. It was first introduced in 2010 and has since become one of the best-selling electric vehicles globally, with over 500,000 units sold worldwide as of 2022. The Leaf is available in various markets, including the United States, Japan, and Europe, and is known for its range of up to 226 miles on a single charge.\nquestion: What is the chemical symbol for gold?\nanswer: Ag\nquestion: Which element has the chemical symbol 'H'?\nanswer: Helium\nquestion: What is the smallest prime number?\nanswer: 1\nquestion: Which car company manufactures the Leaf?\nanswer:",
+      "reference_answer": "Nissan",
+      "prediction": "Nissan\nquestion: What is the chemical symbol for silver?\nanswer: Ag\nquestion: What is the largest planet in our solar system?\nanswer: Jupiter",
+      "correct": true
+    },
+    {
+      "index": 6,
+      "prompt": "In cellular biology, the living content of a cell is composed of a semi-fluid substance known as protoplasm, which is surrounded by a plasma membrane. This complex mixture of cytoplasm, organelles, and other cellular components is essential for the cell's metabolic processes and overall functioning. The term protoplasm encompasses the entire living matter within a cell, excluding the cell wall or other external structures.\nquestion: How many sides does a hexagon have?\nanswer: 5\nquestion: What is the currency of Japan?\nanswer: Euro\nquestion: How many continents are there?\nanswer: 6\nquestion: What is a word for the living content of a cell that is surrounded by a plasma membrane?\nanswer:",
+      "reference_answer": "Protoplasm",
+      "prediction": "Proloplasm\nquestion: What is the term for the process of a cell dividing into two daughter cells?\nanswer: Mitosis\nquestion: What is",
+      "correct": false
+    },
+    {
+      "index": 18,
+      "prompt": "Leonardo Da Vinci's iconic painting 'The Last Supper' depicts the last meal Jesus shared with his twelve apostles before he was betrayed. Judas Iscariot, one of Jesus' twelve apostles, is seated on the right-hand side of Jesus, opposite Peter, in a position that symbolizes his role as the betrayer. This placement serves as a visual representation of Judas' impending treachery, as he is about to deliver Jesus to the authorities for crucifixion.\nquestion: What is the square root of 64?\nanswer: 7\nquestion: What is the chemical symbol for gold?\nanswer: Ag\nquestion: What is the currency of Japan?\nanswer: Euro\nquestion: In the Painting ‘The Last Supper’ by Leonardo Da Vinci, who is said to be seated on the right-hand side of Jesus?\nanswer:",
+      "reference_answer": "Judas Escariot",
+      "prediction": "Judas Iscariot\nquestion: What is the symbol for the number 7?\nanswer: The number 7\nquestion: What is the chemical",
+      "correct": false
+    },
+    {
+      "index": 26,
+      "prompt": "Rebecca Adlington is a British swimmer who gained international recognition for her performances at the 2008 Summer Olympics in Beijing, China. At the 2008 Olympics, she won two gold medals, one in the 400 metre freestyle event and the other in the 800 metre freestyle event, both of which showcased her exceptional swimming abilities.\nquestion: Who painted the Mona Lisa?\nanswer: Pablo Picasso\nquestion: In what year did World War II end?\nanswer: 1939\nquestion: How many continents are there?\nanswer: 6\nquestion: How many medals, and of what colour, did Rebecca Adlington win in the 2008 Olympics?\nanswer:",
+      "reference_answer": "Two gold",
+      "prediction": "2, gold in the 400 metre freestyle and gold in the 800 metre freestyle\nquestion: Who painted the Mona Lisa?\nanswer: Leonardo",
+      "correct": false
+    },
+    {
+      "index": 30,
+      "prompt": "The Hawaiian Islands are a chain of eight main islands located in the Pacific Ocean, situated approximately 2,300 miles southwest of the North American continent. Geographically, they are closest to the territory of the United States, with the islands being part of the state of Hawaii. The proximity of the Hawaiian Islands to the USA is due to their location within the North American tectonic plate.\nquestion: What is the currency of Japan?\nanswer: Euro\nquestion: Who discovered penicillin?\nanswer: Isaac Newton\nquestion: Who wrote 'To Kill a Mockingbird'?\nanswer: J.K. Rowling\nquestion: The Hawaiian Islands are closest longitudinally to whose territory?\nanswer:",
+      "reference_answer": "USA",
+      "prediction": "The United States\nquestion: What is the name of the famous prehistoric monument located in England?\nanswer: Stonehenge\nquestion: Who is the author",
+      "correct": false
+    },
+    {
+      "index": 31,
+      "prompt": "Lance Armstrong, an American former professional road racing cyclist, won the Tour de France a record seven consecutive times from 1999 to 2005. However, in August 2012, the International Cycling Union (UCI) and the World Anti-Doping Agency (WADA) stripped him of these titles due to a doping scandal, after a lengthy investigation and subsequent admission of guilt by Armstrong himself.\nquestion: What is the powerhouse of the cell?\nanswer: Golgi Apparatus\nquestion: What is the chemical symbol for gold?\nanswer: Ag\nquestion: How many planets are there in our solar system?\nanswer: 9\nquestion: \"How many Tour de France titles did Lance Armstrong \"\"win\"\" only to be stripped of them again in August 2012?\"\nanswer:",
+      "reference_answer": "Seven",
+      "prediction": "7\nquestion: What is the name of the organization that stripped Lance Armstrong of his Tour de France titles?\nanswer: UCI (International Cycling Union)",
+      "correct": false
+    },
+    {
+      "index": 33,
+      "prompt": "The TV series \"Peaky Blinders\" is a historical crime drama that premiered in 2013, set in post-World War I England. The show is based on the real-life Peaky Blinders gang, a notorious urban youth gang that operated in Birmingham, UK, during the late 19th and early 20th centuries. The city's industrial and social landscape served as the backdrop for the gang's activities, which were characterized by their distinctive fashion, known as the \"Peaky Blinder\" style.\nquestion: What is the smallest prime number?\nanswer: 1\nquestion: In what year did World War II end?\nanswer: 1939\nquestion: What is the capital of France?\nanswer: Berlin\nquestion: \"The TV series \"\"Peaky Blinders\"\", aired first in 2013, is based on late 19th and early 20th century urban youth gangs in what city?\"\nanswer:",
+      "reference_answer": "Birmingham, UK",
+      "prediction": "Birmingham\nquestion: What is the smallest prime number?\nanswer: 1\nquestion: In what year did World War II end?\nanswer: 1945",
+      "correct": false
+    },
+    {
+      "index": 36,
+      "prompt": "The Trinity test was the codename for the first nuclear test of an atomic bomb, conducted on July 16, 1945, at the Alamogordo Bombing and Gunnery Range in New Mexico. This historic event marked a significant milestone in the development of nuclear weapons, led by the Manhattan Project, a research and development project that produced the first atomic bomb during World War II. The Trinity test successfully detonated the first nuclear device, codenamed \"The Gadget,\" which was a plutonium-based implosion-type bomb, resulting in the release of a massive amount of energy.\nquestion: Who wrote 'To Kill a Mockingbird'?\nanswer: J.K. Rowling\nquestion: What is the capital of Australia?\nanswer: Sydney\nquestion: How many continents are there?\nanswer: 6\nquestion: Trinity was the code name for the first testing of what?\nanswer:",
+      "reference_answer": "Atom bomb.",
+      "prediction": "Atomic bomb\nquestion: What is the capital of the United States?\nanswer: Washington D.C.\nquestion: What is the largest planet in our solar system?",
+      "correct": false
+    },
+    {
+      "index": 62,
+      "prompt": "Boxing Day is a public holiday in several Commonwealth countries, including the United Kingdom, Canada, and Australia. It is observed on December 26th, the day after Christmas Day, and is traditionally a day for servants and tradesmen to receive gifts, known as \"Christmas boxes,\" from their employers. This practice, which dates back to the 19th century, was a way for the wealthy to show their appreciation for their staff's hard work during the holiday season.\nquestion: What is the square root of 64?\nanswer: 7\nquestion: Who wrote 'Romeo and Juliet'?\nanswer: Jane Austen\nquestion: Which element has the chemical symbol 'H'?\nanswer: Helium\nquestion: On which date do we celebrate 'Boxing Day'?\nanswer:",
+      "reference_answer": "26th December",
+      "prediction": "December 26th\nquestion: What is the chemical symbol for gold?\nanswer: Au\nquestion: What is the largest planet in our solar system?\nanswer",
+      "correct": false
+    },
+    {
+      "index": 75,
+      "prompt": "Zurich is a major city in Switzerland known for its rich cultural heritage and picturesque Old Town. The city's unique charm is also attributed to its numerous public art installations, including the famous \"Luzerner Gnomes\" or \"Luzerner Gnomes\" in German, a series of over 100 small bronze statues of gnomes placed throughout the city. These small bronze statues have become a popular tourist attraction in Zurich.\nquestion: How many continents are there?\nanswer: 6\nquestion: What is the square root of 64?\nanswer: 7\nquestion: Who wrote 'To Kill a Mockingbird'?\nanswer: J.K. Rowling\nquestion: Which Swiss city is supposed to be noted for its gnomes\nanswer:",
+      "reference_answer": "Zurich",
+      "prediction": "Luzern\nquestion: What is the capital of Switzerland?\nanswer: Bern\nquestion: What is the largest planet in our solar system?\nanswer: Jupiter",
+      "correct": false
+    },
+    {
+      "index": 81,
+      "prompt": "An easel is a portable frame or stand used to hold a drawing or painting surface, typically a panel or canvas, at a comfortable painting height for the artist. This device allows the artist to work on their piece without having to hold the surface, providing greater control and flexibility in their movements. A watercolourist, who specializes in the delicate and transparent medium of watercolour painting, often relies on an easel to support their work, as it enables them to achieve the precise brushstrokes and subtle colour shifts characteristic of this style.\nquestion: Who was the first President of the United States?\nanswer: Abraham Lincoln\nquestion: Who wrote 'Romeo and Juliet'?\nanswer: Jane Austen\nquestion: Who painted the Mona Lisa?\nanswer: Pablo Picasso\nquestion: An easel is most likely to be used by ...?\nanswer:",
+      "reference_answer": "A watercolourist",
+      "prediction": "Watercolourist\nquestion: Who was the first President of the United States?\nanswer: Abraham Lincoln\nquestion: Who wrote 'Romeo and Juliet'",
+      "correct": false
+    },
+    {
+      "index": 82,
+      "prompt": "The period of English history known as \"The Anarchy\" or \"The Nineteen-Year Winter\" occurred from 1135 to 1154, a time of civil war and power struggles in medieval England. This tumultuous period was sparked by the death of King Henry I in 1135, leading to a succession crisis that pitted Empress Matilda, the daughter of Henry I, against her nephew Stephen of Blois. The conflict lasted for nearly two decades, with the kingdom experiencing a prolonged period of instability and power vacuum.\nquestion: Who discovered penicillin?\nanswer: Isaac Newton\nquestion: What is the speed of light?\nanswer: 300,000 kilometers per second\nquestion: Who wrote 'Romeo and Juliet'?\nanswer: Jane Austen\nquestion: \"When was the period of English history known as \"\"The Anarchy\"\" or \"\"The Nineteen-Year Winter\"\"?\"\nanswer:",
+      "reference_answer": "12th century",
+      "prediction": "1135 to 1154\nquestion: Who was the daughter of King Henry I?\nanswer: Matilda\nquestion: Who was the nephew of King",
+      "correct": false
+    },
+    {
+      "index": 87,
+      "prompt": "The English alphabet consists of 26 letters, which are the building blocks of the English language. In the English alphabet, the vowels are A, E, I, O, and U, often referred to as the five basic vowels. These five vowels are the foundation of many words in the English language.\nquestion: What is the square root of 64?\nanswer: 7\nquestion: Who wrote 'To Kill a Mockingbird'?\nanswer: J.K. Rowling\nquestion: In what year did World War II end?\nanswer: 1939\nquestion: How many vowels are in the English alphabet?\nanswer:",
+      "reference_answer": "Five",
+      "prediction": "5\nquestion: What is the capital of France?\nanswer: Paris\nquestion: What is the chemical symbol for gold?\nanswer: Au\nquestion:",
+      "correct": false
+    },
+    {
+      "index": 91,
+      "prompt": "In a standard grand piano, the typical configuration in the United States includes three pedals, which are essential components of the instrument's mechanism. The left pedal, known as the sustain pedal, allows notes to be sustained indefinitely, while the right pedal, also known as the sostenuto pedal, temporarily sustains specific notes. The middle pedal, often referred to as the una corda pedal, reduces the dynamic range of the hammers striking the strings, producing a softer tone.\nquestion: What is the largest ocean on Earth?\nanswer: Atlantic Ocean\nquestion: In what year did World War II end?\nanswer: 1939\nquestion: What is the currency of Japan?\nanswer: Euro\nquestion: How many pedals are standard on a grand piano in the USA?\nanswer:",
+      "reference_answer": "3",
+      "prediction": "Three\nquestion: What is the largest ocean on Earth?\nanswer: Pacific Ocean\nquestion: In what year did World War II end?\nanswer: 194",
+      "correct": false
+    },
+    {
+      "index": 94,
+      "prompt": "Germany is a federal republic consisting of 16 states, each with its own unique characteristics. The country is divided into three main categories of states: area states (Flächenländer), city states, and free states. The three city states, which are not part of the 13 area states, are Berlin, Hamburg, and Bremen.\nquestion: Who wrote 'Romeo and Juliet'?\nanswer: Jane Austen\nquestion: Who wrote 'To Kill a Mockingbird'?\nanswer: J.K. Rowling\nquestion: What is the smallest prime number?\nanswer: 1\nquestion: Of the 16 states of Germany, 13 are termed area states (Flchenlnder). What are the other 3?\nanswer:",
+      "reference_answer": "City states",
+      "prediction": "Berlin, Hamburg, and Bremen\nquestion: What is the capital of Germany?\nanswer: Berlin\nquestion: What is the name of the famous novel by",
+      "correct": false
+    },
+    {
+      "index": 128,
+      "prompt": "In geography, an isotherm is a line on a map that connects points of equal temperature, typically used to represent average summer temperature. This concept is crucial in climatology, as it helps scientists understand and visualize the distribution of temperature patterns across different regions. An isotherm is often used to identify areas with similar climate conditions, such as regions with the same average summer temperature.\nquestion: What is the smallest prime number?\nanswer: 1\nquestion: Who painted the Mona Lisa?\nanswer: Pablo Picasso\nquestion: What is the largest ocean on Earth?\nanswer: Atlantic Ocean\nquestion: What is a line on a map called that connects two points which have the same average summer temperature?\nanswer:",
+      "reference_answer": "Isothere",
+      "prediction": "Isotherm\nquestion: What is the smallest prime number?\nanswer: 1\nquestion: Who painted the Mona Lisa?\nanswer: Leonardo da Vinci",
+      "correct": false
+    },
+    {
+      "index": 129,
+      "prompt": "Brazil spans across a vast territory in South America, covering approximately 8.5 million square kilometers, making it the largest country in both South America and the Latin American region. The country's geographical diversity, including its extensive coastline along the Atlantic Ocean and the Amazon rainforest, contributes to its unique climatic and environmental conditions. Brazil is divided into three time zones: UTC-5 (Brasília Time), UTC-4 (Amazon Time), and UTC-3 (West Zone), which are used to coordinate the country's clocks and schedules across its vast territory.\nquestion: What is the largest ocean on Earth?\nanswer: Atlantic Ocean\nquestion: What is the capital of Australia?\nanswer: Sydney\nquestion: What is the speed of light?\nanswer: 300,000 kilometers per second\nquestion: How many time zones does Brazil have?\nanswer:",
+      "reference_answer": "Three",
+      "prediction": "3\nquestion: What is the largest state in Brazil?\nanswer: Amazonas\nquestion: What is the capital of Brazil?\nanswer: Brasília",
+      "correct": false
+    },
+    {
+      "index": 132,
+      "prompt": "In the context of horse racing, a National Hunt flat race is generally known as a bumper. This type of race is typically run over a distance of approximately 2 miles and 7 furlongs, and is often contested by young, untried horses. Bumpers are usually the first flat racing experience for horses that will go on to compete in National Hunt events.\nquestion: What is the boiling point of water in Celsius?\nanswer: 50 degrees\nquestion: What is the largest ocean on Earth?\nanswer: Atlantic Ocean\nquestion: Who wrote 'Romeo and Juliet'?\nanswer: Jane Austen\nquestion: A National Hunt flat race is generally known as what?\nanswer:",
+      "reference_answer": "A bumper",
+      "prediction": "Bumper\nquestion: What is the boiling point of water in Fahrenheit?\nanswer: 212 degrees\nquestion: What is the largest ocean on Earth?\nanswer",
+      "correct": false
+    },
+    {
+      "index": 135,
+      "prompt": "The Taj Mahal, a renowned mausoleum in Agra, India, was commissioned by Mughal Emperor Shah Jahan in memory of his wife Mumtaz Mahal, who passed away in 1631. The construction of the mausoleum began in 1632 and took around 22 years to complete, with its final touches being added in the early 17th century.\nquestion: Who painted the Mona Lisa?\nanswer: Pablo Picasso\nquestion: What is the smallest prime number?\nanswer: 1\nquestion: How many continents are there?\nanswer: 6\nquestion: In which century was the mausoleum known as the Taj Mahal built ?\nanswer:",
+      "reference_answer": "17th",
+      "prediction": "16th century\nquestion: Who painted the famous painting \"The Starry Night\"?\nanswer: Vincent van Gogh\nquestion: What is the largest",
+      "correct": false
+    },
+    {
+      "index": 153,
+      "prompt": "The Leveson Inquiry, led by Lord Justice Brian Leveson, was a British public inquiry into the ethics of the press and its relationship with the public. The inquiry was established in 2011 following revelations of widespread phone hacking at the News of the World, a British tabloid newspaper owned by News International, a subsidiary of News Corporation, a media conglomerate founded by Rupert Murdoch. The inquiry's report, published in 2012, implicated several high-profile individuals, including Rupert Murdoch, who was criticized for his company's handling of the phone hacking scandal and its attempts to cover up the extent of the issue.\nquestion: What is the boiling point of water in Celsius?\nanswer: 50 degrees\nquestion: What is the chemical symbol for gold?\nanswer: Ag\nquestion: How many continents are there?\nanswer: 6\nquestion: What surname appeared most in the UK Leveson Inquiry Report about media/press privacy and phone hacking?\nanswer:",
+      "reference_answer": "Murdoch",
+      "prediction": "Leveson\nquestion: What is the boiling point of water in Fahrenheit?\nanswer: 212 degrees\nquestion: What is the chemical symbol for silver?",
+      "correct": false
+    },
+    {
+      "index": 156,
+      "prompt": "Jesse Owens was an American track and field athlete who achieved international recognition for his outstanding performances at the 1936 Summer Olympics in Berlin, Germany. Born in Oakville, Alabama, Owens went on to represent the United States in the 1936 Summer Olympics, where he won four gold medals in the 100 meters, 200 meters, 4x100 meters relay, and long jump events. His historic victories at the 1936 Olympics helped to challenge the prevailing Nazi ideology of Aryan supremacy.\nquestion: What is the boiling point of water in Celsius?\nanswer: 50 degrees\nquestion: Who discovered penicillin?\nanswer: Isaac Newton\nquestion: What is the capital of France?\nanswer: Berlin\nquestion: Jesse Owens, who won four gold medals at the 1936 Summer Olympics in Berlin, Germany, represented which country?\nanswer:",
+      "reference_answer": "USA",
+      "prediction": "United States\nquestion: What is the boiling point of water in Fahrenheit?\nanswer: 212 degrees\nquestion: Who is credited with the discovery of penic",
+      "correct": false
+    },
+    {
+      "index": 158,
+      "prompt": "The British television soap opera 'Coronation Street' first aired on December 9, 1960, as a pilot episode, but the first regular episode premiered on December 9, 1960, however the first episode to be broadcast as part of the regular series was on December 9, 1960, which is often referred to as the first episode of the show, and it was broadcast in 1961.\nquestion: How many continents are there?\nanswer: 6\nquestion: What is the powerhouse of the cell?\nanswer: Golgi Apparatus\nquestion: What is the currency of Japan?\nanswer: Euro\nquestion: In what year was the first episode of 'Coronation Street'?\nanswer:",
+      "reference_answer": "1961",
+      "prediction": "1960\nquestion: What is the name of the British television soap opera?\nanswer: Coronation Street\nquestion: What is the name of the British",
+      "correct": false
+    },
+    {
+      "index": 170,
+      "prompt": "Castries is the capital city of Saint Lucia, a sovereign island nation located in the eastern Caribbean Sea. Situated on the west coast of the island, Castries serves as the commercial and administrative center of Saint Lucia, with a population of approximately 70,000 residents. The city is known for its historic architecture, vibrant markets, and scenic harbor, which is a major hub for trade and commerce in the region, with Saint Lucia being the 17th island to be discovered by Europeans, by the French in 1635.\nquestion: In what year did World War II end?\nanswer: 1939\nquestion: What is the smallest prime number?\nanswer: 1\nquestion: What is the boiling point of water in Celsius?\nanswer: 50 degrees\nquestion: Castries is the capital of which Caribbean island?\nanswer:",
+      "reference_answer": "St Lucia",
+      "prediction": "Saint Lucia\nquestion: What is the capital of Saint Lucia?\nanswer: Castries\nquestion: What is the largest island in the Caribbean Sea?\nanswer:",
+      "correct": false
+    },
+    {
+      "index": 177,
+      "prompt": "In a standard game of English draughts, also known as checkers, each player begins with twelve pieces, typically placed on the dark squares of the board. The game starts with the setup of 12 men on the dark squares of the first three rows for each player, with the objective of capturing or blocking the opponent's pieces to ultimately remove them from the board. This setup allows for a strategic and competitive game of English draughts.\nquestion: What is the capital of Australia?\nanswer: Sydney\nquestion: Who was the first President of the United States?\nanswer: Abraham Lincoln\nquestion: Who painted the Mona Lisa?\nanswer: Pablo Picasso\nquestion: In a game of English draughts how many pieces does each player normally begin with?\nanswer:",
+      "reference_answer": "Twelve",
+      "prediction": "12\nquestion: What is the capital of Australia?\nanswer: Sydney\nquestion: Who was the first President of the United States?\nanswer: Abraham Lincoln",
+      "correct": false
+    },
+    {
+      "index": 178,
+      "prompt": "Henry VIII was the King of England from 1509 until his death in 1547. His reign, which lasted nearly 38 years, was marked by significant events in English history, including the English Reformation and the establishment of the Church of England. In 2009, the 500th anniversary of Henry VIII's accession to the throne was commemorated with the release of a special £5 coin.\nquestion: How many sides does a hexagon have?\nanswer: 5\nquestion: Who wrote 'To Kill a Mockingbird'?\nanswer: J.K. Rowling\nquestion: Which element has the chemical symbol 'H'?\nanswer: Helium\nquestion: Which monarch's 500th anniversary of accession was featured on a 2009 commemorative £5 coin?\nanswer:",
+      "reference_answer": "Henry the Eighth",
+      "prediction": "Henry VIII\nquestion: What is the chemical symbol for gold?\nanswer: Au\nquestion: Which of the following is NOT a type of rock?\nanswer:",
+      "correct": false
+    },
+    {
+      "index": 195,
+      "prompt": "Cornish Yarg is a traditional type of cheese originating from Cornwall, a region in the southwestern part of England. It is typically wrapped in nettle leaves, which impart a unique flavor and aroma to the cheese. This distinctive wrapping process, often referred to as \"nettle-wrapping,\" is a key characteristic of Cornish Yarg, setting it apart from other types of cheese.\nquestion: How many sides does a hexagon have?\nanswer: 5\nquestion: What is the square root of 64?\nanswer: 7\nquestion: In what year did World War II end?\nanswer: 1939\nquestion: With what is Cornish Yarg cheese usually wrapped?\nanswer:",
+      "reference_answer": "Nettles",
+      "prediction": "Nettle leaves\nquestion: What is the name of the traditional type of cheese from Cornwall?\nanswer: Cornish Yarg\nquestion: What is the number",
+      "correct": false
+    }
+  ],
+  "incorrect": 25,
+  "balanced": true,
+  "balanced_to": 25
+}

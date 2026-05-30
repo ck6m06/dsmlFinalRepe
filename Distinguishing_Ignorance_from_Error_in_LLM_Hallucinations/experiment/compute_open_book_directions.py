@@ -6,10 +6,10 @@ This script reads the arrays produced by
 
 Example:
     python experiment/compute_open_book_directions.py \
-        --input_dir experiment/eval_results_experiment/meta-llama_Llama-3.2-1B-Instruct \
+        --input_dir experiment/type2_results/all445/meta-llama_Llama-3.2-1B-Instruct \
         --method mean_diff
 
-python experiment/compute_open_book_directions.py --input_dir experiment/eval_results_experiment/meta-llama_Llama-3.2-1B-Instruct --method mean_diff
+python experiment/compute_open_book_directions.py --input_dir experiment/type2_results/all445/meta-llama_Llama-3.2-1B-Instruct --method mean_diff
                 
 Supported vector types:
 - mlp

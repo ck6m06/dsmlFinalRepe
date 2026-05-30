@@ -1,0 +1,60 @@
+{
+  "vector_type": "heads",
+  "best_layer": 13,
+  "positive_label": "incorrect",
+  "decision_threshold": 0.5,
+  "train": {
+    "accuracy": 1.0,
+    "f1": 1.0,
+    "confusion_matrix": [
+      [
+        1774,
+        0
+      ],
+      [
+        0,
+        325
+      ]
+    ],
+    "decision_threshold": 0.5,
+    "positive_rate": 0.15483563601715103,
+    "mean_positive_probability": 0.1650098081637813,
+    "auc": 1.0
+  },
+  "val": {
+    "accuracy": 0.8155555555555556,
+    "f1": 0.4195804195804196,
+    "confusion_matrix": [
+      [
+        337,
+        57
+      ],
+      [
+        26,
+        30
+      ]
+    ],
+    "decision_threshold": 0.5,
+    "positive_rate": 0.19333333333333333,
+    "mean_positive_probability": 0.21611809043230745,
+    "auc": 0.7787345902828136
+  },
+  "test": {
+    "accuracy": 0.7311111111111112,
+    "f1": 0.2389937106918239,
+    "confusion_matrix": [
+      [
+        310,
+        76
+      ],
+      [
+        45,
+        19
+      ]
+    ],
+    "decision_threshold": 0.5,
+    "positive_rate": 0.2111111111111111,
+    "mean_positive_probability": 0.2114847583383934,
+    "auc": 0.6203448834196892
+  }
+}

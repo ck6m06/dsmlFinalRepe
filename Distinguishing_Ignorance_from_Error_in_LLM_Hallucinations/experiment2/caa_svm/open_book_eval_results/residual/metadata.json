@@ -1,0 +1,21 @@
+{
+  "split_root": "D:\\dsmlFinalRepe\\Distinguishing_Ignorance_from_Error_in_LLM_Hallucinations\\experiment2\\hidden_vectors\\open_book_eval_results",
+  "vector_type": "residual",
+  "positive_label": "incorrect",
+  "decision_threshold": 0.5,
+  "best_layer": 12,
+  "direction_file": "direction_residual_lr_best_layer.npy",
+  "all_directions_file": "direction_residual_lr_all_layers.npy",
+  "train_counts": {
+    "correct": 1774,
+    "incorrect": 325
+  },
+  "val_counts": {
+    "correct": 394,
+    "incorrect": 56
+  },
+  "test_counts": {
+    "correct": 386,
+    "incorrect": 64
+  }
+}

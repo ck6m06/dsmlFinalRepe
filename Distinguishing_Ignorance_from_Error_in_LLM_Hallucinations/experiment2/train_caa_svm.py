@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
-"""Train a linear SVM on train split hidden states, select the best layer on val,
-and evaluate the selected layer on test.
+"""Train a logistic-regression probe on train split hidden states, select the best
+layer on val, and evaluate the selected layer on test.
 
 This script treats `correct=False` as the positive class by default, so the learned
 direction points toward the samples you would intervene on for CAA.
@@ -11,14 +11,16 @@ Inputs:
 Outputs:
 - per-layer metrics JSON
 - best-layer summary JSON
-- SVM direction arrays for all layers and the selected layer
+- LR direction arrays for all layers and the selected layer
 
 Usage example:
     python experiment2/train_caa_svm.py \
         --split_root experiment2/hidden_vectors/open_book_eval_results \
-        --vector_type residual \
+        --vector_type all \
         --output_dir experiment2/caa_svm/open_book_eval_results
-"""
+
+python experiment2/train_caa_svm.py --split_root experiment2/hidden_vectors/open_book_eval_results --vector_type all --output_dir experiment2/caa_lr/open_book_eval_results --positive_label incorrect --decision_threshold 0.5
+        """
 from __future__ import annotations
 
 import argparse
@@ -28,9 +30,9 @@ from pathlib import Path
 from typing import Any
 
 import numpy as np
+from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import accuracy_score, f1_score, roc_auc_score, confusion_matrix
 from sklearn.preprocessing import StandardScaler
-from sklearn.svm import LinearSVC
 
 
 VECTOR_FILE_PATTERNS = {
@@ -70,38 +72,49 @@ def make_xy(arrays: dict[str, np.ndarray], layer_idx: int, positive_class: str =
     return x, y
 
 
-def fit_layer_svm(x_train: np.ndarray, y_train: np.ndarray, seed: int) -> tuple[StandardScaler, LinearSVC, np.ndarray]:
+def fit_layer_lr(
+    x_train: np.ndarray,
+    y_train: np.ndarray,
+    seed: int,
+) -> tuple[StandardScaler, LogisticRegression, np.ndarray]:
     scaler = StandardScaler()
     x_train_scaled = scaler.fit_transform(x_train)
-    use_dual = x_train_scaled.shape[0] <= x_train_scaled.shape[1]
-    clf = LinearSVC(
-        dual=use_dual,
+    clf = LogisticRegression(
         class_weight="balanced",
         random_state=seed,
-        max_iter=10000,
+        max_iter=2000,
+        solver="liblinear",
     )
     clf.fit(x_train_scaled, y_train)
     direction = np.asarray(clf.coef_[0], dtype=np.float32)
     norm = float(np.linalg.norm(direction))
     if norm == 0.0:
-        raise ValueError("SVM direction has zero norm")
+        raise ValueError("LR direction has zero norm")
     direction = direction / norm
     return scaler, clf, direction
 
 
 def evaluate_layer(
     scaler: StandardScaler,
-    clf: LinearSVC,
+    clf: LogisticRegression,
     x: np.ndarray,
     y: np.ndarray,
+    decision_threshold: float = 0.5,
 ) -> dict[str, Any]:
     x_scaled = scaler.transform(x)
     scores = clf.decision_function(x_scaled)
-    preds = (scores >= 0.0).astype(np.int64)
+    if hasattr(clf, "predict_proba"):
+        probs = clf.predict_proba(x_scaled)[:, 1]
+    else:
+        probs = 1.0 / (1.0 + np.exp(-scores))
+    preds = (probs >= decision_threshold).astype(np.int64)
     metrics: dict[str, Any] = {
         "accuracy": float(accuracy_score(y, preds)),
         "f1": float(f1_score(y, preds, zero_division=0)),
         "confusion_matrix": confusion_matrix(y, preds).tolist(),
+        "decision_threshold": float(decision_threshold),
+        "positive_rate": float(preds.mean()) if len(preds) else 0.0,
+        "mean_positive_probability": float(probs.mean()) if len(probs) else 0.0,
     }
     try:
         metrics["auc"] = float(roc_auc_score(y, scores))
@@ -119,17 +132,23 @@ def split_counts(arrays: dict[str, np.ndarray]) -> dict[str, int]:
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(description="Train SVM directions on split hidden vectors and select the best layer on val.")
+    parser = argparse.ArgumentParser(description="Train LR directions on split hidden vectors and select the best layer on val.")
     parser.add_argument("--split_root", type=str, required=True, help="Directory containing train/val/test subdirectories")
     parser.add_argument("--vector_type", type=str, default="residual", choices=list(VECTOR_FILE_PATTERNS.keys()) + ["all"], help="Which vector type to use")
-    parser.add_argument("--output_dir", type=str, required=True, help="Directory to write SVM outputs")
+    parser.add_argument("--output_dir", type=str, required=True, help="Directory to write LR outputs")
     parser.add_argument("--seed", type=int, default=42)
     parser.add_argument(
         "--positive_label",
         type=str,
         default="incorrect",
         choices=["correct", "incorrect"],
-        help="Which class should be treated as the positive class for the SVM.",
+        help="Which class should be treated as the positive class for the LR probe.",
+    )
+    parser.add_argument(
+        "--decision_threshold",
+        type=float,
+        default=0.5,
+        help="Probability threshold for deciding whether to intervene.",
     )
     args = parser.parse_args()
 
@@ -166,9 +185,9 @@ def main() -> None:
             x_train, y_train = make_xy(train_arrays, layer_idx, positive_class=positive_class)
             x_val, y_val = make_xy(val_arrays, layer_idx, positive_class=positive_class)
 
-            scaler, clf, direction = fit_layer_svm(x_train, y_train, seed=args.seed)
-            train_metrics = evaluate_layer(scaler, clf, x_train, y_train)
-            val_metrics = evaluate_layer(scaler, clf, x_val, y_val)
+            scaler, clf, direction = fit_layer_lr(x_train, y_train, seed=args.seed)
+            train_metrics = evaluate_layer(scaler, clf, x_train, y_train, decision_threshold=args.decision_threshold)
+            val_metrics = evaluate_layer(scaler, clf, x_val, y_val, decision_threshold=args.decision_threshold)
 
             direction_rows.append(direction)
             layer_rows.append(
@@ -191,15 +210,15 @@ def main() -> None:
         x_train_best, y_train_best = make_xy(train_arrays, best_layer_idx, positive_class=positive_class)
         x_val_best, y_val_best = make_xy(val_arrays, best_layer_idx, positive_class=positive_class)
         x_test_best, y_test_best = make_xy(test_arrays, best_layer_idx, positive_class=positive_class)
-        scaler_best, clf_best, direction_best = fit_layer_svm(x_train_best, y_train_best, seed=args.seed)
+        scaler_best, clf_best, direction_best = fit_layer_lr(x_train_best, y_train_best, seed=args.seed)
 
-        train_best_metrics = evaluate_layer(scaler_best, clf_best, x_train_best, y_train_best)
-        val_best_metrics = evaluate_layer(scaler_best, clf_best, x_val_best, y_val_best)
-        test_best_metrics = evaluate_layer(scaler_best, clf_best, x_test_best, y_test_best)
+        train_best_metrics = evaluate_layer(scaler_best, clf_best, x_train_best, y_train_best, decision_threshold=args.decision_threshold)
+        val_best_metrics = evaluate_layer(scaler_best, clf_best, x_val_best, y_val_best, decision_threshold=args.decision_threshold)
+        test_best_metrics = evaluate_layer(scaler_best, clf_best, x_test_best, y_test_best, decision_threshold=args.decision_threshold)
 
         all_directions = np.stack(direction_rows, axis=0)
-        np.save(output_dir / f"direction_{vector_type}_svm_all_layers.npy", all_directions)
-        np.save(output_dir / f"direction_{vector_type}_svm_best_layer.npy", direction_best)
+        np.save(output_dir / f"direction_{vector_type}_lr_all_layers.npy", all_directions)
+        np.save(output_dir / f"direction_{vector_type}_lr_best_layer.npy", direction_best)
 
         vector_dir = output_dir / vector_type
         vector_dir.mkdir(parents=True, exist_ok=True)
@@ -210,6 +229,7 @@ def main() -> None:
                     "train_counts": train_counts,
                     "val_counts": val_counts,
                     "test_counts": test_counts,
+                    "decision_threshold": args.decision_threshold,
                     "layers": layer_rows,
                 },
                 handle,
@@ -224,6 +244,7 @@ def main() -> None:
                     "vector_type": vector_type,
                     "best_layer": best_layer_idx,
                     "positive_label": args.positive_label,
+                    "decision_threshold": args.decision_threshold,
                     "train": train_best_metrics,
                     "val": val_best_metrics,
                     "test": test_best_metrics,
@@ -240,9 +261,10 @@ def main() -> None:
                     "split_root": str(split_root),
                     "vector_type": vector_type,
                     "positive_label": args.positive_label,
+                    "decision_threshold": args.decision_threshold,
                     "best_layer": best_layer_idx,
-                    "direction_file": f"direction_{vector_type}_svm_best_layer.npy",
-                    "all_directions_file": f"direction_{vector_type}_svm_all_layers.npy",
+                    "direction_file": f"direction_{vector_type}_lr_best_layer.npy",
+                    "all_directions_file": f"direction_{vector_type}_lr_all_layers.npy",
                     "train_counts": train_counts,
                     "val_counts": val_counts,
                     "test_counts": test_counts,

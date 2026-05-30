@@ -1,0 +1,60 @@
+{
+  "vector_type": "mlp",
+  "best_layer": 13,
+  "positive_label": "incorrect",
+  "decision_threshold": 0.5,
+  "train": {
+    "accuracy": 1.0,
+    "f1": 1.0,
+    "confusion_matrix": [
+      [
+        1774,
+        0
+      ],
+      [
+        0,
+        325
+      ]
+    ],
+    "decision_threshold": 0.5,
+    "positive_rate": 0.15483563601715103,
+    "mean_positive_probability": 0.16419506060419814,
+    "auc": 1.0
+  },
+  "val": {
+    "accuracy": 0.7977777777777778,
+    "f1": 0.38095238095238093,
+    "confusion_matrix": [
+      [
+        331,
+        63
+      ],
+      [
+        28,
+        28
+      ]
+    ],
+    "decision_threshold": 0.5,
+    "positive_rate": 0.20222222222222222,
+    "mean_positive_probability": 0.20971398058633473,
+    "auc": 0.7415246555474981
+  },
+  "test": {
+    "accuracy": 0.7711111111111111,
+    "f1": 0.3522012578616352,
+    "confusion_matrix": [
+      [
+        319,
+        67
+      ],
+      [
+        36,
+        28
+      ]
+    ],
+    "decision_threshold": 0.5,
+    "positive_rate": 0.2111111111111111,
+    "mean_positive_probability": 0.22324972226037448,
+    "auc": 0.7022344559585492
+  }
+}

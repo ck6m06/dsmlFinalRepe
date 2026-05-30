@@ -1,0 +1,3848 @@
+{
+  "dataset": {
+    "true_results": "D:\\dsmlFinalRepe\\Distinguishing_Ignorance_from_Error_in_LLM_Hallucinations\\datasets\\NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+    "false_results": "D:\\dsmlFinalRepe\\Distinguishing_Ignorance_from_Error_in_LLM_Hallucinations\\datasets\\HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json"
+  },
+  "model_name": "",
+  "prompt_field": "prompt",
+  "prompt_fields": {
+    "true": "prompt",
+    "false": "prompt"
+  },
+  "sampling": {
+    "limit_true": 239,
+    "limit_false": 239,
+    "sample_mode": "random",
+    "seed": 42,
+    "shuffle_merged": true
+  },
+  "samples": 478,
+  "correct": 239,
+  "accuracy": 0.5,
+  "results": [
+    {
+      "index": 1,
+      "prompt": "question: On December 1, 1955, who was famously arrested on a bus in Montgomery, Alabama for refusing to obey bus driver James Blake's order to move to the back of the bus, sparking a year long boycott of the bus service?\nanswer:",
+      "reference_answer": "Rosa Parks",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 2,
+      "prompt": "question: Fulgencio Batista was the leader of which country between 1952 and 1959?\nanswer:",
+      "reference_answer": "Cuba",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 3,
+      "prompt": "question: Britain's Charlotte Dujardin won a 2012 Olympic gold in which individual event?\nanswer:",
+      "reference_answer": "Dressage",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 4,
+      "prompt": "question: On which river does the Suffolk town of Dedham stand?\nanswer:",
+      "reference_answer": "Stour",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 5,
+      "prompt": "question: Jay Z and Beyonce launched a music streaming service in 2015 called?\nanswer:",
+      "reference_answer": "Tidal",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 6,
+      "prompt": "question: The coastal city of Chittagong is in which country?\nanswer:",
+      "reference_answer": "Bangladesh",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 7,
+      "prompt": "question: What religion is based on the teachings of Laozi?\nanswer:",
+      "reference_answer": "Taoism",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 8,
+      "prompt": "question: Which 1990 film was the first western to win Best Picture Oscar for 60 years?\nanswer:",
+      "reference_answer": "Dances With Wolves",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 9,
+      "prompt": "question: With the exception of its short coastline, The Gambia is bordered on all sides by which other West African country ?\nanswer:",
+      "reference_answer": "Senegal",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 10,
+      "prompt": "question: Known as The Empire State, what was the 11th state to join the union on July 26, 1788?\nanswer:",
+      "reference_answer": "New York",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 11,
+      "prompt": "question: On which Gulf is Cameroon?\nanswer:",
+      "reference_answer": "Gulf of guinea",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 12,
+      "prompt": "question: In which year was the Panama Canal opened?\nanswer:",
+      "reference_answer": "1914",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 13,
+      "prompt": "question: What is the most common name for the drug Sildenafil Citrate?\nanswer:",
+      "reference_answer": "Viagra",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 14,
+      "prompt": "question: Thomas Jefferson, 3rd President of the USA, was the delegate to the Continental Congress for which American state?\nanswer:",
+      "reference_answer": "Virginia",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 15,
+      "prompt": "question: Exxon, Mobil, Chevron, and Amoco were created from what company, broken up by the Sherman Antitrust act in 1911?\nanswer:",
+      "reference_answer": "Standard Oil",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 16,
+      "prompt": "question: What comic strip, created by Gary Trudeau in 1970, features characters such as Zonker Harris, B.D., Boopsie, and Mark Slackmeyer?\nanswer:",
+      "reference_answer": "Doonesbury",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 17,
+      "prompt": "question: Which “somewhat obscure” golfer has a real first name of Eldrick?\nanswer:",
+      "reference_answer": "Tiger Woods",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 18,
+      "prompt": "question: What is the state capital of Tasmania?\nanswer:",
+      "reference_answer": "Hobart",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 19,
+      "prompt": "question: What type of creature is a koel?\nanswer:",
+      "reference_answer": "Bird",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 20,
+      "prompt": "question: Used primarily for stability, where on a fish, whale, dolphin, or porpoise, do you find the dorsal fin?\nanswer:",
+      "reference_answer": "Back",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 21,
+      "prompt": "question: Originally, what animated mouse was to be named Mortimer?\nanswer:",
+      "reference_answer": "Mickey Mouse",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 22,
+      "prompt": "question: What is the star sign of someone born on Christmas Day?\nanswer:",
+      "reference_answer": "Capricorn",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 23,
+      "prompt": "question: How many squares are on a Spear’s Games Snakes and Ladders board?\nanswer:",
+      "reference_answer": "100",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 24,
+      "prompt": "question: Who first popularised the story of Dr Faustus in England?\nanswer:",
+      "reference_answer": "Christopher Marlowe",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 25,
+      "prompt": "question: In which city is the Liceu Opera House?\nanswer:",
+      "reference_answer": "Barcelona",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 26,
+      "prompt": "question: In the Fellowship of the ring at which inn did the hobbits meet strider?\nanswer:",
+      "reference_answer": "Prancing Pony",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 27,
+      "prompt": "question: Which British artist created the work 'Benefits Supervisor Sleeping'?\nanswer:",
+      "reference_answer": "Lucian freud",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 28,
+      "prompt": "question: Who was president of the USA during the American Civil War?\nanswer:",
+      "reference_answer": "Abraham Lincoln",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 29,
+      "prompt": "question: What is the Hebrew word for the holocaust?\nanswer:",
+      "reference_answer": "Shoah",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 30,
+      "prompt": "question: January 15, 1967 saw the first ever Super Bowl as the Kansas City Chiefs lost to whom, by a score of 35-10?\nanswer:",
+      "reference_answer": "Green Bay Packers",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 31,
+      "prompt": "question: Which wonder of the ancient world was on the island of Pharos in Alexandria, Egypt?\nanswer:",
+      "reference_answer": "Lighthouse",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 32,
+      "prompt": "question: What is France's second largest city (it's in the Rhone-Alpes region)?\nanswer:",
+      "reference_answer": "Lyon",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 33,
+      "prompt": "question: Pristina is the capital of which European state?\nanswer:",
+      "reference_answer": "Kosovo",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 34,
+      "prompt": "question: Which Essex town was granted city status for the Diamond Jubilee of Queen Elizabeth II?\nanswer:",
+      "reference_answer": "Chelmsford",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 35,
+      "prompt": "question: Who held the post of First Lord of the Admiralty at the outbreak of the First World War and was appointed to the post again two days after the outbreak of the Second World War?\nanswer:",
+      "reference_answer": "Winston churchill",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 36,
+      "prompt": "question: Apollo Creed is the enemy of whom?\nanswer:",
+      "reference_answer": "Rocky",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 37,
+      "prompt": "question: What did the USA purchase from Russia for $7,200,000 in 1857?\nanswer:",
+      "reference_answer": "Alaska",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 38,
+      "prompt": "question: Which is the most populated city on the continent of Africa?\nanswer:",
+      "reference_answer": "Lagos",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 39,
+      "prompt": "question: A replica of whose statue of David stands outside the Palazzo Vecchio in Florence - the original is in the Galleria del Accademia?\nanswer:",
+      "reference_answer": "Michelangelo",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 40,
+      "prompt": "question: In chemistry, a 'homogeneous mixture composed of only one phase' (basically a mixed yet uniform substance) is called a?\nanswer:",
+      "reference_answer": "Solution",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 41,
+      "prompt": "question: At least one of which series of spacecraft is docked to the International Space Station at all times for use as an escape craft in the event of an emergency?\nanswer:",
+      "reference_answer": "Soyuz",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 42,
+      "prompt": "question: Which dramatist and poet was murdered by Ingram Frazer in Deptford in 1593?\nanswer:",
+      "reference_answer": "Christopher Marlowe",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 43,
+      "prompt": "question: \"Based on a UK political drama TV series of the same name, the US version featuring the actor Kevin Spacey is called \"\"House...\"\" what?\"\nanswer:",
+      "reference_answer": "Of Cards",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 44,
+      "prompt": "question: What is the official language of Mozambique ?\nanswer:",
+      "reference_answer": "Portuguese",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 45,
+      "prompt": "question: The Americans call this punctuation mark a period. What do we call it?\nanswer:",
+      "reference_answer": "Full stop",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 46,
+      "prompt": "question: Ann Rules book The Stranger Beside Me, is about what serial killer, assumed to have murdered 35 people, before hitting the electric chair in Starke, Florida on January 24, 1989?\nanswer:",
+      "reference_answer": "Ted Bundy",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 47,
+      "prompt": "question: Who was lead singer of The Jam\nanswer:",
+      "reference_answer": "Paul Weller",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 48,
+      "prompt": "question: Which scientist was offered the presidency of Israel in 1952 by Prime Minister David Ben-Gurion?\nanswer:",
+      "reference_answer": "Albert Einstein",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 49,
+      "prompt": "question: Which Pope was elected in 2005?\nanswer:",
+      "reference_answer": "Pope Benedict XVI",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 50,
+      "prompt": "question: El Al is the national airline of which country?\nanswer:",
+      "reference_answer": "Israel",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 51,
+      "prompt": "question: What beverage is made from fermented honey?\nanswer:",
+      "reference_answer": "Mead",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 52,
+      "prompt": "question: The album Menlove Ave, released posthumously in 1986, is by which musician?\nanswer:",
+      "reference_answer": "John Lennon",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 53,
+      "prompt": "question: In January 1953 over 70% of all TV sets in the USA were tuned in to watch the star of which show go to hospital to give birth to her son?\nanswer:",
+      "reference_answer": "I Love Lucy",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 54,
+      "prompt": "question: What is the often used name of the political protest of throwing a beverage into a harbour in December 1773?\nanswer:",
+      "reference_answer": "The Boston Tea Party",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 55,
+      "prompt": "question: Designed in 1873 in the USA, which lever action rifle that later had several different models had the nickname 'The Gun That Won The West' ?\nanswer:",
+      "reference_answer": "Winchester",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 56,
+      "prompt": "question: Which acid found in wood sorrel and rhubarb leaves is traditionally used in dyeing and bleaching?\nanswer:",
+      "reference_answer": "Oxalic",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 57,
+      "prompt": "question: What is Japan's second-largest island\nanswer:",
+      "reference_answer": "Hokkaido",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 58,
+      "prompt": "question: That staple of kids daytime tv (and probably really great when you're drunk), the Teletubbies consist of Tinky Winky, LaLa, Dipsy, and who?\nanswer:",
+      "reference_answer": "Po",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 59,
+      "prompt": "question: The July Revolution in 1830 was in which European country?\nanswer:",
+      "reference_answer": "France",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 60,
+      "prompt": "question: The West Bank is one Palestinian territory. What is the other one?\nanswer:",
+      "reference_answer": "The Gaza Strip",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 61,
+      "prompt": "question: What is the better known name of the medical condition, Tinea Pedes? (the clue is in the Latin)\nanswer:",
+      "reference_answer": "Athlete's foot",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 62,
+      "prompt": "question: Where is Ho Chi Minh City?\nanswer:",
+      "reference_answer": "Vietnam",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 63,
+      "prompt": "question: Which Italian region has the largest population?\nanswer:",
+      "reference_answer": "Lombardy",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 64,
+      "prompt": "question: \"What is the name for a small single-headed drum, in the rim of which are fitted pairs of small circular metal plates, called \"\"jingles\"\"?\"\nanswer:",
+      "reference_answer": "Tambourine",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 65,
+      "prompt": "question: What Irish boyband formed in 1998 by Nicky Byrne, Kian Egan, Mark Feehily, Shane Filan and Brian McFadden became the 3rd biggest selling pop band worldwide and biggest selling band of 2000-2009, with 14 number 1 singles in the UK?\nanswer:",
+      "reference_answer": "Westlife",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 66,
+      "prompt": "question: \"Which insect acts as the transmitting agent in the spread of the infectious disease \"\"Sleeping Sickness\"\"?\"\nanswer:",
+      "reference_answer": "Tsetse fly",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 67,
+      "prompt": "question: The 'running of the bulls' is part of the San Fermin Festival held in which Spanish city?\nanswer:",
+      "reference_answer": "Pamplona",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 68,
+      "prompt": "question: What country suffered the most deaths from the 2004 tsunami?\nanswer:",
+      "reference_answer": "Indonesia",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 69,
+      "prompt": "question: Which is the largest island in the Mediterranean Sea?\nanswer:",
+      "reference_answer": "Sicily",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 70,
+      "prompt": "question: Carborundum and Corundum are compounds/minerals traditionally used in?\nanswer:",
+      "reference_answer": "Abrasives",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 71,
+      "prompt": "question: Who painted Belshazzar's Feast between 1636/38 and Portrait of Titus in 1655?\nanswer:",
+      "reference_answer": "Rembrandt",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 72,
+      "prompt": "question: What part of the body is afflicted by gingivitis?\nanswer:",
+      "reference_answer": "Gums",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 73,
+      "prompt": "question: What ethnic group is famous for helping people to climb Mt. Everest?\nanswer:",
+      "reference_answer": "Sherpas",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 74,
+      "prompt": "question: Who is the maker of the Xbox?\nanswer:",
+      "reference_answer": "Microsoft",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 75,
+      "prompt": "question: Saddam Hussein was born, in 1937, in the village of Al Awja, on the outskirts of which large Iraqi town northwest of Baghdad on the River Tigris?\nanswer:",
+      "reference_answer": "Tikrit",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 76,
+      "prompt": "question: In what country did Augusto Pinochet seize power?\nanswer:",
+      "reference_answer": "Chile",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 77,
+      "prompt": "question: What would a person normally do with perique\nanswer:",
+      "reference_answer": "Smoke it",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 78,
+      "prompt": "question: How many points are awarded for a safety in a football game?\nanswer:",
+      "reference_answer": "2",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 79,
+      "prompt": "question: Of what is oneirology the study?\nanswer:",
+      "reference_answer": "Dreams",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 80,
+      "prompt": "question: In 2012 Price Nayef became the second crown prince, after Prince Sultan, to die before ascending to the throne in which country?\nanswer:",
+      "reference_answer": "Saudi Arabia",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 81,
+      "prompt": "question: What is the name of the day in May on which Americans honour their war dead?\nanswer:",
+      "reference_answer": "Memorial Day",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 82,
+      "prompt": "question: Journalist and writer Martha Gellhorn was the first wife of which author?\nanswer:",
+      "reference_answer": "Ernest Hemingway",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 83,
+      "prompt": "question: What type of highly directional microphone, commonly used on television and film sets, in stadiums, and for field recording of wildlife, was invented by Fritz Sennheiser in the 1950s?\nanswer:",
+      "reference_answer": "Shotgun",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 84,
+      "prompt": "question: In an apiary or hive, feeding a bee larvae royal jelly will result in it developing into what?\nanswer:",
+      "reference_answer": "Queen Bee",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 85,
+      "prompt": "question: In which year did the UK last win the Eurovision Song Contest with Katrina and the Waves' Love Shine a Light?\nanswer:",
+      "reference_answer": "1997",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 86,
+      "prompt": "question: Batavia was the former name, up until 1942, of which Asian city?\nanswer:",
+      "reference_answer": "Jakarta",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 87,
+      "prompt": "question: \"Who wrote the Elvis Presley song \"\"Blue Suede Shoes\"\"\"\nanswer:",
+      "reference_answer": "Carl perkins",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 88,
+      "prompt": "question: In World War II, the German radar Freya was named after a god from which mythology?\nanswer:",
+      "reference_answer": "Norse",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 89,
+      "prompt": "question: Which Australian city is nicknamed The Big Smoke?\nanswer:",
+      "reference_answer": "Sydney",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 90,
+      "prompt": "question: Who is Joseph Alois Ratzinger?\nanswer:",
+      "reference_answer": "Pope Benedict XVI",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 91,
+      "prompt": "question: Found in South East Asia, which is the world's smallest member of the bear family?\nanswer:",
+      "reference_answer": "Sun bear",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 92,
+      "prompt": "question: To which US state is the Green Mountains section of the Appalachians confined?\nanswer:",
+      "reference_answer": "Vermont",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 93,
+      "prompt": "question: What animal causes lyme disease?\nanswer:",
+      "reference_answer": "Tick",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 94,
+      "prompt": "question: ‘The Stolen Generations’ were children of which country who were taken from their families to be adopted or brought up by the state?\nanswer:",
+      "reference_answer": "Australia",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 95,
+      "prompt": "question: What is the only word in the police phonetic alphabet represented by a woman's name?\nanswer:",
+      "reference_answer": "Juliet",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 96,
+      "prompt": "question: Which is the only state of the USA to share a land border with Maine?\nanswer:",
+      "reference_answer": "New Hampshire",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 97,
+      "prompt": "question: What is the study of lakes and other bodies of freshwater?\nanswer:",
+      "reference_answer": "Limnology",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 98,
+      "prompt": "question: Mount Nemrut is in which European country?\nanswer:",
+      "reference_answer": "Turkey",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 99,
+      "prompt": "question: In which region of Israel, is the village of Cana, where Jesus performed his first miracle, turning water into wine?\nanswer:",
+      "reference_answer": "Galilee",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 100,
+      "prompt": "question: \"\"\"Well you can tell by the way I use my walk, I'm a woman's man, no time to talk\"\" are lyrics from which song by the Bee Gees?\"\nanswer:",
+      "reference_answer": "Stayin' Alive",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 101,
+      "prompt": "question: Which large, non-venomous snake found in South America and on Trinidad grows to around 23 feet (7.0 m) long, and is olive green with black blotches with orange-yellow striping on either side of the head?\nanswer:",
+      "reference_answer": "Anaconda",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 102,
+      "prompt": "question: Which King of Scotland was born on March 17th 1473? He died 40 years later.\nanswer:",
+      "reference_answer": "James iv",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 103,
+      "prompt": "question: Juan Velasco Alvarado became President of the Revolutionary Government in October 1968 in which south American country?\nanswer:",
+      "reference_answer": "Peru",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 104,
+      "prompt": "question: Stanford University is in which US state?\nanswer:",
+      "reference_answer": "California",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 105,
+      "prompt": "question: Who was the first Westerner to discover the Victoria Falls?\nanswer:",
+      "reference_answer": "David Livingstone",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 106,
+      "prompt": "question: Who preceded Gerald Ford as US President?\nanswer:",
+      "reference_answer": "Richard Nixon",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 107,
+      "prompt": "question: Which board game is also known as Reversi?\nanswer:",
+      "reference_answer": "Othello",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 108,
+      "prompt": "question: The natural geological columns of Fingal's Cave and the Giant's Causeway are formed of which rock?\nanswer:",
+      "reference_answer": "Basalt",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 109,
+      "prompt": "question: Northern Rhodesia is now known by what name?\nanswer:",
+      "reference_answer": "Zambia",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 110,
+      "prompt": "question: What was the name of the bank that rogue trader Nick Leeson worked for?\nanswer:",
+      "reference_answer": "Barings",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 111,
+      "prompt": "question: What English King fought in the Crusades and battled against Saladin?\nanswer:",
+      "reference_answer": "Richard the Lionheart",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 112,
+      "prompt": "question: What actor has portrayed Malcolm X, Frank Lucas, and Rubin Carter?\nanswer:",
+      "reference_answer": "Denzel Washington",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 113,
+      "prompt": "question: March 10, 1940 saw the birthday of what totally badassed action star, christened as Carlos Ray, who created a martial arts style known as Chun Kuk Do?\nanswer:",
+      "reference_answer": "Chuck Norris",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 114,
+      "prompt": "question: According to Greek mythology, who was the father of Zeus?\nanswer:",
+      "reference_answer": "Cronus",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 115,
+      "prompt": "question: Shinzo Abe resigned in September 2007 as prime minister of which country?\nanswer:",
+      "reference_answer": "Japan",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 116,
+      "prompt": "question: What is the plural of court-martial?\nanswer:",
+      "reference_answer": "Courts-martial",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 117,
+      "prompt": "question: True or False. Pope Adrian the 2nd was the last married Pope?\nanswer:",
+      "reference_answer": "True",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 118,
+      "prompt": "question: What is the longest river entirely in Spain?\nanswer:",
+      "reference_answer": "Ebro",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 119,
+      "prompt": "question: The tiger snake is one of the deadliest, in which country is it found in it's natural habitat\nanswer:",
+      "reference_answer": "Australia",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 120,
+      "prompt": "question: The 2009 film 'Nowhere Boy' concerns the teenage years of which singer?\nanswer:",
+      "reference_answer": "John lennon",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 121,
+      "prompt": "question: In Greek mythology, who was the mother of Oedipus?\nanswer:",
+      "reference_answer": "Jocasta",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 122,
+      "prompt": "question: Which actress played Bathsheba Everdene in the 1967 film ‘Far From the Madding Crowd’?\nanswer:",
+      "reference_answer": "Julie Christie",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 123,
+      "prompt": "question: Which Florentine painter who died in 1337 had the oft overlooked surname, di Bondone?\nanswer:",
+      "reference_answer": "Giotto",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 124,
+      "prompt": "question: Which US Secretary of State resigned from Jimmy Carter's administration in 1980 over the failed attempt to rescue the US hostages in Iran?\nanswer:",
+      "reference_answer": "Cyrus vance",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 125,
+      "prompt": "question: Which musician and songwriter is the subject of the 2015 film Love and Mercy?\nanswer:",
+      "reference_answer": "Brian wilson",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 126,
+      "prompt": "question: The famously rebuilt Shakespeare's theatre on London's River Thames South Bank is the?\nanswer:",
+      "reference_answer": "Globe",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 127,
+      "prompt": "question: Which battle took place on June 18th 1815?\nanswer:",
+      "reference_answer": "Waterloo",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 128,
+      "prompt": "question: What Netflix exclusive programme chronicles the life of Piper Chapman and her experiences in an American State Prison?\nanswer:",
+      "reference_answer": "Orange is the New Black",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 129,
+      "prompt": "question: Who was the 27th US President, assuming power in 1909?\nanswer:",
+      "reference_answer": "William howard taft",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 130,
+      "prompt": "question: \"What suffix means \"\"study of\"\"?\"\nanswer:",
+      "reference_answer": "-logy",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 131,
+      "prompt": "question: The seven hills which lay within ancient Rome are the Capitoline, Caelian, Aventine, Palatine, Quirinal, Esquiline and which other hill?\nanswer:",
+      "reference_answer": "Viminal",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 132,
+      "prompt": "question: What is two divided by a half?\nanswer:",
+      "reference_answer": "4",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 133,
+      "prompt": "question: The Marquis of Queensberry rules govern what sport?\nanswer:",
+      "reference_answer": "Boxing",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 134,
+      "prompt": "question: What is Hobart the capital of?\nanswer:",
+      "reference_answer": "Tasmania",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 135,
+      "prompt": "question: The world's most crossed international land border connects Tijuana to which major Californian city?\nanswer:",
+      "reference_answer": "San Diego",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 136,
+      "prompt": "question: Border, Corriedale and Leicester are all breeds of which animal?\nanswer:",
+      "reference_answer": "Sheep",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 137,
+      "prompt": "question: Which common spring flower has the Latin name Galanthus?\nanswer:",
+      "reference_answer": "Snowdrop",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 138,
+      "prompt": "question: What is the S.I. Unit of radioactivity ?\nanswer:",
+      "reference_answer": "Becquerel",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 139,
+      "prompt": "question: Who directed Good Morning Vietnam?\nanswer:",
+      "reference_answer": "Barry Levinson",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 140,
+      "prompt": "question: Sarafina, Banzai and Shenzi are all characters in which Disney series of films?\nanswer:",
+      "reference_answer": "The Lion King",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 141,
+      "prompt": "question: Which country is the home of the Ashanti?\nanswer:",
+      "reference_answer": "Ghana",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 142,
+      "prompt": "question: What type of bird is considered a national symbol of New Zealand?\nanswer:",
+      "reference_answer": "Kiwi",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 143,
+      "prompt": "question: The 2003 documentary drama ‘Touching the Void’ recounts the story of two mountaineers on which mountain range?\nanswer:",
+      "reference_answer": "The Andes",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 144,
+      "prompt": "question: Name the country which ruled Burundi after Germany?\nanswer:",
+      "reference_answer": "Belgium",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 145,
+      "prompt": "question: In which country is Sochi, the host of the 2014 Winter Olympics?\nanswer:",
+      "reference_answer": "Russia",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 146,
+      "prompt": "question: Which inland sea between Kazakhstan and Uzbekistan is fast disappearing because the rivers that feed it have been diverted and dammed?\nanswer:",
+      "reference_answer": "Aral Sea",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 147,
+      "prompt": "question: What does the legal term 'Caveat Emptor' mean?\nanswer:",
+      "reference_answer": "Let the buyer beware",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 148,
+      "prompt": "question: Which 'BRIC' country re-elected female president Dilma Rousseff of the Workers' Party, 2014?\nanswer:",
+      "reference_answer": "Brazil",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 149,
+      "prompt": "question: What gas is used to make carbonated soft drinks and soda water?\nanswer:",
+      "reference_answer": "Carbon dioxide",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 150,
+      "prompt": "question: In Norse mythology who killed Baldur with a spear made from mistletoe?\nanswer:",
+      "reference_answer": "Loki",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 151,
+      "prompt": "question: Which country is home to a train service known as the Ghan ?\nanswer:",
+      "reference_answer": "Australia",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 152,
+      "prompt": "question: What ingredient gives pasta verde its green colouring?\nanswer:",
+      "reference_answer": "Spinach",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 153,
+      "prompt": "question: What colour is copper sulphate?\nanswer:",
+      "reference_answer": "Blue",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 154,
+      "prompt": "question: What type of fly is commonly used in genetic research?\nanswer:",
+      "reference_answer": "Fruit Fly",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 155,
+      "prompt": "question: Sonny Liston only made one successful defence of his world title who was it against\nanswer:",
+      "reference_answer": "Floyd Patterson",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 156,
+      "prompt": "question: In Hertz, what is the frequency of mains electricity supply in the UK?\nanswer:",
+      "reference_answer": "50",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 157,
+      "prompt": "question: Who designed the wedding dress worn by Kate Middleton, the Duchess of Cambridge?\nanswer:",
+      "reference_answer": "Sarah Burton",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 158,
+      "prompt": "question: What type of creature is a minke?\nanswer:",
+      "reference_answer": "Whale",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 159,
+      "prompt": "question: Who is the leader of the Autobots?\nanswer:",
+      "reference_answer": "Optimus Prime",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 160,
+      "prompt": "question: Which former Royal Navy ship, launched in 1938, is now moored in London and is a now a museum ship operated by the Imperial War Museum?\nanswer:",
+      "reference_answer": "HMS Belfast",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 161,
+      "prompt": "question: Glienicke, Oberbaum and Moltke are all bridges in which European city?\nanswer:",
+      "reference_answer": "Berlin",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 162,
+      "prompt": "question: Which medium-sized, burrowing, nocturnal mammal, native to Africa, is the sole representative of the mammalian order Tubulidentata?\nanswer:",
+      "reference_answer": "Aardvark",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 163,
+      "prompt": "question: ‘A Study In Scarlet’ by Arthur Conan Doyle, featuring Sherlock Holmes, was the first work of fiction to incorporate which item as an investigative tool?\nanswer:",
+      "reference_answer": "Magnifying glass",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 164,
+      "prompt": "question: What live in an artificial environment known as a formicarium?\nanswer:",
+      "reference_answer": "Ants",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 165,
+      "prompt": "question: What is the substance made from petroleum used for road surfacing, whose name derives from Greek meaning 'of foreign origin'?\nanswer:",
+      "reference_answer": "Asphalt",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 166,
+      "prompt": "question: Darfur, scene of mass genocide over the last few years, is part of which African country?\nanswer:",
+      "reference_answer": "Sudan",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 167,
+      "prompt": "question: Kiritimati, the first inhabited place to experience each New Year, is more commonly known as what?\nanswer:",
+      "reference_answer": "Christmas Island",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 168,
+      "prompt": "question: In which country did the Battle of Majuba Hill take place in 1881?\nanswer:",
+      "reference_answer": "South Africa",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 169,
+      "prompt": "question: What name links Spain's oldest university (dating to 1218) and an 1812 battle involving the Duke of Wellington?\nanswer:",
+      "reference_answer": "Salamanca",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 170,
+      "prompt": "question: The Nazca Plate, part of the earth's lithosphere, lies under which ocean?\nanswer:",
+      "reference_answer": "Pacific",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 171,
+      "prompt": "question: Which school was the first to have an old school tie\nanswer:",
+      "reference_answer": "Eton",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 172,
+      "prompt": "question: The House of Silk by Anthony Horowitz is about which character?\nanswer:",
+      "reference_answer": "Sherlock Holmes",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 173,
+      "prompt": "question: Which Israeli seaport lies below Mount Carmel?\nanswer:",
+      "reference_answer": "Haifa",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 174,
+      "prompt": "question: \"Which opera singer was known as the \"\"Swedish Nightingale\"\"?\"\nanswer:",
+      "reference_answer": "Jenny Lind",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 175,
+      "prompt": "question: What country controversially won the bid to host the 2022 FIFA World Cup?\nanswer:",
+      "reference_answer": "Qatar",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 176,
+      "prompt": "question: In which month is United Nations day?\nanswer:",
+      "reference_answer": "October",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 177,
+      "prompt": "question: Which British liner was sunk by a German submarine in 1915?\nanswer:",
+      "reference_answer": "Lusitania",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 178,
+      "prompt": "question: Which intermittent wars between 1793 and 1815 included the battles of 'Aspern' and 'Austerlitz'?\nanswer:",
+      "reference_answer": "Napoleonic wars",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 179,
+      "prompt": "question: What number is the French coded slang 'vingt-deux!', which warns that police are coming?\nanswer:",
+      "reference_answer": "22",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 180,
+      "prompt": "question: Aldebaran is the brightest star in which Zodiacal constellation?\nanswer:",
+      "reference_answer": "Taurus",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 181,
+      "prompt": "question: Which philosopher propounded the idea of 'Utilitarianism', later taken up by John Stuart Mill?\nanswer:",
+      "reference_answer": "Jeremy bentham",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 182,
+      "prompt": "question: In entertainment, which Marx Brothers real name was Leonard?\nanswer:",
+      "reference_answer": "Chico",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 183,
+      "prompt": "question: \"What television character said \"\"How YOU doin\"\"?\"\nanswer:",
+      "reference_answer": "Joey Tribbiani",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 184,
+      "prompt": "question: What traditional profession specialises in the assessment of costs and tenders for materials and contracts within building and construction projects?\nanswer:",
+      "reference_answer": "Quantity Surveyor",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 185,
+      "prompt": "question: Who was the president of America for the majority of the 1920's?\nanswer:",
+      "reference_answer": "Calvin Coolidge",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 186,
+      "prompt": "question: Which US President was the first to live in the White House?\nanswer:",
+      "reference_answer": "John Adams",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 187,
+      "prompt": "question: All Formula One cars use the same make of tyres. Who is the current manufacturer?\nanswer:",
+      "reference_answer": "Pirelli",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 188,
+      "prompt": "question: A phrenologist would be studying which part of the body?\nanswer:",
+      "reference_answer": "Skull",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 189,
+      "prompt": "question: Which band member is missing from the line-up of Ray Manzarek, Robby Krieger and John Densmore?\nanswer:",
+      "reference_answer": "Jim Morrison",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 190,
+      "prompt": "question: \"What does the German word \"\"Danke\"\" mean in English?\"\nanswer:",
+      "reference_answer": "Thank You",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 191,
+      "prompt": "question: After which goddess is the the capital of Greece named?\nanswer:",
+      "reference_answer": "Athena",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 192,
+      "prompt": "question: Sable is the heraldic term for which colour?\nanswer:",
+      "reference_answer": "Black",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 193,
+      "prompt": "question: Which major German seaport on the Baltic sea was for several centuries the capital of the Hanseatic League and was also known as 'Queen of the Hanse'?\nanswer:",
+      "reference_answer": "Lübeck",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 194,
+      "prompt": "question: A truant is someone who stays away from what?\nanswer:",
+      "reference_answer": "School",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 195,
+      "prompt": "question: Which strong man appears in the Bible in the Book of Judges?\nanswer:",
+      "reference_answer": "Samson",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 196,
+      "prompt": "question: What Christian festival commemorates the coming of the Three Wise Men to Bethlehem?\nanswer:",
+      "reference_answer": "Epiphany",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 197,
+      "prompt": "question: Matola and Beira are the second and third largest cities in which African country?\nanswer:",
+      "reference_answer": "Mozambique",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 198,
+      "prompt": "question: What term is given to a plant that lasts more than two years?\nanswer:",
+      "reference_answer": "Perennial",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 199,
+      "prompt": "question: A pyroclastic flow comes from which natural structure?\nanswer:",
+      "reference_answer": "Volcano",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 200,
+      "prompt": "question: The Gunfight at the O.K. Corral took place in which city?\nanswer:",
+      "reference_answer": "Tombstone",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 201,
+      "prompt": "question: Katharina von Bora, a nun who escaped convent life in 1523 by fleeing to Wittenberg hiding among fish barrels was married to which key figure of world history?\nanswer:",
+      "reference_answer": "Martin Luther",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 202,
+      "prompt": "question: Who did England beat by two runs in a 2005 Edgbaston Test Match?\nanswer:",
+      "reference_answer": "Australia",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 203,
+      "prompt": "question: Knowna s the 'Evening Satr' which planet in our solar system is the closest in size to earth?\nanswer:",
+      "reference_answer": "Venus",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 204,
+      "prompt": "question: Who won the 1948 Pulitzer Fiction Prize for 'Tales Of The South Pacific'?\nanswer:",
+      "reference_answer": "James michener",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 205,
+      "prompt": "question: Where would you find the islets of Langerhans?\nanswer:",
+      "reference_answer": "Pancreas",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 206,
+      "prompt": "question: Operation Typhoon, launched on this day in 1941, was a German strategic offensive designed to capture which capital city?\nanswer:",
+      "reference_answer": "Moscow",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 207,
+      "prompt": "question: What beat novel featured the character Dean Moriarty?\nanswer:",
+      "reference_answer": "On The Road",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 208,
+      "prompt": "question: What country singer has been known as The Red Headed Stranger since the 1975 album of the same name went multi-platinum?\nanswer:",
+      "reference_answer": "Willie Nelson",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 209,
+      "prompt": "question: Which was the first country to give the vote to women, doing so in 1893?\nanswer:",
+      "reference_answer": "New Zealand",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 210,
+      "prompt": "question: Pneumoconiosis is a disease of which part of the human body?\nanswer:",
+      "reference_answer": "Lungs",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 211,
+      "prompt": "question: What brand of rum, named for a privateer, advertises itself with the slogan \"To Life, Love, and Loot\"?\nanswer:",
+      "reference_answer": "Captain Morgan",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 212,
+      "prompt": "question: Kyudo is the Japanese art of which sport?\nanswer:",
+      "reference_answer": "Archery",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 213,
+      "prompt": "question: According to Greek legend, who was the father of Telemachus?\nanswer:",
+      "reference_answer": "Odysseus",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 214,
+      "prompt": "question: \"What is the simple past tense of the verb \"\"swim\"\"?\"\nanswer:",
+      "reference_answer": "Swam",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 215,
+      "prompt": "question: What is the term for a triangle with three angles of 60 degrees?\nanswer:",
+      "reference_answer": "Equilateral",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 216,
+      "prompt": "question: The Netherlands won the 2009 junior version of which international entertainment competition?\nanswer:",
+      "reference_answer": "Eurovision Song Contest",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 217,
+      "prompt": "question: Geelong, Ballarat and Bendigo are cities in which Australian state?\nanswer:",
+      "reference_answer": "Victoria",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 218,
+      "prompt": "question: What is the highest medal awarded by the U.S. military?\nanswer:",
+      "reference_answer": "Medal of Honor",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 219,
+      "prompt": "question: In what city would you find an art museum known as the Prado?\nanswer:",
+      "reference_answer": "Madrid",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 220,
+      "prompt": "question: What was the first name of the song-writing brother of George Gershwin?\nanswer:",
+      "reference_answer": "IRA",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 221,
+      "prompt": "question: 'Hello darkness my old friend' are the first words of which Simon and Garfunkel song?\nanswer:",
+      "reference_answer": "The Sound of Silence",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 222,
+      "prompt": "question: What is the last letter in the Greek alphabet?\nanswer:",
+      "reference_answer": "Omega",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 223,
+      "prompt": "question: Argentum is the Latin name for what element?\nanswer:",
+      "reference_answer": "Silver",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 224,
+      "prompt": "question: In which country is the Angostura bridge?\nanswer:",
+      "reference_answer": "Venezuela",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 225,
+      "prompt": "question: How many MP's are there in the House of Commons?\nanswer:",
+      "reference_answer": "650",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 226,
+      "prompt": "question: In which year was Marie Antoinette, queen of France, executed?\nanswer:",
+      "reference_answer": "1793",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 227,
+      "prompt": "question: Which painter was married to Mexican artist Diego Rivera?\nanswer:",
+      "reference_answer": "Frida Kahlo",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 228,
+      "prompt": "question: In Western ecclesiastical law a diriment impediment invalidates what?\nanswer:",
+      "reference_answer": "Marriage",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 229,
+      "prompt": "question: In which British city is St. Enoch Railway Station?\nanswer:",
+      "reference_answer": "Glasgow",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 230,
+      "prompt": "question: Diplopia is the medical term for which condition of the human body?\nanswer:",
+      "reference_answer": "Double vision",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 231,
+      "prompt": "question: Which European country has land borders with Greece, Turkey, Romania, Serbia and the Republic of Macedonia?\nanswer:",
+      "reference_answer": "Bulgaria",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 232,
+      "prompt": "question: Where would you find the Caves of Altamira, famous for prehistoric paintings on the rock?\nanswer:",
+      "reference_answer": "Spain",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 233,
+      "prompt": "question: \"What is the \"\"national\"\" and \"\"first official\"\" language of The Republic of Ireland?\"\nanswer:",
+      "reference_answer": "Irish",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 234,
+      "prompt": "question: Who did Bobby Fischer defeat to win the World Chess Championship in 1972?\nanswer:",
+      "reference_answer": "Boris spassky",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 235,
+      "prompt": "question: What does the musical term forte mean\nanswer:",
+      "reference_answer": "Loud",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 236,
+      "prompt": "question: What is a very hard, naturally-occurring mineral, of which ruby and sapphire are gem quality varieties?\nanswer:",
+      "reference_answer": "Corundum",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 237,
+      "prompt": "question: Most of Georgette Heyer's romance novels were set in which period?\nanswer:",
+      "reference_answer": "Regency",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 238,
+      "prompt": "question: Which British beetle is recognised by its large mandibles?\nanswer:",
+      "reference_answer": "The stag beetle",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 239,
+      "prompt": "question: Used in church advent services, a Christingle is made using which fruit?\nanswer:",
+      "reference_answer": "Orange",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 240,
+      "prompt": "question: What light-sensitive tissue lines the inner surface of the eye?\nanswer:",
+      "reference_answer": "Retina",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 241,
+      "prompt": "question: The internal angles of a rectangle add up to how many degrees?\nanswer:",
+      "reference_answer": "360",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 242,
+      "prompt": "question: Which electronics company has the motto ‘make.believe’?\nanswer:",
+      "reference_answer": "Sony",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 243,
+      "prompt": "question: What is the state capital of Michigan, USA?\nanswer:",
+      "reference_answer": "Lansing",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 244,
+      "prompt": "question: How many players per side are allowed on the field in a game of rugby league?\nanswer:",
+      "reference_answer": "13",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 245,
+      "prompt": "question: Which young singer/songwriter was born near Halifax in 1991 but was raised in Suffolk, he has released two albums, + (plus) and x (multiply)?\nanswer:",
+      "reference_answer": "Ed Sheeran",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 246,
+      "prompt": "question: Which river forms much of the boundary between Devon and Cornwall?\nanswer:",
+      "reference_answer": "Tamar",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 247,
+      "prompt": "question: In which Verdi opera is 'Gilda' the jester's daughter?\nanswer:",
+      "reference_answer": "Rigoletto",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 248,
+      "prompt": "question: What nationality was Trygvie Lie, first United Nations Secretary General?\nanswer:",
+      "reference_answer": "Norwegian",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 249,
+      "prompt": "question: Who was the first American to orbit the Earth\nanswer:",
+      "reference_answer": "John Glenn",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 250,
+      "prompt": "question: As at 2012 what 115-island Indian Ocean nation has the smallest population (about 86,000) of any African country?\nanswer:",
+      "reference_answer": "Seychelles",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 251,
+      "prompt": "question: Which whale has the largest brain of any creature on Earth?\nanswer:",
+      "reference_answer": "The Sperm Whale",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 252,
+      "prompt": "question: Who succeeded Mervyn King, Governor of the Bank of England until 2013?\nanswer:",
+      "reference_answer": "Mark Carney",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 253,
+      "prompt": "question: What year were all these people born: David Hassellhoff, Michael Barrymore and Mister T?\nanswer:",
+      "reference_answer": "1952",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 254,
+      "prompt": "question: Which motor city was the original the base of Tamla Motown?\nanswer:",
+      "reference_answer": "Detroit",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 255,
+      "prompt": "question: Electrum is an alloy of gold and which other element?\nanswer:",
+      "reference_answer": "Silver",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 256,
+      "prompt": "question: Quinsy affects which part of the human body?\nanswer:",
+      "reference_answer": "Tonsils",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 257,
+      "prompt": "question: Who, appointed in 2008, is the Director of Public Prosecutions of England and Wales?\nanswer:",
+      "reference_answer": "Keir Starmer",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 258,
+      "prompt": "question: As whom did Mohammad Reza Pahlavi become better known?\nanswer:",
+      "reference_answer": "Shah of Iran",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 259,
+      "prompt": "question: What is the capital of Uzbekistan\nanswer:",
+      "reference_answer": "Tashkent",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 260,
+      "prompt": "question: Who played Jerry in the film `Jerry McGuire`?\nanswer:",
+      "reference_answer": "Tom Cruise",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 261,
+      "prompt": "question: In which year did the Channel Tunnel open?\nanswer:",
+      "reference_answer": "1994",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 262,
+      "prompt": "question: What kind of creature is a Twite ?\nanswer:",
+      "reference_answer": "Bird",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 263,
+      "prompt": "question: Lactuca Sativa is the Latin name for which common vegetable?\nanswer:",
+      "reference_answer": "Lettuce",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 264,
+      "prompt": "question: The 1992 film ‘Candyman’ is based on which short story by Clive Barker?\nanswer:",
+      "reference_answer": "The Forbidden",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 265,
+      "prompt": "question: Which is the largest of the asteroids?\nanswer:",
+      "reference_answer": "Ceres",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 266,
+      "prompt": "question: Now that Pluto's been demoted, what's the smallest planet of the solar system, with a radius only 0.3892 that of Earth?\nanswer:",
+      "reference_answer": "Mercury",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 267,
+      "prompt": "question: What fruit is mentioned in the official nickname of the US state of Georgia?\nanswer:",
+      "reference_answer": "Peach",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 268,
+      "prompt": "question: Pol Pot was overthrown as ruler of what country in 1979?\nanswer:",
+      "reference_answer": "Cambodia",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 269,
+      "prompt": "question: \"The names of how many US states begin with the letter \"\"I\"\"?\"\nanswer:",
+      "reference_answer": "4",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 270,
+      "prompt": "question: In which capital of the British Isles would you find the Royal Canal?\nanswer:",
+      "reference_answer": "Dublin",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 271,
+      "prompt": "question: Used to carry oxygen throughout your body, you create billions of new red blood cells every day. Where in your body are those red blood cells created?\nanswer:",
+      "reference_answer": "Bone marrow",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 272,
+      "prompt": "question: In the 2004 film biopic Beyond the Sea, Kevin Spacey plays which 1960s singer?\nanswer:",
+      "reference_answer": "Bobby Darin",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 273,
+      "prompt": "question: In which city is the Prado Art Gallery?\nanswer:",
+      "reference_answer": "Madrid",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 274,
+      "prompt": "question: Which Polynesian island nation of 4 reef islands and 5 true atolls in the Pacific Ocean, midway between Hawaii and Australia, formerly known as the Ellice Islands, became fully independent within the Commonwealth in 1978?\nanswer:",
+      "reference_answer": "Tuvalu",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 275,
+      "prompt": "question: In which year was the Japanese attack on Pearl Harbour in the USA?\nanswer:",
+      "reference_answer": "1941",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 276,
+      "prompt": "question: What was the name of the last concert by the Canadian-American rock group The Band in November 1976?\nanswer:",
+      "reference_answer": "The Last Waltz",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 277,
+      "prompt": "question: Who became US President Barack Obama’s Vice President in 2008?\nanswer:",
+      "reference_answer": "Joe Biden",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 278,
+      "prompt": "question: In which country would you find the Test Cricket Ground of Sabina Park?\nanswer:",
+      "reference_answer": "Jamaica",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 279,
+      "prompt": "question: What title did King Edward VIII of the UK take after his abdication?\nanswer:",
+      "reference_answer": "Duke of Windsor",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 280,
+      "prompt": "question: In what year did US airline 'Pan Am' fold?\nanswer:",
+      "reference_answer": "1991",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 281,
+      "prompt": "question: Which TV series features the Sterling Cooper advertising agency?\nanswer:",
+      "reference_answer": "Mad Men",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 282,
+      "prompt": "question: In which American state is the successful t.v. drama series 'Boardwalk Empire' set?\nanswer:",
+      "reference_answer": "New jersey",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 283,
+      "prompt": "question: Which city is the capital of Tanzania?\nanswer:",
+      "reference_answer": "Dodoma",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 284,
+      "prompt": "question: May 26, 1868 saw the first impeachment trial in the US, when which US President, the 17th, was charged with illegally removing a cabinet member?\nanswer:",
+      "reference_answer": "Andrew Johnson",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 285,
+      "prompt": "question: The painting The Scream was stolen form which city in 1994?\nanswer:",
+      "reference_answer": "Oslo",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 286,
+      "prompt": "question: An unidentified Satoshi Nakamoto is credited with what concept that has taken the financial world by storm?\nanswer:",
+      "reference_answer": "Bitcoin",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 287,
+      "prompt": "question: On which part of the body would a barrette be worn?\nanswer:",
+      "reference_answer": "Head",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 288,
+      "prompt": "question: Which skier spectacularly summersaulted through 2 barriers, landing on his head, in the downhill race at the winter Olympics in Nagano. Then went on to win 2 gold medals a few days later?\nanswer:",
+      "reference_answer": "Hermann Maier",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 289,
+      "prompt": "question: Native to America, what type of creature is a 'Bobolink'?\nanswer:",
+      "reference_answer": "Bird",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 290,
+      "prompt": "question: In 1953, Edmund Hillary and Tenzing Norgay became the first men to reach the summit of which mountain?\nanswer:",
+      "reference_answer": "Everest",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 291,
+      "prompt": "question: a What is the English name for the constellation Sagittarius?\nanswer:",
+      "reference_answer": "The archer",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 292,
+      "prompt": "question: Which city did Rome destroy at the end of the Second Punic War?\nanswer:",
+      "reference_answer": "Carthage",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 293,
+      "prompt": "question: Which river flows through the city of Derby?\nanswer:",
+      "reference_answer": "Derwent",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 294,
+      "prompt": "question: What is the capital of the province of New Brunswick, Canada?\nanswer:",
+      "reference_answer": "Fredericton",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 295,
+      "prompt": "question: In statistics, what term is applied to techniques for modeling and analysing several variables to understand how the typical value of the dependent variable changes when one of the independent variables is varied, and the other variables are fixed?\nanswer:",
+      "reference_answer": "Regression analysis",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 296,
+      "prompt": "question: In the BBC television series Dr Who, the villain Davros was from which fictional planet?\nanswer:",
+      "reference_answer": "Skaro",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 297,
+      "prompt": "question: Nigeria shares the vast majority of its eastern border with which country?\nanswer:",
+      "reference_answer": "Cameroon",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 298,
+      "prompt": "question: Named for the day of its discovery by Captain William Mynors, Christmas Island, a land mass in the Indian Ocean, is a territory of what nation?\nanswer:",
+      "reference_answer": "Australia",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 299,
+      "prompt": "question: \"Who wrote the poems \"\"The Solitary Reaper\"\"and\"\"Upon Westminster Bridge, September 3rd. 1802\"\"?\"\nanswer:",
+      "reference_answer": "William wordsworth",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 300,
+      "prompt": "question: Which palace in Spain takes its name from the colour of its sun dried red bricks?\nanswer:",
+      "reference_answer": "Alhambra",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 301,
+      "prompt": "question: Who is elected by the College of Cardinals?\nanswer:",
+      "reference_answer": "The Pope",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 302,
+      "prompt": "question: Galena is a major ore of which metal?\nanswer:",
+      "reference_answer": "Lead",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 303,
+      "prompt": "question: Which British pop group won the 1981 Eurovision Song Contest?\nanswer:",
+      "reference_answer": "Bucks Fizz",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 304,
+      "prompt": "question: In April 2014 a record BASE jump from top of the world's tallest building, Burj Khalifa in Dubai, involved how many people jumping?\nanswer:",
+      "reference_answer": "3",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 305,
+      "prompt": "question: A plant described as etoliated has been grown lacking what?\nanswer:",
+      "reference_answer": "Light",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 306,
+      "prompt": "question: What colourless/colorless, odourless/odorless, poisonous polluting gas is chiefly emitted by small engines typically used in lawn-mowers and chainsaws, etc?\nanswer:",
+      "reference_answer": "Carbon monoxide",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 307,
+      "prompt": "question: What is it called when all the pins fall on the first bowl of an Indoor Bowling game ?\nanswer:",
+      "reference_answer": "Strike",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 308,
+      "prompt": "question: Robbie Coltrane played a psychologist in which British TV series?\nanswer:",
+      "reference_answer": "Cracker",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 309,
+      "prompt": "question: What was the name of Billy J Kramer's backing group in the 1960s?\nanswer:",
+      "reference_answer": "The Dakotas",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 310,
+      "prompt": "question: Mosi-oa-Tunya National Park in Zambia is adjacent with what other park that is also named for a famed attraction?\nanswer:",
+      "reference_answer": "Victoria Falls",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 311,
+      "prompt": "question: Which acid is contained in rhubarb leaves, making them poisonous to eat?\nanswer:",
+      "reference_answer": "Oxalic acid",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 312,
+      "prompt": "question: Who had a No 1 in the 70's with Annie's Song\nanswer:",
+      "reference_answer": "John Denver",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 313,
+      "prompt": "question: The adjective 'pulmonary' means of, or pertaining to, which organ of the body?\nanswer:",
+      "reference_answer": "Lungs",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 314,
+      "prompt": "question: In which city were the 2002 Winter Olympic Games held?\nanswer:",
+      "reference_answer": "Salt lake city",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 315,
+      "prompt": "question: Which is the largest moon, orbiting the planet Neptune?\nanswer:",
+      "reference_answer": "Triton",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 316,
+      "prompt": "question: What constellation is depicted on the Australian flag?\nanswer:",
+      "reference_answer": "Southern Cross",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 317,
+      "prompt": "question: In which county is Sunningdale Golf Course found?\nanswer:",
+      "reference_answer": "Berkshire",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 318,
+      "prompt": "question: One US gallon is equal to how many pints?\nanswer:",
+      "reference_answer": "8",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 319,
+      "prompt": "question: What was the primary language of the Byzantine Empire?\nanswer:",
+      "reference_answer": "Greek",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 320,
+      "prompt": "question: Who starred in the title role in the 2002 film, Mr Deeds?\nanswer:",
+      "reference_answer": "Adam Sandler",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 321,
+      "prompt": "question: Who was the first British monarch to travel by train?\nanswer:",
+      "reference_answer": "Queen Victoria",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 322,
+      "prompt": "question: Who was elected First Minister of the Northern Ireland Assembly in 1998\nanswer:",
+      "reference_answer": "David Trimble",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 323,
+      "prompt": "question: The Cyclades are an eastern island group of which nation?\nanswer:",
+      "reference_answer": "Greece",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 324,
+      "prompt": "question: Theo and Karl Albrecht were the original owners of which supermarket chain?\nanswer:",
+      "reference_answer": "Aldi",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 325,
+      "prompt": "question: In what year was England ruled (technically) by kings called Edward, Harold, Edgar and William, in that order?\nanswer:",
+      "reference_answer": "1066",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 326,
+      "prompt": "question: What gift is traditionally given on a 25th wedding anniversary?\nanswer:",
+      "reference_answer": "Silver",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 327,
+      "prompt": "question: What is the square root of 361?\nanswer:",
+      "reference_answer": "19",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 328,
+      "prompt": "question: What country, with a population of around 12,000, is the third-least-populated sovereign state in the world behind Vatican City and Nauru, and at 26 square kilometres (10 sq miles) is the fourth smallest country in the world, behind those two and Monaco?\nanswer:",
+      "reference_answer": "Tuvalu",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 329,
+      "prompt": "question: In which year did Hurricane Katrina strike New Orleans?\nanswer:",
+      "reference_answer": "2005",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 330,
+      "prompt": "question: In which country is the confluence of the White Nile and the Blue Nile?\nanswer:",
+      "reference_answer": "Sudan",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 331,
+      "prompt": "question: In physics, what is the S I unit of force?\nanswer:",
+      "reference_answer": "Newton",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 332,
+      "prompt": "question: On which of the Greek islands did Bacchus find Ariadne, according to legend?\nanswer:",
+      "reference_answer": "Naxos",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 333,
+      "prompt": "question: Which composer, born in Pesaro, in Italy, in 1792, was known by the nickname, Monsieur Crescendo?\nanswer:",
+      "reference_answer": "Rossini",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 334,
+      "prompt": "question: What is the British Army equivalent to the German military rank of Oberst?\nanswer:",
+      "reference_answer": "Colonel",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 335,
+      "prompt": "question: What was the only U.K. number one for The Supremes\nanswer:",
+      "reference_answer": "Baby Love",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 336,
+      "prompt": "question: Who directed the 1994 film 'Pulp Fiction'?\nanswer:",
+      "reference_answer": "Quentin tarantino",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 337,
+      "prompt": "question: What is the alternative name for Pluto, the Greek God of the underworld, that has come to mean Hell?\nanswer:",
+      "reference_answer": "Hades",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 338,
+      "prompt": "question: In the Simpson's TV cartoon series, what was Marge Simpson's maiden name?\nanswer:",
+      "reference_answer": "Bouvier",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 339,
+      "prompt": "question: Which French city was the seat of the popes in the fourteenth century\nanswer:",
+      "reference_answer": "Avignon",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 340,
+      "prompt": "question: What was the more common name for the German World War II dive bomber the Junkers Ju 87?\nanswer:",
+      "reference_answer": "Stuka",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 341,
+      "prompt": "question: Which liqueur is named after the Carthusian monastery where it was first made in 1737?\nanswer:",
+      "reference_answer": "Chartreuse",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 342,
+      "prompt": "question: What is the herb that is used mostly in Swedish cookery\nanswer:",
+      "reference_answer": "Dill",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 343,
+      "prompt": "question: Which protest movement which began in 2011, had as its slogan 'We are the 99%'?\nanswer:",
+      "reference_answer": "Occupy",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 344,
+      "prompt": "question: What popular office product/brand did Bette Nesmith Graham (mother of Monkee Mike Nesmith) invent and later sell to Gillette for nearly $50m in 1979?\nanswer:",
+      "reference_answer": "Liquid Paper",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 345,
+      "prompt": "question: Which is the forty ninth state of The USA\nanswer:",
+      "reference_answer": "Alaska",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 346,
+      "prompt": "question: Which was the first antibiotic to be discovered?\nanswer:",
+      "reference_answer": "Penicillin",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 347,
+      "prompt": "question: Who is the New Zealand-born physicist whose discoveries include most of the great advances in physics between 1899 and 1930?\nanswer:",
+      "reference_answer": "Ernest Rutherford",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 348,
+      "prompt": "question: From which country does the word tycoon originate\nanswer:",
+      "reference_answer": "Japan",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 349,
+      "prompt": "question: What city is Kowloon a part of?\nanswer:",
+      "reference_answer": "Hong Kong",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 350,
+      "prompt": "question: Before 1949, by what name was Thailand known?\nanswer:",
+      "reference_answer": "Siam",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 351,
+      "prompt": "question: Which European country was the Roman province of Lusitania?\nanswer:",
+      "reference_answer": "Portugal",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 352,
+      "prompt": "question: \"Which was the title of the 7th and final book in the \"\"Chronicles of Narnia\"\" by C.S. Lewis?\"\nanswer:",
+      "reference_answer": "The last battle",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 353,
+      "prompt": "question: What is the national flower of Wales\nanswer:",
+      "reference_answer": "Daffodil",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 354,
+      "prompt": "question: Pulex irritans is a parasitic insect. What is.it more commonly known as?\nanswer:",
+      "reference_answer": "Flea",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 355,
+      "prompt": "question: Who plays Rachel in Friends\nanswer:",
+      "reference_answer": "Jennifer Aniston",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 356,
+      "prompt": "question: Who founded the magazine Camera Work?\nanswer:",
+      "reference_answer": "Alfred Stieglitz",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 357,
+      "prompt": "question: Silkworms feed on the leaves of which plant?\nanswer:",
+      "reference_answer": "Mulberry",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 358,
+      "prompt": "question: Digger, Plasterer and Orchid are all types of which creature?\nanswer:",
+      "reference_answer": "Bees",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 359,
+      "prompt": "question: The medical term sclerosis refers to the abnormal (what?) of body tissue?\nanswer:",
+      "reference_answer": "Hardening",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 360,
+      "prompt": "question: What do we call the lake that the Germans call Bodensee?\nanswer:",
+      "reference_answer": "Lake Constance",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 361,
+      "prompt": "question: What kind of creature is a monitor?\nanswer:",
+      "reference_answer": "Lizard",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 362,
+      "prompt": "question: In February 1906, which type of British battleship was launched for the first time?\nanswer:",
+      "reference_answer": "Dreadnought",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 363,
+      "prompt": "question: In Greek myth who was the mother of Oedipus?\nanswer:",
+      "reference_answer": "Jocasta",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 364,
+      "prompt": "question: In 1968 the first Legoland was established where?\nanswer:",
+      "reference_answer": "Billund, Denmark",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 365,
+      "prompt": "question: The French word for 'hook' is the name for which craft?\nanswer:",
+      "reference_answer": "Crochet",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 366,
+      "prompt": "question: What type of creature was Gimli?\nanswer:",
+      "reference_answer": "Dwarf",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 367,
+      "prompt": "question: Which motorway connects Glasgow and Edinburgh?\nanswer:",
+      "reference_answer": "M8",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 368,
+      "prompt": "question: Saddam Hussein was born in which town?\nanswer:",
+      "reference_answer": "Tikrit",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 369,
+      "prompt": "question: Who was the last South African golfer to win the Open Championship?\nanswer:",
+      "reference_answer": "Ernie els",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 370,
+      "prompt": "question: \"On what river would you find the famous \"\"Left Bank\"\"?\"\nanswer:",
+      "reference_answer": "Seine",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 371,
+      "prompt": "question: LS What is the name of the famous Opera House in Milan, opened in 1778?\nanswer:",
+      "reference_answer": "La scala",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 372,
+      "prompt": "question: Alex Turner is the lead singer with which Sheffield band?\nanswer:",
+      "reference_answer": "Arctic Monkeys",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 373,
+      "prompt": "question: What was the name of the stricken cruise ship on which the salvage operation began in September 2013 on the Italian coast?\nanswer:",
+      "reference_answer": "Costa concordia",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 374,
+      "prompt": "question: King Ludwig II of Bavaria was the patron of which German composer ?\nanswer:",
+      "reference_answer": "Wagner",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 375,
+      "prompt": "question: Which group has reformed after 25 years but without founder member, songwriter and keyboard player Jerry Dammers?\nanswer:",
+      "reference_answer": "The Specials",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 376,
+      "prompt": "question: Which company was responsible for the oil spill in Alaska in 1989?\nanswer:",
+      "reference_answer": "Exxon",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 377,
+      "prompt": "question: On a football pitch, how many yards should the penalty spot be from the goal line?\nanswer:",
+      "reference_answer": "12",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 378,
+      "prompt": "question: St Mawes and Pendennis Castles in Cornwall were built by which English monarch to defend the coast against a French invasion?\nanswer:",
+      "reference_answer": "Henry VIII",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 379,
+      "prompt": "question: Representing about 100 million people and 40% of the population, which is the largest ethnic group of Indonesia?\nanswer:",
+      "reference_answer": "Javanese",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 380,
+      "prompt": "question: \"What is another name for \"\"fishing\"\"?\"\nanswer:",
+      "reference_answer": "Angling",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 381,
+      "prompt": "question: Which US psychologist and writer popularised the carchphrase ‘Turn on, tune in, drop out’?\nanswer:",
+      "reference_answer": "Timothy Leary",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 382,
+      "prompt": "question: What wine is named after a city in the south of Iraq?\nanswer:",
+      "reference_answer": "Shiraz",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 383,
+      "prompt": "question: What country would you travel through in going from Honduras to Costa Rica?\nanswer:",
+      "reference_answer": "Nicaragua",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 384,
+      "prompt": "question: In which year was the Berlin International Film Festival first held?\nanswer:",
+      "reference_answer": "1951",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 385,
+      "prompt": "question: Which company owns British Gas?\nanswer:",
+      "reference_answer": "Centrica",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 386,
+      "prompt": "question: In what year was the first Nobel Peace Prize actually awarded, ostensibly to someone who earned it?\nanswer:",
+      "reference_answer": "1901",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 387,
+      "prompt": "question: Kopi Luwak coffee beans, the most expensive in the world, come from the dung of which animal, after it has partially digested the berries which contain the beans?\nanswer:",
+      "reference_answer": "Civet",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 388,
+      "prompt": "question: In ancient Rome, what was a scutum?\nanswer:",
+      "reference_answer": "A shield",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 389,
+      "prompt": "question: Who won Pop Idol in 2002?\nanswer:",
+      "reference_answer": "Will Young",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 390,
+      "prompt": "question: Which vegetable has the Latin name solanum tuberosum?\nanswer:",
+      "reference_answer": "Potato",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 391,
+      "prompt": "question: Who was elected Chancellor of Germany in November 2005?\nanswer:",
+      "reference_answer": "Angela merkel",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 392,
+      "prompt": "question: Citizens of Mexico know it as Rio Bravo del Norte. What do we call the 4th longest river system in the US?\nanswer:",
+      "reference_answer": "Rio Grande",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 393,
+      "prompt": "question: Who, with 448 runs, was Australia's leading run scorer in the 2009 Ashes series?\nanswer:",
+      "reference_answer": "Michael clarke",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 394,
+      "prompt": "question: \"Who wrote the tale \"\"The Princess and the Pea\"\"?\"\nanswer:",
+      "reference_answer": "Hans Christian Andersen",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 395,
+      "prompt": "question: Caroline of Brunswick, a German Noblewoman was married to which British King?\nanswer:",
+      "reference_answer": "George iv",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 396,
+      "prompt": "question: Damon Alban, Graham Coton, Alex James and Dave Roundtree were members of which pop group?\nanswer:",
+      "reference_answer": "Blur",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 397,
+      "prompt": "question: Dec 7, 1941 saw the attack on the US Naval facilities at Pearl Harbor, HI. The sinking of what battleship, now the site of a major memorial, accounted for over half the loss of life during the attack when 1,177 sailors died?\nanswer:",
+      "reference_answer": "USS Arizona",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 398,
+      "prompt": "question: ANZAC Day, Australia’s annual holiday to remember its war dead, is held during which month of the year?\nanswer:",
+      "reference_answer": "April",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 399,
+      "prompt": "question: Dyce Airport is in which British city?\nanswer:",
+      "reference_answer": "Aberdeen",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 400,
+      "prompt": "question: What is Captain Picard's first name?\nanswer:",
+      "reference_answer": "Jean-Luc",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 401,
+      "prompt": "question: In which Bond film did Judi Dench first play the role of M?\nanswer:",
+      "reference_answer": "Goldeneye",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 402,
+      "prompt": "question: The Seychelle Islands lie in which body of water?\nanswer:",
+      "reference_answer": "Indian Ocean",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 403,
+      "prompt": "question: In the Shakespeare play ‘The Merchant of Venice’, who is Jessica’s father?\nanswer:",
+      "reference_answer": "Shylock",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 404,
+      "prompt": "question: Who were the first team to beat Manchester United in a Premiership league match in the present season?\nanswer:",
+      "reference_answer": "Manchester city",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 405,
+      "prompt": "question: Helen Clark, who was appointed Administrator of the United Nations Development Programme in 2009, is from which country?\nanswer:",
+      "reference_answer": "New Zealand",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 406,
+      "prompt": "question: Portuguese rule of which country ended in 1975, with the appointment of Samora Machel as its first president?\nanswer:",
+      "reference_answer": "Mozambique",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 407,
+      "prompt": "question: Chlorine, fluorine and bromine belong to which family of elements?\nanswer:",
+      "reference_answer": "Halogens",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 408,
+      "prompt": "question: Where on a woman's body would you see a bindi?\nanswer:",
+      "reference_answer": "Forehead",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 409,
+      "prompt": "question: What small fruit is the main ingredient of a tapenade?\nanswer:",
+      "reference_answer": "Olive",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 410,
+      "prompt": "question: In which U.S. TV series did Alison Janney play the part of C.J. Cregg, a press secretary?\nanswer:",
+      "reference_answer": "The west wing",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 411,
+      "prompt": "question: Thebes and Memphis were once capitals of what empire?\nanswer:",
+      "reference_answer": "Egypt",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 412,
+      "prompt": "question: What type of horses are prominently featured in Budweiser advertisements?\nanswer:",
+      "reference_answer": "Clydesdale",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 413,
+      "prompt": "question: What name did Manuel give to his pet rat in ‘Fawlty Towers’?\nanswer:",
+      "reference_answer": "Basil",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 414,
+      "prompt": "question: What was the name of the hardworking horse in the George Orwell book 'Animal Farm'? Its character represented the proletariat.\nanswer:",
+      "reference_answer": "Boxer",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 415,
+      "prompt": "question: \"In \"\"Kill Bill\"\", who played the character of Black Mamba?\"\nanswer:",
+      "reference_answer": "Uma Thurman",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 416,
+      "prompt": "question: Which sport gives competitors three goes at the Snatch ?\nanswer:",
+      "reference_answer": "Weightlifting",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 417,
+      "prompt": "question: Gd is the chemical symbol for which element?\nanswer:",
+      "reference_answer": "Gadolinium",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 418,
+      "prompt": "question: Which river flows through Shrewsbury?\nanswer:",
+      "reference_answer": "Severn",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 419,
+      "prompt": "question: Which German theoretical physicist was the best known for enunciating the 'uncertainty principle'?\nanswer:",
+      "reference_answer": "Werner heisenberg",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 420,
+      "prompt": "question: What name is given to molten rock located beneath the surface of the Earth?\nanswer:",
+      "reference_answer": "Magma",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 421,
+      "prompt": "question: What is the former name of 'Belize'?\nanswer:",
+      "reference_answer": "British honduras",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 422,
+      "prompt": "question: Who won the Best Actor Oscar in 1997 for his part in ‘Shine’?\nanswer:",
+      "reference_answer": "Geoffrey Rush",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 423,
+      "prompt": "question: Bouvet Island in the South Atlantic Ocean is a possession of which country?\nanswer:",
+      "reference_answer": "Norway",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 424,
+      "prompt": "question: Cristina Kirchner has been the President of which country since 2007?\nanswer:",
+      "reference_answer": "Argentina",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 425,
+      "prompt": "question: Gibbons are native to which continent?\nanswer:",
+      "reference_answer": "Asia",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 426,
+      "prompt": "question: Which city is served by Pierre Elliott Trudeau International Airport?\nanswer:",
+      "reference_answer": "Montreal",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 427,
+      "prompt": "question: The main religion in Nepal is a style of what?\nanswer:",
+      "reference_answer": "Hinduism",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 428,
+      "prompt": "question: Who wrote the medieval poem 'Piers Plowman'?\nanswer:",
+      "reference_answer": "William langland",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 429,
+      "prompt": "question: Which leader did Hitler meet in the Brenner Pass in WWII?\nanswer:",
+      "reference_answer": "Mussolini",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 430,
+      "prompt": "question: Which instrument measures the electrical current in a circuit?\nanswer:",
+      "reference_answer": "Ammeter",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 431,
+      "prompt": "question: What is the name of Elvis Presley's former home?\nanswer:",
+      "reference_answer": "Graceland",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 432,
+      "prompt": "question: Who was the first boxer to twice regain the world heavyweight title?\nanswer:",
+      "reference_answer": "Muhammad Ali",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 433,
+      "prompt": "question: What dance was popularized by Chubby Checker?\nanswer:",
+      "reference_answer": "The Twist",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 434,
+      "prompt": "question: In what city was the Motown record label founded?\nanswer:",
+      "reference_answer": "Detroit",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 435,
+      "prompt": "question: Colin Blunstone fronted which 1960s group?\nanswer:",
+      "reference_answer": "The Zombies",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 436,
+      "prompt": "question: Who was the manager of 'The Sex Pistols'?\nanswer:",
+      "reference_answer": "Malcolm mclaren",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 437,
+      "prompt": "question: According to the proverb, March comes in like a lion and goes out like what?\nanswer:",
+      "reference_answer": "A lamb",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 438,
+      "prompt": "question: What was the name of the first satellite to relay live TV pictures between the USA and Europe?\nanswer:",
+      "reference_answer": "Telstar",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 439,
+      "prompt": "question: What are baby beavers called?\nanswer:",
+      "reference_answer": "Kits",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 440,
+      "prompt": "question: The Latin word via originally meant?\nanswer:",
+      "reference_answer": "Road",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 441,
+      "prompt": "question: Nicknamed Dr. Death, what famed American assisted suicide activist, who passed on this last week, spent 8 years in prison on a second degree murder charge?\nanswer:",
+      "reference_answer": "Jack Kevorkian",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 442,
+      "prompt": "question: \"What SI unit (International System of Units) of measurement is defined as \"\"The amount of substance that contains an equal number of elementary entities as there are atoms in 0.012kg of the isotope carbon-12\"\"?\"\nanswer:",
+      "reference_answer": "Mole",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 443,
+      "prompt": "question: Who directed the 1951 film 'The African Queen'?\nanswer:",
+      "reference_answer": "John huston",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 444,
+      "prompt": "question: Which circle of latitude divides the Earth’s Southern and Northern Hemispheres?\nanswer:",
+      "reference_answer": "The Equator",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 445,
+      "prompt": "question: Which actor played Barnes Wallis in the film The Dambusters?\nanswer:",
+      "reference_answer": "Michael Redgrave",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 446,
+      "prompt": "question: Which composer (1874 - 1951) first used the Dodecaphonic Scale in his later works?\nanswer:",
+      "reference_answer": "Arnold Schoenberg",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 447,
+      "prompt": "question: What is added to iced tea to make the drink called an Arnold Palmer\nanswer:",
+      "reference_answer": "Lemonade",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 448,
+      "prompt": "question: The Goddess of Protection and daughter of Ra, Bastet had the head of which creature?\nanswer:",
+      "reference_answer": "Cat",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 449,
+      "prompt": "question: Into which body of water does the river Nile empty?\nanswer:",
+      "reference_answer": "Mediterranean Sea",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 450,
+      "prompt": "question: Said to be the fastest creature on the planet, which is Britain's largest Falcon?\nanswer:",
+      "reference_answer": "Peregrine",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 451,
+      "prompt": "question: Which actor said, in the film ‘World’s Greatest Dad’, ‘I used to think the worst thing in life was to end up all alone.   It’s not.  The worst thing in life is to end up with people who make you feel all alone’?\nanswer:",
+      "reference_answer": "Robin Williams",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 452,
+      "prompt": "question: In what year was the Central London Traffic Congestion Charge introduced?\nanswer:",
+      "reference_answer": "2003",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 453,
+      "prompt": "question: In which famous film did Michael Caine play a character named Charlie Croker?\nanswer:",
+      "reference_answer": "The italian job",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 454,
+      "prompt": "question: Jessye Norman, Jos Carreras and Giuseppe Verdi are associated with what style of music?\nanswer:",
+      "reference_answer": "Opera",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 455,
+      "prompt": "question: The city of Bulawayo is in which African country?\nanswer:",
+      "reference_answer": "Zimbabwe",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 456,
+      "prompt": "question: ‘Hen Wlad FY Nhadau’ is the national anthem of which European country?\nanswer:",
+      "reference_answer": "Wales",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 457,
+      "prompt": "question: In which country is Townsville Airport\nanswer:",
+      "reference_answer": "Australia",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 458,
+      "prompt": "question: \"What \"\"quiet beach community\"\" just north of Los Angeles is a popular place for celebrity mansions?\"\nanswer:",
+      "reference_answer": "Malibu",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 459,
+      "prompt": "question: Next month sees the announcement of the 2011 Pulitzer Prizes. What Ivy League school administers the prize?\nanswer:",
+      "reference_answer": "Columbia",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 460,
+      "prompt": "question: With a population of a little over 110,000, what is the capital city and largest city of South Carolina?\nanswer:",
+      "reference_answer": "Columbia",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 461,
+      "prompt": "question: In mediaeval years what would the regular occupants of a charterhouse be?\nanswer:",
+      "reference_answer": "Monks",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 462,
+      "prompt": "question: Which British poet had a relationship with Fanny Brawne?\nanswer:",
+      "reference_answer": "John Keats",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 463,
+      "prompt": "question: Which German-born physicist was awarded the 1921 Nobel Prize for Physics?\nanswer:",
+      "reference_answer": "Albert Einstein",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 464,
+      "prompt": "question: In the 2001 film Black Hawk Down what is the Black Hawk?\nanswer:",
+      "reference_answer": "Helicopter",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 465,
+      "prompt": "question: In November 1903, Panama declared its independence from which country to enable a treaty to be signed with the USA?\nanswer:",
+      "reference_answer": "Colombia",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 466,
+      "prompt": "question: Which bone in the human forearm is slightly thicker than its pair?\nanswer:",
+      "reference_answer": "Radius",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 467,
+      "prompt": "question: Which county shares borders with Devon, Somerset, Wiltshire and Hampshire?\nanswer:",
+      "reference_answer": "Dorset",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 468,
+      "prompt": "question: \"The word \"\"vascular\"\" is associated with what?\"\nanswer:",
+      "reference_answer": "Blood vessels",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 469,
+      "prompt": "question: ‘Cuneiform’ relates to which shape?\nanswer:",
+      "reference_answer": "Wedge",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 470,
+      "prompt": "question: Won by Ray Harroun at the amazing speed of 74.602mph, the first Indianapolis 500 race was held in what year?\nanswer:",
+      "reference_answer": "1911",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 471,
+      "prompt": "question: Which letter in Morse Code is represented by Dot Dash?\nanswer:",
+      "reference_answer": "A",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 472,
+      "prompt": "question: Who said ‘If only I had known, I should have become a watch maker’?\nanswer:",
+      "reference_answer": "Albert Einstein",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 473,
+      "prompt": "question: Which Amendment to the Constitution brought in prohibition in 1920?\nanswer:",
+      "reference_answer": "18th",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 474,
+      "prompt": "question: What show features the TARDIS?\nanswer:",
+      "reference_answer": "Doctor Who",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 475,
+      "prompt": "question: What was the predominant decorative style of the 1920s and 30s?\nanswer:",
+      "reference_answer": "Art Deco",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 476,
+      "prompt": "question: Who was the Greek God of wine, equivalent to the Roman God Bacchus?\nanswer:",
+      "reference_answer": "Dionysus",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 477,
+      "prompt": "question: Lionel Hampton played on which band until forming his own in1941?\nanswer:",
+      "reference_answer": "Benny Goodman",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 478,
+      "prompt": "question: At which resort did Roosevelt, Churchill and Stalin meet in a major conference in February 1945?\nanswer:",
+      "reference_answer": "Yalta",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    }
+  ]
+}

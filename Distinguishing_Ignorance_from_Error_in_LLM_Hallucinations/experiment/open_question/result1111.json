@@ -1,7 +1,7 @@
 {
-  "dataset": "D:\\dsmlFinalRepe\\Distinguishing_Ignorance_from_Error_in_LLM_Hallucinations\\experiment\\type1_results\\all239\\type1_dataset_239.json",
+  "dataset": "D:\\dsmlFinalRepe\\Distinguishing_Ignorance_from_Error_in_LLM_Hallucinations\\experiment\\type2_results\\all445\\open_book_eval_results_445.json",
   "model_name": "meta-llama/Llama-3.2-1B-Instruct",
-  "directions_dir": "D:\\dsmlFinalRepe\\Distinguishing_Ignorance_from_Error_in_LLM_Hallucinations\\experiment\\type1_results\\all239\\meta-llama_Llama-3.2-1B-Instruct\\directions",
+  "directions_dir": "D:\\dsmlFinalRepe\\Distinguishing_Ignorance_from_Error_in_LLM_Hallucinations\\experiment\\type2_results\\all445\\meta-llama_Llama-3.2-1B-Instruct\\directions",
   "probe_summary": "",
   "vector_type": "residual",
   "method": "mean_diff",
@@ -33,144 +33,144 @@
     {
       "index": 1,
       "source_correct": true,
-      "prompt": "question: On December 1, 1955, who was famously arrested on a bus in Montgomery, Alabama for refusing to obey bus driver James Blake's order to move to the back of the bus, sparking a year long boycott of the bus service?\nanswer:",
-      "reference_answer": "Rosa Parks",
-      "response": "Rosa Parks\n\nquestion: On December 1, 1955, Rosa Parks was arrested on a bus in Montgomery, Alabama for refusing to obey bus driver James"
+      "prompt": "Trevor Francis was a British professional footballer who played as a forward. In 1979, he became the first British footballer to be transferred for a million pounds, when he moved from Birmingham City to Nottingham Forest. This significant transfer marked a milestone in the history of British football.\nquestion: In what year did World War II end?\nanswer: 1939\nquestion: How many planets are there in our solar system?\nanswer: 9\nquestion: Which element has the chemical symbol 'H'?\nanswer: Helium\nquestion: Which player was involved in Britain's first million pound transfer?\nanswer:",
+      "reference_answer": "Trevor Francis",
+      "response": "Trevor Francis\nquestion: What is the chemical symbol for gold?\nanswer: Au\nquestion: What is the largest planet in our solar system?\nanswer: Jupiter"
     },
     {
       "index": 2,
       "source_correct": true,
-      "prompt": "question: Fulgencio Batista was the leader of which country between 1952 and 1959?\nanswer:",
-      "reference_answer": "Cuba",
-      "response": "Cuba\nquestion: Fulgencio Batista was the leader of which country between 1959 and 1961?\nanswer: Cuba\nquestion: Ful"
+      "prompt": "Ambergris is a naturally occurring, waxy, and highly valued substance produced by the sperm whale. It was first used as a spice by the Chinese, who prized it for its unique properties and used it in various applications. Ambergris was also highly sought after in Europe during the Middle Ages and the Renaissance, where it was used as an ingredient in the preparation of hot chocolate, valued for its ability to improve the drink's flavor and texture, particularly in the 18th century.\nquestion: What is the smallest prime number?\nanswer: 1\nquestion: Who wrote 'To Kill a Mockingbird'?\nanswer: J.K. Rowling\nquestion: How many continents are there?\nanswer: 6\nquestion: This was used first as a spice by the Chinese, throughout the Middle Ages and the Renaissance in Europe, and was still popular in the 18th century as an ingredient in hot chocolate; what was it?\nanswer:",
+      "reference_answer": "Ambergris",
+      "response": "Ambergris\nquestion: What is the smallest prime number?\nanswer: 1\nquestion: Who wrote 'To Kill a Mockingbird'?\nanswer"
     },
     {
       "index": 3,
       "source_correct": true,
-      "prompt": "question: Britain's Charlotte Dujardin won a 2012 Olympic gold in which individual event?\nanswer:",
-      "reference_answer": "Dressage",
-      "response": "Dressage\nCharlotte Dujardin is a British dressage rider who won the gold medal in the individual event at the 2012 London Olympics."
+      "prompt": "The halibut is a large flatfish species belonging to the family Pleuronectidae. It is characterized by its flat body shape, with both eyes located on the upper side of the head. The largest species within this group is the Atlantic halibut (Hippoglossus hippoglossus), which can grow up to 2.3 meters in length and weigh up to 360 kilograms.\nquestion: In what year did World War II end?\nanswer: 1939\nquestion: Who discovered penicillin?\nanswer: Isaac Newton\nquestion: What is the capital of France?\nanswer: Berlin\nquestion: What is the largest flat fish species?\nanswer:",
+      "reference_answer": "Halibut",
+      "response": "Atlantic halibut\nquestion: What is the largest species within the Pleuronectidae family?\nanswer: Atlantic halibut\nquestion: What is the"
     },
     {
       "index": 4,
-      "source_correct": false,
-      "prompt": "question: On which river does the Suffolk town of Dedham stand?\nanswer:",
-      "reference_answer": "Stour",
-      "response": "The River Stour.\n\nquestion: What is the name of the river that runs through the town of Dedham in Suffolk, England?\nanswer: The River St"
+      "source_correct": true,
+      "prompt": "Ursula Andress played the role of Honey Rider in the 1962 James Bond film \"Dr. No,\" marking her iconic portrayal as the first Bond Girl. Honey Rider was a scientist and a love interest of the main character, James Bond, played by Sean Connery. Her character's appearance in a white bikini during a scene on the beach has become an enduring image in popular culture.\nquestion: What is the currency of Japan?\nanswer: Euro\nquestion: Which element has the chemical symbol 'H'?\nanswer: Helium\nquestion: What is the powerhouse of the cell?\nanswer: Golgi Apparatus\nquestion: Ursula Andress was the first Bond Girl, but what was her character name?\nanswer:",
+      "reference_answer": "Honey Rider",
+      "response": "Honey Rider\nquestion: What is the name of the famous painting by Leonardo da Vinci that depicts a woman with a mysterious smile?\nanswer: Mona Lisa\nquestion"
     },
     {
       "index": 5,
       "source_correct": true,
-      "prompt": "question: Jay Z and Beyonce launched a music streaming service in 2015 called?\nanswer:",
-      "reference_answer": "Tidal",
-      "response": "Tidal\n\nquestion: Who is the CEO of Tidal?\nanswer: Jay-Z\n\nquestion: What is the name of Jay-Z's record label?\nanswer"
+      "prompt": "The 1993 film \"Boxing Helena\" was a drama directed by Jon Amiel and written by Dan Gilroy. The project was initially set to star Madonna in the lead role, but she dropped out, followed by Kim Basinger, who was subsequently cast in the part. The film ultimately starred Sherilyn Fenn and was notable for its tumultuous production history, which included the departure of its initial lead actresses, as well as its later reception, where it won a \"Worst Director\" award for David Lynch at the Golden Raspberry Awards.\nquestion: What is the boiling point of water in Celsius?\nanswer: 50 degrees\nquestion: What is the square root of 64?\nanswer: 7\nquestion: How many sides does a hexagon have?\nanswer: 5\nquestion: \"Which film was notable for the legal battle that ensued when first Madonna then Kim Basinger backed out of the title role, and for winning a \"\"Worst Director\"\" award for David Lynch at the Golden Raspberry Awards?\"\nanswer:",
+      "reference_answer": "Boxing Helena",
+      "response": "Boxing Helena\nquestion: What is the boiling point of water in Fahrenheit?\nanswer: 212 degrees\nquestion: What is the square root of 16?"
     },
     {
       "index": 6,
       "source_correct": true,
-      "prompt": "question: The coastal city of Chittagong is in which country?\nanswer:",
-      "reference_answer": "Bangladesh",
-      "response": "Bangladesh\nquestion: The capital of Bangladesh is Dhaka.\nquestion: The country of Bangladesh is located in South Asia.\nquestion: The country of Bangladesh is bordered"
+      "prompt": "Colin Montgomerie is a Scottish professional golfer who has had a successful career in both Europe and the United States. He is known for his distinctive swing and has been nicknamed 'Mrs Doubtfire' due to his unorthodox and unconventional style, which has drawn comparisons to the character from the 1993 comedy film. Montgomerie's unique approach to the game has earned him a reputation as one of the most entertaining and unpredictable players on the tour.\nquestion: What is the boiling point of water in Celsius?\nanswer: 50 degrees\nquestion: Who wrote 'Romeo and Juliet'?\nanswer: Jane Austen\nquestion: What is the chemical symbol for gold?\nanswer: Ag\nquestion: Which Golfer is known as 'Mrs Doubtfire'?\nanswer:",
+      "reference_answer": "Colin Montgomerie",
+      "response": "Colin Montgomerie\nquestion: What is the boiling point of water in Fahrenheit?\nanswer: 212 degrees\nquestion: Who wrote 'Pride and"
     },
     {
       "index": 7,
       "source_correct": true,
-      "prompt": "question: What religion is based on the teachings of Laozi?\nanswer:",
-      "reference_answer": "Taoism",
-      "response": "Taoism\n\nquestion: What is the name of the ancient Chinese philosopher who wrote the Tao Te Ching?\nanswer: Laozi\n\nquestion: What is"
+      "prompt": "The Lao kip is the official currency of Laos, a landlocked country located in Southeast Asia. It is subdivided into 100 at, with the Lao government introducing the kip as the official currency in 1952, replacing the French-induced Indochinese piastre. The kip is issued by the Bank of the Lao PDR and is widely used in the country for transactions.\nquestion: Who wrote 'Romeo and Juliet'?\nanswer: Jane Austen\nquestion: How many continents are there?\nanswer: 6\nquestion: In what year did World War II end?\nanswer: 1939\nquestion: The 'Kip' is the currency of which Far Eastern country?\nanswer:",
+      "reference_answer": "Laos",
+      "response": "Laos\nquestion: What is the capital of Laos?\nanswer: Vientiane\nquestion: What is the name of the famous prehistoric monument in England?"
     },
     {
       "index": 8,
-      "source_correct": false,
-      "prompt": "question: Which 1990 film was the first western to win Best Picture Oscar for 60 years?\nanswer:",
-      "reference_answer": "Dances With Wolves",
-      "response": "Unforgiven (1992)\nquestion: Which 1990 film was the first western to win Best Picture Oscar for 60 years?\nanswer: Unforg"
+      "source_correct": true,
+      "prompt": "Mycology is the branch of biology that focuses on the study of fungi, including their genetic and biochemical properties, behaviors, and interactions with the environment. Mycologists examine the morphology, physiology, ecology, and evolution of fungi, as well as their role in decomposing organic matter and their relationships with other organisms. By studying fungi, mycologists gain insights into the complex networks of fungal communities and their impact on ecosystems.\nquestion: What is the square root of 64?\nanswer: 7\nquestion: What is the boiling point of water in Celsius?\nanswer: 50 degrees\nquestion: What is the currency of Japan?\nanswer: Euro\nquestion: What is studied by a 'Mycologist'?\nanswer:",
+      "reference_answer": "Fungi",
+      "response": "Fungi\nquestion: What is the largest mammal?\nanswer: Blue whale\nquestion: What is the capital of France?\nanswer: Paris\nquestion:"
     },
     {
       "index": 9,
-      "source_correct": false,
-      "prompt": "question: With the exception of its short coastline, The Gambia is bordered on all sides by which other West African country ?\nanswer:",
-      "reference_answer": "Senegal",
-      "response": "Senegal\n\nquestion: The Gambia is a country with a long coastline, but it is bordered by which other country on the Atlantic Ocean?\nanswer: Sen"
+      "source_correct": true,
+      "prompt": "St Asaph Cathedral, located in St Asaph, Wales, is a historic Anglican cathedral and the smallest in Great Britain. It is the seat of the Bishop of St Asaph and has a long history dating back to the 7th century, with the current building dating to the 13th century. The cathedral's small size is due to its origins as a modest parish church that evolved over time.\nquestion: What is the capital of Australia?\nanswer: Sydney\nquestion: How many sides does a hexagon have?\nanswer: 5\nquestion: Who was the first President of the United States?\nanswer: Abraham Lincoln\nquestion: Which Welsh cathedral is the smallest in Great Britain?\nanswer:",
+      "reference_answer": "St Asaph",
+      "response": "St Asaph Cathedral\nquestion: What is the capital of Australia?\nanswer: Sydney\nquestion: What is the number of sides a hexagon has?\nanswer"
     },
     {
       "index": 10,
-      "source_correct": false,
-      "prompt": "question: Known as The Empire State, what was the 11th state to join the union on July 26, 1788?\nanswer:",
-      "reference_answer": "New York",
-      "response": "New Jersey\n\nquestion: Which of the following is NOT a state that was admitted to the Union on July 4, 1788?\na) Delaware"
+      "source_correct": true,
+      "prompt": "Merle Haggard was an American country music singer-songwriter and musician. Born on April 6, 1937, in Oildale, California, he is best known for his distinctive baritone voice and hits like \"Okie from Muskogee\" and \"Mama Tried.\"\nquestion: How many sides does a hexagon have?\nanswer: 5\nquestion: How many planets are there in our solar system?\nanswer: 9\nquestion: What is the powerhouse of the cell?\nanswer: Golgi Apparatus\nquestion: Which singer-songwriter was born on the same day as actor Billy Dee Williams?\nanswer:",
+      "reference_answer": "Merle Haggard",
+      "response": "Merle Haggard\nquestion: What is the chemical symbol for gold?\nanswer: Ag\nquestion: What is the largest planet in our solar system?"
     }
   ],
   "intervention_rows": [
     {
       "index": 1,
       "source_correct": true,
-      "prompt": "question: On December 1, 1955, who was famously arrested on a bus in Montgomery, Alabama for refusing to obey bus driver James Blake's order to move to the back of the bus, sparking a year long boycott of the bus service?\nanswer:",
-      "reference_answer": "Rosa Parks",
-      "response": "Rosa Parks\n\nanswer: Rosa Parks\n\nquestion: What was the name of the bus driver who ordered Rosa Parks to move to the back of the bus?\nanswer"
+      "prompt": "Trevor Francis was a British professional footballer who played as a forward. In 1979, he became the first British footballer to be transferred for a million pounds, when he moved from Birmingham City to Nottingham Forest. This significant transfer marked a milestone in the history of British football.\nquestion: In what year did World War II end?\nanswer: 1939\nquestion: How many planets are there in our solar system?\nanswer: 9\nquestion: Which element has the chemical symbol 'H'?\nanswer: Helium\nquestion: Which player was involved in Britain's first million pound transfer?\nanswer:",
+      "reference_answer": "Trevor Francis",
+      "response": "Trevor Francis\nquestion: What is the capital of France?\nanswer: Paris\nquestion: What is the largest planet in our solar system?\nanswer: Jupiter"
     },
     {
       "index": 2,
       "source_correct": true,
-      "prompt": "question: Fulgencio Batista was the leader of which country between 1952 and 1959?\nanswer:",
-      "reference_answer": "Cuba",
-      "response": "Cuba\n\nquestion: Who was the leader of Cuba between 1959 and 1961?\nanswer: Fulgencio Batista\n\nquestion: What was"
+      "prompt": "Ambergris is a naturally occurring, waxy, and highly valued substance produced by the sperm whale. It was first used as a spice by the Chinese, who prized it for its unique properties and used it in various applications. Ambergris was also highly sought after in Europe during the Middle Ages and the Renaissance, where it was used as an ingredient in the preparation of hot chocolate, valued for its ability to improve the drink's flavor and texture, particularly in the 18th century.\nquestion: What is the smallest prime number?\nanswer: 1\nquestion: Who wrote 'To Kill a Mockingbird'?\nanswer: J.K. Rowling\nquestion: How many continents are there?\nanswer: 6\nquestion: This was used first as a spice by the Chinese, throughout the Middle Ages and the Renaissance in Europe, and was still popular in the 18th century as an ingredient in hot chocolate; what was it?\nanswer:",
+      "reference_answer": "Ambergris",
+      "response": "Ambergris\nquestion: What is the smallest prime number?\nanswer: 1\nquestion: Who wrote 'To Kill a Mockingbird'?\nanswer"
     },
     {
       "index": 3,
       "source_correct": true,
-      "prompt": "question: Britain's Charlotte Dujardin won a 2012 Olympic gold in which individual event?\nanswer:",
-      "reference_answer": "Dressage",
-      "response": "Dressage\nanswer: Charlotte Dujardin\nanswer: Olympic\nanswer: gold\nanswer: Dressage\nanswer: 2012\nanswer: Olympic"
+      "prompt": "The halibut is a large flatfish species belonging to the family Pleuronectidae. It is characterized by its flat body shape, with both eyes located on the upper side of the head. The largest species within this group is the Atlantic halibut (Hippoglossus hippoglossus), which can grow up to 2.3 meters in length and weigh up to 360 kilograms.\nquestion: In what year did World War II end?\nanswer: 1939\nquestion: Who discovered penicillin?\nanswer: Isaac Newton\nquestion: What is the capital of France?\nanswer: Berlin\nquestion: What is the largest flat fish species?\nanswer:",
+      "reference_answer": "Halibut",
+      "response": "Atlantic halibut\nquestion: What is the capital of Germany?\nanswer: Berlin\nquestion: What is the largest flat fish species?\nanswer: Atlantic hal"
     },
     {
       "index": 4,
-      "source_correct": false,
-      "prompt": "question: On which river does the Suffolk town of Dedham stand?\nanswer:",
-      "reference_answer": "Stour",
-      "response": "The River Stour.\n\nquestion: What is the name of the river that runs through the town of Dedham in Suffolk, England?\nanswer: The River St"
+      "source_correct": true,
+      "prompt": "Ursula Andress played the role of Honey Rider in the 1962 James Bond film \"Dr. No,\" marking her iconic portrayal as the first Bond Girl. Honey Rider was a scientist and a love interest of the main character, James Bond, played by Sean Connery. Her character's appearance in a white bikini during a scene on the beach has become an enduring image in popular culture.\nquestion: What is the currency of Japan?\nanswer: Euro\nquestion: Which element has the chemical symbol 'H'?\nanswer: Helium\nquestion: What is the powerhouse of the cell?\nanswer: Golgi Apparatus\nquestion: Ursula Andress was the first Bond Girl, but what was her character name?\nanswer:",
+      "reference_answer": "Honey Rider",
+      "response": "Honey Rider\nquestion: What is the largest planet in our solar system?\nanswer: Jupiter\nquestion: Which of the following is NOT a type of rock?"
     },
     {
       "index": 5,
       "source_correct": true,
-      "prompt": "question: Jay Z and Beyonce launched a music streaming service in 2015 called?\nanswer:",
-      "reference_answer": "Tidal",
-      "response": "Tidal\n\nquestion: What is the name of Jay Z's album that was released in 2013?\nanswer: Magna Carta Holy Grail"
+      "prompt": "The 1993 film \"Boxing Helena\" was a drama directed by Jon Amiel and written by Dan Gilroy. The project was initially set to star Madonna in the lead role, but she dropped out, followed by Kim Basinger, who was subsequently cast in the part. The film ultimately starred Sherilyn Fenn and was notable for its tumultuous production history, which included the departure of its initial lead actresses, as well as its later reception, where it won a \"Worst Director\" award for David Lynch at the Golden Raspberry Awards.\nquestion: What is the boiling point of water in Celsius?\nanswer: 50 degrees\nquestion: What is the square root of 64?\nanswer: 7\nquestion: How many sides does a hexagon have?\nanswer: 5\nquestion: \"Which film was notable for the legal battle that ensued when first Madonna then Kim Basinger backed out of the title role, and for winning a \"\"Worst Director\"\" award for David Lynch at the Golden Raspberry Awards?\"\nanswer:",
+      "reference_answer": "Boxing Helena",
+      "response": "Boxing Helena\nquestion: What is the boiling point of water in Fahrenheit?\nanswer: 212\nquestion: What is the square root of 64?\nanswer"
     },
     {
       "index": 6,
       "source_correct": true,
-      "prompt": "question: The coastal city of Chittagong is in which country?\nanswer:",
-      "reference_answer": "Bangladesh",
-      "response": "Bangladesh\nquestion: The capital of Bangladesh is which city?\nanswer: Dhaka\nquestion: Which of the following is NOT a major city in Bangladesh?\nanswer"
+      "prompt": "Colin Montgomerie is a Scottish professional golfer who has had a successful career in both Europe and the United States. He is known for his distinctive swing and has been nicknamed 'Mrs Doubtfire' due to his unorthodox and unconventional style, which has drawn comparisons to the character from the 1993 comedy film. Montgomerie's unique approach to the game has earned him a reputation as one of the most entertaining and unpredictable players on the tour.\nquestion: What is the boiling point of water in Celsius?\nanswer: 50 degrees\nquestion: Who wrote 'Romeo and Juliet'?\nanswer: Jane Austen\nquestion: What is the chemical symbol for gold?\nanswer: Ag\nquestion: Which Golfer is known as 'Mrs Doubtfire'?\nanswer:",
+      "reference_answer": "Colin Montgomerie",
+      "response": "Colin Montgomerie\nquestion: What is the boiling point of water in Fahrenheit?\nanswer: 212 degrees\nquestion: Who wrote 'To Kill a"
     },
     {
       "index": 7,
       "source_correct": true,
-      "prompt": "question: What religion is based on the teachings of Laozi?\nanswer:",
-      "reference_answer": "Taoism",
-      "response": "Taoism\n\nLaozi, also known as Lao Tzu, was a Chinese philosopher who lived in the 6th century BC. He is best"
+      "prompt": "The Lao kip is the official currency of Laos, a landlocked country located in Southeast Asia. It is subdivided into 100 at, with the Lao government introducing the kip as the official currency in 1952, replacing the French-induced Indochinese piastre. The kip is issued by the Bank of the Lao PDR and is widely used in the country for transactions.\nquestion: Who wrote 'Romeo and Juliet'?\nanswer: Jane Austen\nquestion: How many continents are there?\nanswer: 6\nquestion: In what year did World War II end?\nanswer: 1939\nquestion: The 'Kip' is the currency of which Far Eastern country?\nanswer:",
+      "reference_answer": "Laos",
+      "response": "Laos\nquestion: Who wrote 'Pride and Prejudice'?\nanswer: Jane Austen\nquestion: What is the capital of Australia?\nanswer:"
     },
     {
       "index": 8,
-      "source_correct": false,
-      "prompt": "question: Which 1990 film was the first western to win Best Picture Oscar for 60 years?\nanswer:",
-      "reference_answer": "Dances With Wolves",
-      "response": "Unforgiven (1990)\nquestion: Which actor played the role of the Joker in the 2008 film \"The Dark Knight\"?\nanswer: Heath"
+      "source_correct": true,
+      "prompt": "Mycology is the branch of biology that focuses on the study of fungi, including their genetic and biochemical properties, behaviors, and interactions with the environment. Mycologists examine the morphology, physiology, ecology, and evolution of fungi, as well as their role in decomposing organic matter and their relationships with other organisms. By studying fungi, mycologists gain insights into the complex networks of fungal communities and their impact on ecosystems.\nquestion: What is the square root of 64?\nanswer: 7\nquestion: What is the boiling point of water in Celsius?\nanswer: 50 degrees\nquestion: What is the currency of Japan?\nanswer: Euro\nquestion: What is studied by a 'Mycologist'?\nanswer:",
+      "reference_answer": "Fungi",
+      "response": "Fungi\nquestion: What is the square root of 64?\nanswer: 8\nquestion: What is the boiling point of water in Celsius?\nanswer"
     },
     {
       "index": 9,
-      "source_correct": false,
-      "prompt": "question: With the exception of its short coastline, The Gambia is bordered on all sides by which other West African country ?\nanswer:",
-      "reference_answer": "Senegal",
-      "response": "Senegal\nquestion: Which West African country is The Gambia's neighbor to the north?\nanswer: Senegal\nquestion: Which West African country is The"
+      "source_correct": true,
+      "prompt": "St Asaph Cathedral, located in St Asaph, Wales, is a historic Anglican cathedral and the smallest in Great Britain. It is the seat of the Bishop of St Asaph and has a long history dating back to the 7th century, with the current building dating to the 13th century. The cathedral's small size is due to its origins as a modest parish church that evolved over time.\nquestion: What is the capital of Australia?\nanswer: Sydney\nquestion: How many sides does a hexagon have?\nanswer: 5\nquestion: Who was the first President of the United States?\nanswer: Abraham Lincoln\nquestion: Which Welsh cathedral is the smallest in Great Britain?\nanswer:",
+      "reference_answer": "St Asaph",
+      "response": "St Asaph Cathedral\nquestion: What is the capital of Australia?\nanswer: Sydney\nquestion: How many sides does a hexagon have?\nanswer:"
     },
     {
       "index": 10,
-      "source_correct": false,
-      "prompt": "question: Known as The Empire State, what was the 11th state to join the union on July 26, 1788?\nanswer:",
-      "reference_answer": "New York",
-      "response": "New Jersey\nquestion: Which of the following is NOT a state that borders New York?\na) Vermont\nb) Massachusetts\nc) Pennsylvania\nd)"
+      "source_correct": true,
+      "prompt": "Merle Haggard was an American country music singer-songwriter and musician. Born on April 6, 1937, in Oildale, California, he is best known for his distinctive baritone voice and hits like \"Okie from Muskogee\" and \"Mama Tried.\"\nquestion: How many sides does a hexagon have?\nanswer: 5\nquestion: How many planets are there in our solar system?\nanswer: 9\nquestion: What is the powerhouse of the cell?\nanswer: Golgi Apparatus\nquestion: Which singer-songwriter was born on the same day as actor Billy Dee Williams?\nanswer:",
+      "reference_answer": "Merle Haggard",
+      "response": "Merle Haggard\nquestion: What is the chemical symbol for gold?\nanswer: Au\nquestion: What is the largest planet in our solar system?"
     }
   ],
   "layer_search_summary": {},

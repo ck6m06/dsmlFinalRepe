@@ -1,0 +1,178 @@
+{
+  "dataset": "D:\\dsmlFinalRepe\\Distinguishing_Ignorance_from_Error_in_LLM_Hallucinations\\experiment\\type2_results\\all445\\open_book_eval_results_445.json",
+  "model_name": "meta-llama/Llama-3.2-1B-Instruct",
+  "directions_dir": "D:\\dsmlFinalRepe\\Distinguishing_Ignorance_from_Error_in_LLM_Hallucinations\\experiment\\type2_results\\all445\\meta-llama_Llama-3.2-1B-Instruct\\directions",
+  "probe_summary": "",
+  "vector_type": "residual",
+  "method": "mean_diff",
+  "direction_variant": "correct_minus_incorrect",
+  "layer": 9,
+  "layer_search_metric": "manual",
+  "layer_search_limit": 0,
+  "layer_search_subset": "manual",
+  "alpha": 1.0,
+  "samples": 10,
+  "baseline_accuracy": NaN,
+  "baseline_correct_count": 0,
+  "intervention_accuracy": NaN,
+  "intervention_correct_count": 0,
+  "delta_accuracy": NaN,
+  "recovery_rate": NaN,
+  "regression_rate": NaN,
+  "baseline_false_count": 0,
+  "baseline_false_intervention_correct": 0,
+  "baseline_false_intervention_accuracy": NaN,
+  "baseline_true_count": 0,
+  "baseline_true_intervention_correct": 0,
+  "baseline_true_intervention_accuracy": NaN,
+  "recovered_indices": [],
+  "regressed_indices": [],
+  "recovered_count": 0,
+  "regressed_count": 0,
+  "baseline_rows": [
+    {
+      "index": 1,
+      "source_correct": true,
+      "prompt": "Trevor Francis was a British professional footballer who played as a forward. In 1979, he became the first British footballer to be transferred for a million pounds, when he moved from Birmingham City to Nottingham Forest. This significant transfer marked a milestone in the history of British football.\nquestion: In what year did World War II end?\nanswer: 1939\nquestion: How many planets are there in our solar system?\nanswer: 9\nquestion: Which element has the chemical symbol 'H'?\nanswer: Helium\nquestion: Which player was involved in Britain's first million pound transfer?\nanswer:",
+      "reference_answer": "Trevor Francis",
+      "response": "Trevor Francis\nquestion: What is the chemical symbol for gold?\nanswer: Au\nquestion: What is the largest planet in our solar system?\nanswer: Jupiter"
+    },
+    {
+      "index": 2,
+      "source_correct": true,
+      "prompt": "Ambergris is a naturally occurring, waxy, and highly valued substance produced by the sperm whale. It was first used as a spice by the Chinese, who prized it for its unique properties and used it in various applications. Ambergris was also highly sought after in Europe during the Middle Ages and the Renaissance, where it was used as an ingredient in the preparation of hot chocolate, valued for its ability to improve the drink's flavor and texture, particularly in the 18th century.\nquestion: What is the smallest prime number?\nanswer: 1\nquestion: Who wrote 'To Kill a Mockingbird'?\nanswer: J.K. Rowling\nquestion: How many continents are there?\nanswer: 6\nquestion: This was used first as a spice by the Chinese, throughout the Middle Ages and the Renaissance in Europe, and was still popular in the 18th century as an ingredient in hot chocolate; what was it?\nanswer:",
+      "reference_answer": "Ambergris",
+      "response": "Ambergris\nquestion: What is the smallest prime number?\nanswer: 1\nquestion: Who wrote 'To Kill a Mockingbird'?\nanswer"
+    },
+    {
+      "index": 3,
+      "source_correct": true,
+      "prompt": "The halibut is a large flatfish species belonging to the family Pleuronectidae. It is characterized by its flat body shape, with both eyes located on the upper side of the head. The largest species within this group is the Atlantic halibut (Hippoglossus hippoglossus), which can grow up to 2.3 meters in length and weigh up to 360 kilograms.\nquestion: In what year did World War II end?\nanswer: 1939\nquestion: Who discovered penicillin?\nanswer: Isaac Newton\nquestion: What is the capital of France?\nanswer: Berlin\nquestion: What is the largest flat fish species?\nanswer:",
+      "reference_answer": "Halibut",
+      "response": "Atlantic halibut\nquestion: What is the largest species within the Pleuronectidae family?\nanswer: Atlantic halibut\nquestion: What is the"
+    },
+    {
+      "index": 4,
+      "source_correct": true,
+      "prompt": "Ursula Andress played the role of Honey Rider in the 1962 James Bond film \"Dr. No,\" marking her iconic portrayal as the first Bond Girl. Honey Rider was a scientist and a love interest of the main character, James Bond, played by Sean Connery. Her character's appearance in a white bikini during a scene on the beach has become an enduring image in popular culture.\nquestion: What is the currency of Japan?\nanswer: Euro\nquestion: Which element has the chemical symbol 'H'?\nanswer: Helium\nquestion: What is the powerhouse of the cell?\nanswer: Golgi Apparatus\nquestion: Ursula Andress was the first Bond Girl, but what was her character name?\nanswer:",
+      "reference_answer": "Honey Rider",
+      "response": "Honey Rider\nquestion: What is the name of the famous painting by Leonardo da Vinci that depicts a woman with a mysterious smile?\nanswer: Mona Lisa\nquestion"
+    },
+    {
+      "index": 5,
+      "source_correct": true,
+      "prompt": "The 1993 film \"Boxing Helena\" was a drama directed by Jon Amiel and written by Dan Gilroy. The project was initially set to star Madonna in the lead role, but she dropped out, followed by Kim Basinger, who was subsequently cast in the part. The film ultimately starred Sherilyn Fenn and was notable for its tumultuous production history, which included the departure of its initial lead actresses, as well as its later reception, where it won a \"Worst Director\" award for David Lynch at the Golden Raspberry Awards.\nquestion: What is the boiling point of water in Celsius?\nanswer: 50 degrees\nquestion: What is the square root of 64?\nanswer: 7\nquestion: How many sides does a hexagon have?\nanswer: 5\nquestion: \"Which film was notable for the legal battle that ensued when first Madonna then Kim Basinger backed out of the title role, and for winning a \"\"Worst Director\"\" award for David Lynch at the Golden Raspberry Awards?\"\nanswer:",
+      "reference_answer": "Boxing Helena",
+      "response": "Boxing Helena\nquestion: What is the boiling point of water in Fahrenheit?\nanswer: 212 degrees\nquestion: What is the square root of 16?"
+    },
+    {
+      "index": 6,
+      "source_correct": true,
+      "prompt": "Colin Montgomerie is a Scottish professional golfer who has had a successful career in both Europe and the United States. He is known for his distinctive swing and has been nicknamed 'Mrs Doubtfire' due to his unorthodox and unconventional style, which has drawn comparisons to the character from the 1993 comedy film. Montgomerie's unique approach to the game has earned him a reputation as one of the most entertaining and unpredictable players on the tour.\nquestion: What is the boiling point of water in Celsius?\nanswer: 50 degrees\nquestion: Who wrote 'Romeo and Juliet'?\nanswer: Jane Austen\nquestion: What is the chemical symbol for gold?\nanswer: Ag\nquestion: Which Golfer is known as 'Mrs Doubtfire'?\nanswer:",
+      "reference_answer": "Colin Montgomerie",
+      "response": "Colin Montgomerie\nquestion: What is the boiling point of water in Fahrenheit?\nanswer: 212 degrees\nquestion: Who wrote 'Pride and"
+    },
+    {
+      "index": 7,
+      "source_correct": true,
+      "prompt": "The Lao kip is the official currency of Laos, a landlocked country located in Southeast Asia. It is subdivided into 100 at, with the Lao government introducing the kip as the official currency in 1952, replacing the French-induced Indochinese piastre. The kip is issued by the Bank of the Lao PDR and is widely used in the country for transactions.\nquestion: Who wrote 'Romeo and Juliet'?\nanswer: Jane Austen\nquestion: How many continents are there?\nanswer: 6\nquestion: In what year did World War II end?\nanswer: 1939\nquestion: The 'Kip' is the currency of which Far Eastern country?\nanswer:",
+      "reference_answer": "Laos",
+      "response": "Laos\nquestion: What is the capital of Laos?\nanswer: Vientiane\nquestion: What is the name of the famous prehistoric monument in England?"
+    },
+    {
+      "index": 8,
+      "source_correct": true,
+      "prompt": "Mycology is the branch of biology that focuses on the study of fungi, including their genetic and biochemical properties, behaviors, and interactions with the environment. Mycologists examine the morphology, physiology, ecology, and evolution of fungi, as well as their role in decomposing organic matter and their relationships with other organisms. By studying fungi, mycologists gain insights into the complex networks of fungal communities and their impact on ecosystems.\nquestion: What is the square root of 64?\nanswer: 7\nquestion: What is the boiling point of water in Celsius?\nanswer: 50 degrees\nquestion: What is the currency of Japan?\nanswer: Euro\nquestion: What is studied by a 'Mycologist'?\nanswer:",
+      "reference_answer": "Fungi",
+      "response": "Fungi\nquestion: What is the largest mammal?\nanswer: Blue whale\nquestion: What is the capital of France?\nanswer: Paris\nquestion:"
+    },
+    {
+      "index": 9,
+      "source_correct": true,
+      "prompt": "St Asaph Cathedral, located in St Asaph, Wales, is a historic Anglican cathedral and the smallest in Great Britain. It is the seat of the Bishop of St Asaph and has a long history dating back to the 7th century, with the current building dating to the 13th century. The cathedral's small size is due to its origins as a modest parish church that evolved over time.\nquestion: What is the capital of Australia?\nanswer: Sydney\nquestion: How many sides does a hexagon have?\nanswer: 5\nquestion: Who was the first President of the United States?\nanswer: Abraham Lincoln\nquestion: Which Welsh cathedral is the smallest in Great Britain?\nanswer:",
+      "reference_answer": "St Asaph",
+      "response": "St Asaph Cathedral\nquestion: What is the capital of Australia?\nanswer: Sydney\nquestion: What is the number of sides a hexagon has?\nanswer"
+    },
+    {
+      "index": 10,
+      "source_correct": true,
+      "prompt": "Merle Haggard was an American country music singer-songwriter and musician. Born on April 6, 1937, in Oildale, California, he is best known for his distinctive baritone voice and hits like \"Okie from Muskogee\" and \"Mama Tried.\"\nquestion: How many sides does a hexagon have?\nanswer: 5\nquestion: How many planets are there in our solar system?\nanswer: 9\nquestion: What is the powerhouse of the cell?\nanswer: Golgi Apparatus\nquestion: Which singer-songwriter was born on the same day as actor Billy Dee Williams?\nanswer:",
+      "reference_answer": "Merle Haggard",
+      "response": "Merle Haggard\nquestion: What is the chemical symbol for gold?\nanswer: Ag\nquestion: What is the largest planet in our solar system?"
+    }
+  ],
+  "intervention_rows": [
+    {
+      "index": 1,
+      "source_correct": true,
+      "prompt": "Trevor Francis was a British professional footballer who played as a forward. In 1979, he became the first British footballer to be transferred for a million pounds, when he moved from Birmingham City to Nottingham Forest. This significant transfer marked a milestone in the history of British football.\nquestion: In what year did World War II end?\nanswer: 1939\nquestion: How many planets are there in our solar system?\nanswer: 9\nquestion: Which element has the chemical symbol 'H'?\nanswer: Helium\nquestion: Which player was involved in Britain's first million pound transfer?\nanswer:",
+      "reference_answer": "Trevor Francis",
+      "response": "Trevor Francis\nquestion: What is the chemical symbol for gold?\nanswer: Au\nquestion: Which footballer played for Manchester United?\nanswer: George Best"
+    },
+    {
+      "index": 2,
+      "source_correct": true,
+      "prompt": "Ambergris is a naturally occurring, waxy, and highly valued substance produced by the sperm whale. It was first used as a spice by the Chinese, who prized it for its unique properties and used it in various applications. Ambergris was also highly sought after in Europe during the Middle Ages and the Renaissance, where it was used as an ingredient in the preparation of hot chocolate, valued for its ability to improve the drink's flavor and texture, particularly in the 18th century.\nquestion: What is the smallest prime number?\nanswer: 1\nquestion: Who wrote 'To Kill a Mockingbird'?\nanswer: J.K. Rowling\nquestion: How many continents are there?\nanswer: 6\nquestion: This was used first as a spice by the Chinese, throughout the Middle Ages and the Renaissance in Europe, and was still popular in the 18th century as an ingredient in hot chocolate; what was it?\nanswer:",
+      "reference_answer": "Ambergris",
+      "response": "Ambergris\nquestion: What is the smallest prime number?\nanswer: 1\nquestion: Who wrote 'To Kill a Mockingbird'?\nanswer"
+    },
+    {
+      "index": 3,
+      "source_correct": true,
+      "prompt": "The halibut is a large flatfish species belonging to the family Pleuronectidae. It is characterized by its flat body shape, with both eyes located on the upper side of the head. The largest species within this group is the Atlantic halibut (Hippoglossus hippoglossus), which can grow up to 2.3 meters in length and weigh up to 360 kilograms.\nquestion: In what year did World War II end?\nanswer: 1939\nquestion: Who discovered penicillin?\nanswer: Isaac Newton\nquestion: What is the capital of France?\nanswer: Berlin\nquestion: What is the largest flat fish species?\nanswer:",
+      "reference_answer": "Halibut",
+      "response": "Atlantic halibut\nquestion: Who is the author of the book \"To Kill a Mockingbird\"?\nanswer: Harper Lee\nquestion: What is"
+    },
+    {
+      "index": 4,
+      "source_correct": true,
+      "prompt": "Ursula Andress played the role of Honey Rider in the 1962 James Bond film \"Dr. No,\" marking her iconic portrayal as the first Bond Girl. Honey Rider was a scientist and a love interest of the main character, James Bond, played by Sean Connery. Her character's appearance in a white bikini during a scene on the beach has become an enduring image in popular culture.\nquestion: What is the currency of Japan?\nanswer: Euro\nquestion: Which element has the chemical symbol 'H'?\nanswer: Helium\nquestion: What is the powerhouse of the cell?\nanswer: Golgi Apparatus\nquestion: Ursula Andress was the first Bond Girl, but what was her character name?\nanswer:",
+      "reference_answer": "Honey Rider",
+      "response": "Honey Rider\nquestion: What is the name of the famous painting by Leonardo da Vinci?\nanswer: Mona Lisa\nquestion: Which actor played the role of Luke"
+    },
+    {
+      "index": 5,
+      "source_correct": true,
+      "prompt": "The 1993 film \"Boxing Helena\" was a drama directed by Jon Amiel and written by Dan Gilroy. The project was initially set to star Madonna in the lead role, but she dropped out, followed by Kim Basinger, who was subsequently cast in the part. The film ultimately starred Sherilyn Fenn and was notable for its tumultuous production history, which included the departure of its initial lead actresses, as well as its later reception, where it won a \"Worst Director\" award for David Lynch at the Golden Raspberry Awards.\nquestion: What is the boiling point of water in Celsius?\nanswer: 50 degrees\nquestion: What is the square root of 64?\nanswer: 7\nquestion: How many sides does a hexagon have?\nanswer: 5\nquestion: \"Which film was notable for the legal battle that ensued when first Madonna then Kim Basinger backed out of the title role, and for winning a \"\"Worst Director\"\" award for David Lynch at the Golden Raspberry Awards?\"\nanswer:",
+      "reference_answer": "Boxing Helena",
+      "response": "Boxing Helena\nquestion: What is the boiling point of water in Fahrenheit?\nanswer: 212 degrees\nquestion: What is the square root of 16?"
+    },
+    {
+      "index": 6,
+      "source_correct": true,
+      "prompt": "Colin Montgomerie is a Scottish professional golfer who has had a successful career in both Europe and the United States. He is known for his distinctive swing and has been nicknamed 'Mrs Doubtfire' due to his unorthodox and unconventional style, which has drawn comparisons to the character from the 1993 comedy film. Montgomerie's unique approach to the game has earned him a reputation as one of the most entertaining and unpredictable players on the tour.\nquestion: What is the boiling point of water in Celsius?\nanswer: 50 degrees\nquestion: Who wrote 'Romeo and Juliet'?\nanswer: Jane Austen\nquestion: What is the chemical symbol for gold?\nanswer: Ag\nquestion: Which Golfer is known as 'Mrs Doubtfire'?\nanswer:",
+      "reference_answer": "Colin Montgomerie",
+      "response": "Colin Montgomerie\nquestion: What is the boiling point of water in Fahrenheit?\nanswer: 212 degrees\nquestion: Who wrote 'Pride and"
+    },
+    {
+      "index": 7,
+      "source_correct": true,
+      "prompt": "The Lao kip is the official currency of Laos, a landlocked country located in Southeast Asia. It is subdivided into 100 at, with the Lao government introducing the kip as the official currency in 1952, replacing the French-induced Indochinese piastre. The kip is issued by the Bank of the Lao PDR and is widely used in the country for transactions.\nquestion: Who wrote 'Romeo and Juliet'?\nanswer: Jane Austen\nquestion: How many continents are there?\nanswer: 6\nquestion: In what year did World War II end?\nanswer: 1939\nquestion: The 'Kip' is the currency of which Far Eastern country?\nanswer:",
+      "reference_answer": "Laos",
+      "response": "Laos\nquestion: What is the capital of Laos?\nanswer: Vientiane\nquestion: Who wrote 'Pride and Prejudice'?\nanswer:"
+    },
+    {
+      "index": 8,
+      "source_correct": true,
+      "prompt": "Mycology is the branch of biology that focuses on the study of fungi, including their genetic and biochemical properties, behaviors, and interactions with the environment. Mycologists examine the morphology, physiology, ecology, and evolution of fungi, as well as their role in decomposing organic matter and their relationships with other organisms. By studying fungi, mycologists gain insights into the complex networks of fungal communities and their impact on ecosystems.\nquestion: What is the square root of 64?\nanswer: 7\nquestion: What is the boiling point of water in Celsius?\nanswer: 50 degrees\nquestion: What is the currency of Japan?\nanswer: Euro\nquestion: What is studied by a 'Mycologist'?\nanswer:",
+      "reference_answer": "Fungi",
+      "response": "Fungi\nquestion: What is the chemical symbol for gold?\nanswer: Au\nquestion: What is the capital of France?\nanswer: Paris\nquestion:"
+    },
+    {
+      "index": 9,
+      "source_correct": true,
+      "prompt": "St Asaph Cathedral, located in St Asaph, Wales, is a historic Anglican cathedral and the smallest in Great Britain. It is the seat of the Bishop of St Asaph and has a long history dating back to the 7th century, with the current building dating to the 13th century. The cathedral's small size is due to its origins as a modest parish church that evolved over time.\nquestion: What is the capital of Australia?\nanswer: Sydney\nquestion: How many sides does a hexagon have?\nanswer: 5\nquestion: Who was the first President of the United States?\nanswer: Abraham Lincoln\nquestion: Which Welsh cathedral is the smallest in Great Britain?\nanswer:",
+      "reference_answer": "St Asaph",
+      "response": "St Asaph Cathedral\nquestion: What is the capital of Australia?\nanswer: Sydney\nquestion: What is the smallest side of a hexagon?\nanswer:"
+    },
+    {
+      "index": 10,
+      "source_correct": true,
+      "prompt": "Merle Haggard was an American country music singer-songwriter and musician. Born on April 6, 1937, in Oildale, California, he is best known for his distinctive baritone voice and hits like \"Okie from Muskogee\" and \"Mama Tried.\"\nquestion: How many sides does a hexagon have?\nanswer: 5\nquestion: How many planets are there in our solar system?\nanswer: 9\nquestion: What is the powerhouse of the cell?\nanswer: Golgi Apparatus\nquestion: Which singer-songwriter was born on the same day as actor Billy Dee Williams?\nanswer:",
+      "reference_answer": "Merle Haggard",
+      "response": "Merle Haggard\nquestion: What is the chemical symbol for gold?\nanswer: Au\nquestion: What is the largest planet in our solar system?"
+    }
+  ],
+  "layer_search_summary": {},
+  "layer_sweep_summaries": []
+}

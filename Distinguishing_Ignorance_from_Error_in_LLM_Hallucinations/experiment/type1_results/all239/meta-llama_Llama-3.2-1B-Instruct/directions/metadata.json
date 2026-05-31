@@ -1,0 +1,93 @@
+{
+  "input_dir": "D:\\dsmlFinalRepe\\Distinguishing_Ignorance_from_Error_in_LLM_Hallucinations\\experiment\\type1_results\\all239\\meta-llama_Llama-3.2-1B-Instruct",
+  "output_dir": "D:\\dsmlFinalRepe\\Distinguishing_Ignorance_from_Error_in_LLM_Hallucinations\\experiment\\type1_results\\all239\\meta-llama_Llama-3.2-1B-Instruct\\directions",
+  "vector_types": [
+    "mlp",
+    "attention",
+    "residual",
+    "heads"
+  ],
+  "methods": [
+    "mean_diff"
+  ],
+  "files": {
+    "mlp": {
+      "correct": "all_mlp_vector_correct.npy",
+      "incorrect": "all_mlp_vector_incorrect.npy",
+      "shape_correct": [
+        239,
+        16,
+        2048
+      ],
+      "shape_incorrect": [
+        239,
+        16,
+        2048
+      ],
+      "mean_diff": {
+        "correct_minus_incorrect": "direction_mlp_mean_diff_correct_minus_incorrect.npy",
+        "incorrect_minus_correct": "direction_mlp_mean_diff_incorrect_minus_correct.npy",
+        "norms": "direction_mlp_mean_diff_norms.npy"
+      }
+    },
+    "attention": {
+      "correct": "all_attention_vector_correct.npy",
+      "incorrect": "all_attention_vector_incorrect.npy",
+      "shape_correct": [
+        239,
+        16,
+        2048
+      ],
+      "shape_incorrect": [
+        239,
+        16,
+        2048
+      ],
+      "mean_diff": {
+        "correct_minus_incorrect": "direction_attention_mean_diff_correct_minus_incorrect.npy",
+        "incorrect_minus_correct": "direction_attention_mean_diff_incorrect_minus_correct.npy",
+        "norms": "direction_attention_mean_diff_norms.npy"
+      }
+    },
+    "residual": {
+      "correct": "all_residual_vectors_correct.npy",
+      "incorrect": "all_residual_vectors_incorrect.npy",
+      "shape_correct": [
+        239,
+        16,
+        2048
+      ],
+      "shape_incorrect": [
+        239,
+        16,
+        2048
+      ],
+      "mean_diff": {
+        "correct_minus_incorrect": "direction_residual_mean_diff_correct_minus_incorrect.npy",
+        "incorrect_minus_correct": "direction_residual_mean_diff_incorrect_minus_correct.npy",
+        "norms": "direction_residual_mean_diff_norms.npy"
+      }
+    },
+    "heads": {
+      "correct": "heads_vectors_correct_no_projection.npy",
+      "incorrect": "heads_vectors_incorrect_no_projection.npy",
+      "shape_correct": [
+        239,
+        16,
+        32,
+        64
+      ],
+      "shape_incorrect": [
+        239,
+        16,
+        32,
+        64
+      ],
+      "mean_diff": {
+        "correct_minus_incorrect": "direction_heads_mean_diff_correct_minus_incorrect.npy",
+        "incorrect_minus_correct": "direction_heads_mean_diff_incorrect_minus_correct.npy",
+        "norms": "direction_heads_mean_diff_norms.npy"
+      }
+    }
+  }
+}

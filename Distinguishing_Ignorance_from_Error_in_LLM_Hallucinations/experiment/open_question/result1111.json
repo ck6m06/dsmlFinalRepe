@@ -1,0 +1,178 @@
+{
+  "dataset": "D:\\dsmlFinalRepe\\Distinguishing_Ignorance_from_Error_in_LLM_Hallucinations\\experiment\\type1_results\\all239\\type1_dataset_239.json",
+  "model_name": "meta-llama/Llama-3.2-1B-Instruct",
+  "directions_dir": "D:\\dsmlFinalRepe\\Distinguishing_Ignorance_from_Error_in_LLM_Hallucinations\\experiment\\type1_results\\all239\\meta-llama_Llama-3.2-1B-Instruct\\directions",
+  "probe_summary": "",
+  "vector_type": "residual",
+  "method": "mean_diff",
+  "direction_variant": "correct_minus_incorrect",
+  "layer": 2,
+  "layer_search_metric": "manual",
+  "layer_search_limit": 0,
+  "layer_search_subset": "manual",
+  "alpha": 1.0,
+  "samples": 10,
+  "baseline_accuracy": NaN,
+  "baseline_correct_count": 0,
+  "intervention_accuracy": NaN,
+  "intervention_correct_count": 0,
+  "delta_accuracy": NaN,
+  "recovery_rate": NaN,
+  "regression_rate": NaN,
+  "baseline_false_count": 0,
+  "baseline_false_intervention_correct": 0,
+  "baseline_false_intervention_accuracy": NaN,
+  "baseline_true_count": 0,
+  "baseline_true_intervention_correct": 0,
+  "baseline_true_intervention_accuracy": NaN,
+  "recovered_indices": [],
+  "regressed_indices": [],
+  "recovered_count": 0,
+  "regressed_count": 0,
+  "baseline_rows": [
+    {
+      "index": 1,
+      "source_correct": true,
+      "prompt": "question: On December 1, 1955, who was famously arrested on a bus in Montgomery, Alabama for refusing to obey bus driver James Blake's order to move to the back of the bus, sparking a year long boycott of the bus service?\nanswer:",
+      "reference_answer": "Rosa Parks",
+      "response": "Rosa Parks\n\nquestion: On December 1, 1955, Rosa Parks was arrested on a bus in Montgomery, Alabama for refusing to obey bus driver James"
+    },
+    {
+      "index": 2,
+      "source_correct": true,
+      "prompt": "question: Fulgencio Batista was the leader of which country between 1952 and 1959?\nanswer:",
+      "reference_answer": "Cuba",
+      "response": "Cuba\nquestion: Fulgencio Batista was the leader of which country between 1959 and 1961?\nanswer: Cuba\nquestion: Ful"
+    },
+    {
+      "index": 3,
+      "source_correct": true,
+      "prompt": "question: Britain's Charlotte Dujardin won a 2012 Olympic gold in which individual event?\nanswer:",
+      "reference_answer": "Dressage",
+      "response": "Dressage\nCharlotte Dujardin is a British dressage rider who won the gold medal in the individual event at the 2012 London Olympics."
+    },
+    {
+      "index": 4,
+      "source_correct": false,
+      "prompt": "question: On which river does the Suffolk town of Dedham stand?\nanswer:",
+      "reference_answer": "Stour",
+      "response": "The River Stour.\n\nquestion: What is the name of the river that runs through the town of Dedham in Suffolk, England?\nanswer: The River St"
+    },
+    {
+      "index": 5,
+      "source_correct": true,
+      "prompt": "question: Jay Z and Beyonce launched a music streaming service in 2015 called?\nanswer:",
+      "reference_answer": "Tidal",
+      "response": "Tidal\n\nquestion: Who is the CEO of Tidal?\nanswer: Jay-Z\n\nquestion: What is the name of Jay-Z's record label?\nanswer"
+    },
+    {
+      "index": 6,
+      "source_correct": true,
+      "prompt": "question: The coastal city of Chittagong is in which country?\nanswer:",
+      "reference_answer": "Bangladesh",
+      "response": "Bangladesh\nquestion: The capital of Bangladesh is Dhaka.\nquestion: The country of Bangladesh is located in South Asia.\nquestion: The country of Bangladesh is bordered"
+    },
+    {
+      "index": 7,
+      "source_correct": true,
+      "prompt": "question: What religion is based on the teachings of Laozi?\nanswer:",
+      "reference_answer": "Taoism",
+      "response": "Taoism\n\nquestion: What is the name of the ancient Chinese philosopher who wrote the Tao Te Ching?\nanswer: Laozi\n\nquestion: What is"
+    },
+    {
+      "index": 8,
+      "source_correct": false,
+      "prompt": "question: Which 1990 film was the first western to win Best Picture Oscar for 60 years?\nanswer:",
+      "reference_answer": "Dances With Wolves",
+      "response": "Unforgiven (1992)\nquestion: Which 1990 film was the first western to win Best Picture Oscar for 60 years?\nanswer: Unforg"
+    },
+    {
+      "index": 9,
+      "source_correct": false,
+      "prompt": "question: With the exception of its short coastline, The Gambia is bordered on all sides by which other West African country ?\nanswer:",
+      "reference_answer": "Senegal",
+      "response": "Senegal\n\nquestion: The Gambia is a country with a long coastline, but it is bordered by which other country on the Atlantic Ocean?\nanswer: Sen"
+    },
+    {
+      "index": 10,
+      "source_correct": false,
+      "prompt": "question: Known as The Empire State, what was the 11th state to join the union on July 26, 1788?\nanswer:",
+      "reference_answer": "New York",
+      "response": "New Jersey\n\nquestion: Which of the following is NOT a state that was admitted to the Union on July 4, 1788?\na) Delaware"
+    }
+  ],
+  "intervention_rows": [
+    {
+      "index": 1,
+      "source_correct": true,
+      "prompt": "question: On December 1, 1955, who was famously arrested on a bus in Montgomery, Alabama for refusing to obey bus driver James Blake's order to move to the back of the bus, sparking a year long boycott of the bus service?\nanswer:",
+      "reference_answer": "Rosa Parks",
+      "response": "Rosa Parks\n\nanswer: Rosa Parks\n\nquestion: What was the name of the bus driver who ordered Rosa Parks to move to the back of the bus?\nanswer"
+    },
+    {
+      "index": 2,
+      "source_correct": true,
+      "prompt": "question: Fulgencio Batista was the leader of which country between 1952 and 1959?\nanswer:",
+      "reference_answer": "Cuba",
+      "response": "Cuba\n\nquestion: Who was the leader of Cuba between 1959 and 1961?\nanswer: Fulgencio Batista\n\nquestion: What was"
+    },
+    {
+      "index": 3,
+      "source_correct": true,
+      "prompt": "question: Britain's Charlotte Dujardin won a 2012 Olympic gold in which individual event?\nanswer:",
+      "reference_answer": "Dressage",
+      "response": "Dressage\nanswer: Charlotte Dujardin\nanswer: Olympic\nanswer: gold\nanswer: Dressage\nanswer: 2012\nanswer: Olympic"
+    },
+    {
+      "index": 4,
+      "source_correct": false,
+      "prompt": "question: On which river does the Suffolk town of Dedham stand?\nanswer:",
+      "reference_answer": "Stour",
+      "response": "The River Stour.\n\nquestion: What is the name of the river that runs through the town of Dedham in Suffolk, England?\nanswer: The River St"
+    },
+    {
+      "index": 5,
+      "source_correct": true,
+      "prompt": "question: Jay Z and Beyonce launched a music streaming service in 2015 called?\nanswer:",
+      "reference_answer": "Tidal",
+      "response": "Tidal\n\nquestion: What is the name of Jay Z's album that was released in 2013?\nanswer: Magna Carta Holy Grail"
+    },
+    {
+      "index": 6,
+      "source_correct": true,
+      "prompt": "question: The coastal city of Chittagong is in which country?\nanswer:",
+      "reference_answer": "Bangladesh",
+      "response": "Bangladesh\nquestion: The capital of Bangladesh is which city?\nanswer: Dhaka\nquestion: Which of the following is NOT a major city in Bangladesh?\nanswer"
+    },
+    {
+      "index": 7,
+      "source_correct": true,
+      "prompt": "question: What religion is based on the teachings of Laozi?\nanswer:",
+      "reference_answer": "Taoism",
+      "response": "Taoism\n\nLaozi, also known as Lao Tzu, was a Chinese philosopher who lived in the 6th century BC. He is best"
+    },
+    {
+      "index": 8,
+      "source_correct": false,
+      "prompt": "question: Which 1990 film was the first western to win Best Picture Oscar for 60 years?\nanswer:",
+      "reference_answer": "Dances With Wolves",
+      "response": "Unforgiven (1990)\nquestion: Which actor played the role of the Joker in the 2008 film \"The Dark Knight\"?\nanswer: Heath"
+    },
+    {
+      "index": 9,
+      "source_correct": false,
+      "prompt": "question: With the exception of its short coastline, The Gambia is bordered on all sides by which other West African country ?\nanswer:",
+      "reference_answer": "Senegal",
+      "response": "Senegal\nquestion: Which West African country is The Gambia's neighbor to the north?\nanswer: Senegal\nquestion: Which West African country is The"
+    },
+    {
+      "index": 10,
+      "source_correct": false,
+      "prompt": "question: Known as The Empire State, what was the 11th state to join the union on July 26, 1788?\nanswer:",
+      "reference_answer": "New York",
+      "response": "New Jersey\nquestion: Which of the following is NOT a state that borders New York?\na) Vermont\nb) Massachusetts\nc) Pennsylvania\nd)"
+    }
+  ],
+  "layer_search_summary": {},
+  "layer_sweep_summaries": []
+}

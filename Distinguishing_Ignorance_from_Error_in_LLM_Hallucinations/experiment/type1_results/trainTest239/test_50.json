@@ -1,0 +1,427 @@
+{
+  "dataset": {
+    "true_results": "D:\\dsmlFinalRepe\\Distinguishing_Ignorance_from_Error_in_LLM_Hallucinations\\datasets\\NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+    "false_results": "D:\\dsmlFinalRepe\\Distinguishing_Ignorance_from_Error_in_LLM_Hallucinations\\datasets\\HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json"
+  },
+  "model_name": "",
+  "prompt_field": "prompt",
+  "prompt_fields": {
+    "true": "prompt",
+    "false": "prompt"
+  },
+  "sampling": {
+    "limit_true": 239,
+    "limit_false": 239,
+    "sample_mode": "random",
+    "seed": 42,
+    "shuffle_merged": true
+  },
+  "samples": 50,
+  "correct": 25,
+  "accuracy": 0.5,
+  "results": [
+    {
+      "index": 319,
+      "prompt": "question: What was the primary language of the Byzantine Empire?\nanswer:",
+      "reference_answer": "Greek",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 50,
+      "prompt": "question: El Al is the national airline of which country?\nanswer:",
+      "reference_answer": "Israel",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 13,
+      "prompt": "question: What is the most common name for the drug Sildenafil Citrate?\nanswer:",
+      "reference_answer": "Viagra",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 375,
+      "prompt": "question: Which group has reformed after 25 years but without founder member, songwriter and keyboard player Jerry Dammers?\nanswer:",
+      "reference_answer": "The Specials",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 125,
+      "prompt": "question: Which musician and songwriter is the subject of the 2015 film Love and Mercy?\nanswer:",
+      "reference_answer": "Brian wilson",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 109,
+      "prompt": "question: Northern Rhodesia is now known by what name?\nanswer:",
+      "reference_answer": "Zambia",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 101,
+      "prompt": "question: Which large, non-venomous snake found in South America and on Trinidad grows to around 23 feet (7.0 m) long, and is olive green with black blotches with orange-yellow striping on either side of the head?\nanswer:",
+      "reference_answer": "Anaconda",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 62,
+      "prompt": "question: Where is Ho Chi Minh City?\nanswer:",
+      "reference_answer": "Vietnam",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 374,
+      "prompt": "question: King Ludwig II of Bavaria was the patron of which German composer ?\nanswer:",
+      "reference_answer": "Wagner",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 43,
+      "prompt": "question: \"Based on a UK political drama TV series of the same name, the US version featuring the actor Kevin Spacey is called \"\"House...\"\" what?\"\nanswer:",
+      "reference_answer": "Of Cards",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 338,
+      "prompt": "question: In the Simpson's TV cartoon series, what was Marge Simpson's maiden name?\nanswer:",
+      "reference_answer": "Bouvier",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 475,
+      "prompt": "question: What was the predominant decorative style of the 1920s and 30s?\nanswer:",
+      "reference_answer": "Art Deco",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 255,
+      "prompt": "question: Electrum is an alloy of gold and which other element?\nanswer:",
+      "reference_answer": "Silver",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 36,
+      "prompt": "question: Apollo Creed is the enemy of whom?\nanswer:",
+      "reference_answer": "Rocky",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 286,
+      "prompt": "question: An unidentified Satoshi Nakamoto is credited with what concept that has taken the financial world by storm?\nanswer:",
+      "reference_answer": "Bitcoin",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 192,
+      "prompt": "question: Sable is the heraldic term for which colour?\nanswer:",
+      "reference_answer": "Black",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 15,
+      "prompt": "question: Exxon, Mobil, Chevron, and Amoco were created from what company, broken up by the Sherman Antitrust act in 1911?\nanswer:",
+      "reference_answer": "Standard Oil",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 14,
+      "prompt": "question: Thomas Jefferson, 3rd President of the USA, was the delegate to the Continental Congress for which American state?\nanswer:",
+      "reference_answer": "Virginia",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 37,
+      "prompt": "question: What did the USA purchase from Russia for $7,200,000 in 1857?\nanswer:",
+      "reference_answer": "Alaska",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 98,
+      "prompt": "question: Mount Nemrut is in which European country?\nanswer:",
+      "reference_answer": "Turkey",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 104,
+      "prompt": "question: Stanford University is in which US state?\nanswer:",
+      "reference_answer": "California",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 230,
+      "prompt": "question: Diplopia is the medical term for which condition of the human body?\nanswer:",
+      "reference_answer": "Double vision",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 294,
+      "prompt": "question: What is the capital of the province of New Brunswick, Canada?\nanswer:",
+      "reference_answer": "Fredericton",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 476,
+      "prompt": "question: Who was the Greek God of wine, equivalent to the Roman God Bacchus?\nanswer:",
+      "reference_answer": "Dionysus",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 267,
+      "prompt": "question: What fruit is mentioned in the official nickname of the US state of Georgia?\nanswer:",
+      "reference_answer": "Peach",
+      "correct": true,
+      "source_dataset": "NonHallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 25,
+      "prompt": "question: In which city is the Liceu Opera House?\nanswer:",
+      "reference_answer": "Barcelona",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 176,
+      "prompt": "question: In which month is United Nations day?\nanswer:",
+      "reference_answer": "October",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 363,
+      "prompt": "question: In Greek myth who was the mother of Oedipus?\nanswer:",
+      "reference_answer": "Jocasta",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 393,
+      "prompt": "question: Who, with 448 runs, was Australia's leading run scorer in the 2009 Ashes series?\nanswer:",
+      "reference_answer": "Michael clarke",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 83,
+      "prompt": "question: What type of highly directional microphone, commonly used on television and film sets, in stadiums, and for field recording of wildlife, was invented by Fritz Sennheiser in the 1950s?\nanswer:",
+      "reference_answer": "Shotgun",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 260,
+      "prompt": "question: Who played Jerry in the film `Jerry McGuire`?\nanswer:",
+      "reference_answer": "Tom Cruise",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 215,
+      "prompt": "question: What is the term for a triangle with three angles of 60 degrees?\nanswer:",
+      "reference_answer": "Equilateral",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 354,
+      "prompt": "question: Pulex irritans is a parasitic insect. What is.it more commonly known as?\nanswer:",
+      "reference_answer": "Flea",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 467,
+      "prompt": "question: Which county shares borders with Devon, Somerset, Wiltshire and Hampshire?\nanswer:",
+      "reference_answer": "Dorset",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 407,
+      "prompt": "question: Chlorine, fluorine and bromine belong to which family of elements?\nanswer:",
+      "reference_answer": "Halogens",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 57,
+      "prompt": "question: What is Japan's second-largest island\nanswer:",
+      "reference_answer": "Hokkaido",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 257,
+      "prompt": "question: Who, appointed in 2008, is the Director of Public Prosecutions of England and Wales?\nanswer:",
+      "reference_answer": "Keir Starmer",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 316,
+      "prompt": "question: What constellation is depicted on the Australian flag?\nanswer:",
+      "reference_answer": "Southern Cross",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 274,
+      "prompt": "question: Which Polynesian island nation of 4 reef islands and 5 true atolls in the Pacific Ocean, midway between Hawaii and Australia, formerly known as the Ellice Islands, became fully independent within the Commonwealth in 1978?\nanswer:",
+      "reference_answer": "Tuvalu",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 320,
+      "prompt": "question: Who starred in the title role in the 2002 film, Mr Deeds?\nanswer:",
+      "reference_answer": "Adam Sandler",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 11,
+      "prompt": "question: On which Gulf is Cameroon?\nanswer:",
+      "reference_answer": "Gulf of guinea",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 281,
+      "prompt": "question: Which TV series features the Sterling Cooper advertising agency?\nanswer:",
+      "reference_answer": "Mad Men",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 245,
+      "prompt": "question: Which young singer/songwriter was born near Halifax in 1991 but was raised in Suffolk, he has released two albums, + (plus) and x (multiply)?\nanswer:",
+      "reference_answer": "Ed Sheeran",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 308,
+      "prompt": "question: Robbie Coltrane played a psychologist in which British TV series?\nanswer:",
+      "reference_answer": "Cracker",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 216,
+      "prompt": "question: The Netherlands won the 2009 junior version of which international entertainment competition?\nanswer:",
+      "reference_answer": "Eurovision Song Contest",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 332,
+      "prompt": "question: On which of the Greek islands did Bacchus find Ariadne, according to legend?\nanswer:",
+      "reference_answer": "Naxos",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 296,
+      "prompt": "question: In the BBC television series Dr Who, the villain Davros was from which fictional planet?\nanswer:",
+      "reference_answer": "Skaro",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 388,
+      "prompt": "question: In ancient Rome, what was a scutum?\nanswer:",
+      "reference_answer": "A shield",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 247,
+      "prompt": "question: In which Verdi opera is 'Gilda' the jester's daughter?\nanswer:",
+      "reference_answer": "Rigoletto",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    },
+    {
+      "index": 231,
+      "prompt": "question: Which European country has land borders with Greece, Turkey, Romania, Serbia and the Republic of Macedonia?\nanswer:",
+      "reference_answer": "Bulgaria",
+      "correct": false,
+      "source_dataset": "HallucinateTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-1B-Instruct_readable.json",
+      "rank_diff": -1
+    }
+  ],
+  "incorrect": 25,
+  "balanced": true,
+  "balanced_to": 25
+}

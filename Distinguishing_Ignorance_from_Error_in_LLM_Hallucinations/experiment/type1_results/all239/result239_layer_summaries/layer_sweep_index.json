@@ -128,5 +128,14 @@
       "layer": 15,
       "alpha": -1.0
     }
-  ]
+  ],
+  "source_total": 239,
+  "source_correct_count": 238,
+  "source_accuracy": 0.99581589958159,
+  "intervention_source_correct_count": 238,
+  "intervention_accuracy_source": 0.99581589958159,
+  "source_true_count": 239,
+  "source_false_count": 239,
+  "source_fault_count": 1,
+  "intervention_source_fault_count": 1
 }

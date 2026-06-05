@@ -1,21 +1,97 @@
-import torch
-from transformers import AutoModelForCausalLM, AutoTokenizer, BitsAndBytesConfig, LlamaForCausalLM
-base_model = "meta-llama/Llama-3.2-1b-Instruct"
+import json
+import random
+from pathlib import Path
 
-# load the tokenizer
-tokenizer = AutoTokenizer.from_pretrained(base_model)
+from transformers import AutoConfig
 
-# bnb_config = BitsAndBytesConfig(
-#     load_in_4bit=True,
-#     bnb_4bit_quant_type="nf4",
-#     bnb_4bit_compute_dtype=torch.bfloat16
+# 這裡以 Llama-3.2-1B-Instruct 為例
+config = AutoConfig.from_pretrained("meta-llama/Llama-3.2-1B-Instruct")
+
+print(f"總層數 (Layers): {config.num_hidden_layers}")          # 16
+print(f"每層 Q-Heads: {config.num_attention_heads}")         # 16
+print(f"每層 KV-Heads: {config.num_key_value_heads}")        # 4
+
+# base_dir = Path(__file__).resolve().parent
+# json_path = base_dir / "type1_results" / "all239" / "result239_with_source.json"
+
+# random.seed(42)
+
+# # 1. 讀資料
+# with open(json_path, "r", encoding="utf-8") as f:
+#     data = json.load(f)
+
+# rows = data.get("baseline_rows", [])
+
+# # 2. 分類
+# false_rows = [row for row in rows if row.get("correct") is False]
+# true_rows = [row for row in rows if row.get("correct") is True]
+
+# # 3. 目標數量
+# n = len(false_rows)
+
+# # 4. 隨機抽 true
+# sample_true_rows = random.sample(true_rows, min(n, len(true_rows)))
+
+# # 5. 合併
+# output_rows = false_rows + sample_true_rows
+
+# # （可選）打亂順序，避免 model bias
+# random.shuffle(output_rows)
+
+# # 6. 輸出 JSON
+# output = {
+#     "false_count": len(false_rows),
+#     "sample_true_count": len(sample_true_rows),
+#     "total": len(output_rows),
+#     "rows": output_rows
+# }
+
+# out_path = base_dir / "balanced_sample.json"
+# with open(out_path, "w", encoding="utf-8") as f:
+#     json.dump(output, f, ensure_ascii=False, indent=2)
+
+# print(f"Saved to: {out_path}")
+# print(f"False: {len(false_rows)}, Sample True: {len(sample_true_rows)}")
+
+# # 條件 B：source_correct 是 True 且 correct 也是 True (使用 and 串聯)
+# both_true_count = sum(
+#     1
+#     for row in rows
+#     if row.get("source_correct") is True and row.get("correct") is True
 # )
+# # 條件 A：只有 source_correct 是 True
+# source_false_count = sum(1 for row in rows if row.get("source_correct") is False)
 
-# load and quantize the model 
-base_model = AutoModelForCausalLM.from_pretrained(base_model, device_map = 'auto')
-# base_model_bnb_4b = AutoModelForCausalLM.from_pretrained(base_model, quantization_config=bnb_config, device_map = 'auto')
-print(base_model)
-print(base_model.config)
+# # 條件 B：source_correct 是 True 且 correct 也是 True (使用 and 串聯)
+# both_false_count = sum(
+#     1
+#     for row in rows
+#     if row.get("source_correct") is False and row.get("correct") is True
+# )
+# print(f"1. source_correct 為 True 的總筆數: {source_true_count}")
+# print(f"2. source_correct 為 True 且 correct 亦為 True 的筆數: {both_true_count}")
+
+# print(f"1. source_correct 為 False 的總筆數: {source_false_count}")
+# print(f"2. source_correct 為 False 且 correct 亦為 True 的筆數: {both_false_count}")
+
+# import torch
+# from transformers import AutoModelForCausalLM, AutoTokenizer, BitsAndBytesConfig, LlamaForCausalLM
+# base_model = "meta-llama/Llama-3.2-1b-Instruct"
+
+# # load the tokenizer
+# tokenizer = AutoTokenizer.from_pretrained(base_model)
+
+# # bnb_config = BitsAndBytesConfig(
+# #     load_in_4bit=True,
+# #     bnb_4bit_quant_type="nf4",
+# #     bnb_4bit_compute_dtype=torch.bfloat16
+# # )
+
+# # load and quantize the model 
+# base_model = AutoModelForCausalLM.from_pretrained(base_model, device_map = 'auto')
+# # base_model_bnb_4b = AutoModelForCausalLM.from_pretrained(base_model, quantization_config=bnb_config, device_map = 'auto')
+# print(base_model)
+# print(base_model.config)
 
 
 

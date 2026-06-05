@@ -237,6 +237,13 @@ def build_run_summary(
 ) -> dict[str, Any]:
     baseline_accuracy = summarize(baseline_rows, "correct")
     intervention_accuracy = summarize(intervention_rows, "correct")
+    source_rows = [row for row in baseline_rows if bool(row.get("source_correct", False))]
+    intervention_source_rows = [row for baseline_row, row in zip(baseline_rows, intervention_rows) if bool(baseline_row.get("source_correct", False))]
+    source_total = len(source_rows)
+    source_correct_count = int(np.sum([1 if r.get("correct") else 0 for r in source_rows]))
+    intervention_source_correct_count = int(np.sum([1 if r.get("correct") else 0 for r in intervention_source_rows]))
+    source_accuracy = summarize(source_rows, "correct")
+    intervention_accuracy_source = summarize(intervention_source_rows, "correct")
     recovery_rate = float(np.mean([not b["correct"] and i["correct"] for b, i in zip(baseline_rows, intervention_rows)])) if baseline_rows else float("nan")
     regression_rate = float(np.mean([b["correct"] and not i["correct"] for b, i in zip(baseline_rows, intervention_rows)])) if baseline_rows else float("nan")
     baseline_correct_count = int(np.sum([1 if r.get("correct") else 0 for r in baseline_rows]))
@@ -278,11 +285,16 @@ def build_run_summary(
         "alpha": alpha_value,
         "baseline_accuracy": baseline_accuracy,
         "intervention_accuracy": intervention_accuracy,
+        "source_accuracy": source_accuracy,
+        "intervention_accuracy_source": intervention_accuracy_source,
         "delta_accuracy": intervention_accuracy - baseline_accuracy,
         "recovery_rate": recovery_rate,
         "regression_rate": regression_rate,
         "baseline_correct_count": baseline_correct_count,
         "intervention_correct_count": intervention_correct_count,
+        "source_total": source_total,
+        "source_correct_count": source_correct_count,
+        "intervention_source_correct_count": intervention_source_correct_count,
         "baseline_total": len(baseline_rows),
         "intervention_total": len(intervention_rows),
         "baseline_false_count": baseline_false_count,
@@ -472,6 +484,8 @@ def search_best_layer(
         summary = {
             "baseline_accuracy": baseline_acc,
             "intervention_accuracy": intervention_acc,
+            "source_accuracy": source_accuracy,
+            "intervention_accuracy_source": intervention_accuracy_source,
             "delta_accuracy": intervention_acc - baseline_acc,
             "recovery_rate": float(np.mean([not b["correct"] and i["correct"] for b, i in zip(baseline_rows, intervention_rows)])) if baseline_rows else float("nan"),
             "regression_rate": float(np.mean([b["correct"] and not i["correct"] for b, i in zip(baseline_rows, intervention_rows)])) if baseline_rows else float("nan"),
@@ -480,14 +494,19 @@ def search_best_layer(
             "baseline_total": baseline_total,
             "intervention_correct_count": intervention_correct_count,
             "intervention_total": intervention_total,
+            "source_total": source_total,
+            "source_correct_count": source_correct_count,
+            "intervention_source_correct_count": intervention_source_correct_count,
         }
         print(
             json.dumps(
                 {
                     "layer": layer_idx,
                     "baseline_accuracy": baseline_acc,
+                    "source_accuracy": source_accuracy,
                     "baseline_count": f"{baseline_correct_count}/{baseline_total}",
                     "intervention_accuracy": intervention_acc,
+                    "intervention_accuracy(source)": intervention_accuracy_source,
                     "intervention_count": f"{intervention_correct_count}/{intervention_total}",
                     "delta_accuracy": summary["delta_accuracy"],
                     "recovery_rate": summary["recovery_rate"],
@@ -865,7 +884,9 @@ def main() -> None:
 
     print("\n=== Summary ===")
     print(f"baseline_accuracy: {baseline_accuracy:.4f}")
+    print(f"source_accuracy: {source_accuracy:.4f}")
     print(f"intervention_accuracy: {intervention_accuracy:.4f}")
+    print(f"intervention_accuracy(source): {intervention_accuracy_source:.4f}")
     print(f"delta_accuracy: {summary['delta_accuracy']:.4f}")
     print(f"recovery_rate: {recovery_rate:.4f}")
     print(f"regression_rate: {regression_rate:.4f}")
@@ -873,6 +894,7 @@ def main() -> None:
 
     print(f"baseline_false_count: {baseline_false_count} recovered: {baseline_false_intervention_correct} (acc {baseline_false_intervention_accuracy:.4f} if not nan)")
     print(f"baseline_true_count: {baseline_true_count} regressed: {len(regressed_indices)} (acc after {baseline_true_intervention_accuracy:.4f} if not nan)")
+    print(f"source_total: {source_total} source_correct_count: {source_correct_count} intervention_source_correct_count: {intervention_source_correct_count}")
 
     if layer_arg == "sweep":
         print(f"sweep_runs: {len(layer_sweep_summaries)}")

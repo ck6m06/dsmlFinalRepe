@@ -1,0 +1,43 @@
+{
+  "layer": 14,
+  "alpha": -1.0,
+  "baseline_accuracy": 0.7531380753138075,
+  "intervention_accuracy": 0.7531380753138075,
+  "delta_accuracy": 0.0,
+  "recovery_rate": 0.01882845188284519,
+  "regression_rate": 0.01882845188284519,
+  "baseline_correct_count": 360,
+  "intervention_correct_count": 360,
+  "baseline_total": 478,
+  "intervention_total": 478,
+  "baseline_false_count": 118,
+  "baseline_false_intervention_correct": 9,
+  "baseline_false_intervention_accuracy": 0.07627118644067797,
+  "baseline_true_count": 360,
+  "baseline_true_intervention_correct": 351,
+  "baseline_true_intervention_accuracy": 0.975,
+  "recovered_indices": [
+    126,
+    176,
+    203,
+    238,
+    356,
+    378,
+    381,
+    400,
+    445
+  ],
+  "regressed_indices": [
+    68,
+    85,
+    100,
+    102,
+    118,
+    178,
+    239,
+    432,
+    440
+  ],
+  "recovered_count": 9,
+  "regressed_count": 9
+}

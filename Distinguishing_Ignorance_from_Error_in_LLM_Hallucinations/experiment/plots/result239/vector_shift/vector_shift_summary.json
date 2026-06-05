@@ -1,0 +1,42 @@
+{
+  "result_json": "D:\\dsmlFinalRepe\\Distinguishing_Ignorance_from_Error_in_LLM_Hallucinations\\experiment\\type1_results\\all239\\result239.json",
+  "model_name": "meta-llama/Llama-3.2-1B-Instruct",
+  "layer": 9,
+  "alpha": -1.0,
+  "n": 478,
+  "overall": {
+    "cosine_mean": 0.9889661626087571,
+    "l2_shift_mean": 0.9999835774240134,
+    "proj_shift_mean": -0.9999827722936994
+  },
+  "by_group": {
+    "recovered": {
+      "n": 69,
+      "cosine_mean": 0.98885878186295,
+      "cosine_std": 0.0013587316829209457,
+      "l2_shift_mean": 0.9999922781750776,
+      "proj_shift_mean": -0.9999914836624394
+    },
+    "regressed": {
+      "n": 18,
+      "cosine_mean": 0.9891010953320397,
+      "cosine_std": 0.0010903559593399112,
+      "l2_shift_mean": 0.9999886122014787,
+      "proj_shift_mean": -0.9999877946037385
+    },
+    "stable_false": {
+      "n": 141,
+      "cosine_mean": 0.9887290343325189,
+      "cosine_std": 0.0011722606167297333,
+      "l2_shift_mean": 0.9999862490816319,
+      "proj_shift_mean": -0.9999854439037278
+    },
+    "stable_true": {
+      "n": 250,
+      "cosine_mean": 0.989119824886322,
+      "cosine_std": 0.001199892737475081,
+      "l2_shift_mean": 0.9999793066978454,
+      "proj_shift_mean": -0.9999784995615483
+    }
+  }
+}

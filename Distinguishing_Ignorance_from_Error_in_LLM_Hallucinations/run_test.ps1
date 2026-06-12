@@ -3,8 +3,12 @@ $ErrorActionPreference = "Stop"
 Set-Location "d:\dsmlFinalRepe\Distinguishing_Ignorance_from_Error_in_LLM_Hallucinations"
 
 # .\run_test.ps1 <-- run 這個檔案的指令
+# python experiment/generate_open_book_contexts.py --input datasets/GeneralTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-3B-Instruct_readable.json --output datasets/GeneralTrivia_qa_with_context_meta-llama_Llama-3.2-3B-Instruct.json --model_name meta-llama/Llama-3.2-3B-Instruct --limit 6000
 
-python experiment/evaluate_open_book_prompt.py --dataset experiment/type1_results/all239/type1_dataset_239.json --model_name meta-llama/Llama-3.2-1B-Instruct --prompt_field prompt --limit 10 --output_json experiment/type1_results/all239/newResult239.json
+# python experiment/add_without_instruction_prompt.py --input datasets/GeneralTrivia_qa_with_context_meta-llama_Llama-3.2-3B-Instruct.json --output datasets/GeneralTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-3B-withoutInstruct_readable.json
+
+python experiment/evaluate_open_book_prompt.py --dataset datasets/GeneralTrivia_qa_no_contextWithThreshold1.0_meta-llama_Llama-3.2-3B-withoutInstruct_readable.json --model_name meta-llama/Llama-3.2-3B-Instruct --output_json experiment/withoutInsturct_open_book_eval_3bresults.json --prompt_field full_without_instruct_prompt
+# python experiment/evaluate_open_book_prompt.py --dataset experiment/type1_results/all239/type1_dataset_239.json --model_name meta-llama/Llama-3.2-1B-Instruct --prompt_field prompt --limit 10 --output_json experiment/type1_results/all239/newResult239.json
 
 # 替換 eva_results 資料集位置 資料集長相可以參考 experiment/type1_results/all239/type1_dataset_239.json
 # 替換 directions 向量位置

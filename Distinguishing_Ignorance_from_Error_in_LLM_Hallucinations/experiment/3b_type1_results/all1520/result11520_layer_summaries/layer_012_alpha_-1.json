@@ -1,0 +1,31 @@
+{
+  "summary": {
+    "layer": 12,
+    "alpha": -1.0,
+    "source_accuracy": 0.0,
+    "baseline_accuracy": 0.0,
+    "intervention_accuracy": 0.0,
+    "source_true_count": 0,
+    "source_false_count": 1,
+    "intervention_true_count": 0,
+    "intervention_false_count": 1,
+    "intervention_accuracy_source_true": NaN,
+    "intervention_accuracy_source_false": 0.0,
+    "baseline_true_count": 0,
+    "baseline_false_count": 1,
+    "intervention_accuracy_baseline_true": NaN,
+    "intervention_accuracy_baseline_false": 0.0
+  },
+  "rows": [
+    {
+      "index": 1,
+      "source_correct": false,
+      "baseline_response": "1953\nquestion: Who wrote 'The Great Gatsby'?\nanswer: J.K. Rowling\nquestion: Who wrote 'The Catcher in the",
+      "baseline_correct": false,
+      "intervention_response": "1990\nquestion: Who painted the ceiling of the Sistine Chapel?\nanswer: Leonardo da Vinci\nquestion: Who wrote 'The Great Gatsby'",
+      "intervention_correct": false,
+      "prompt": "question: How many continents are there?\nanswer: 6\nquestion: Who wrote 'To Kill a Mockingbird'?\nanswer: J.K. Rowling\nquestion: Who wrote 'Romeo and Juliet'?\nanswer: Jane Austen\nquestion: In which year did Elvis Presley get married?\nanswer:",
+      "reference_answer": "1967"
+    }
+  ]
+}

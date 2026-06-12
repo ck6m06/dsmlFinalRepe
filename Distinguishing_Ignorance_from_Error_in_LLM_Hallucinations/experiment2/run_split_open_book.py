@@ -3,12 +3,12 @@ import json, random, os
 from collections import Counter
 
 def main():
-    infile = r"d:\\dsmlFinalRepe\\Distinguishing_Ignorance_from_Error_in_LLM_Hallucinations\\experiment\\type2_results\\open_book_eval_results.json"
-    out_prefix = r"d:\\dsmlFinalRepe\\Distinguishing_Ignorance_from_Error_in_LLM_Hallucinations\\experiment2\\datasets\\open_book_eval_results"
+    infile = r"d:\\dsmlFinalRepe\\Distinguishing_Ignorance_from_Error_in_LLM_Hallucinations\\experiment\\3b_type1_results\\all1520\\balanced_sampl1520.json"
+    out_prefix = r"d:\\dsmlFinalRepe\\Distinguishing_Ignorance_from_Error_in_LLM_Hallucinations\\experiment\\3b_type1_results\\73traintest\\balanced_sampl1520"
     seed = 42
     train_frac = 0.7
-    val_frac = 0.15
-    test_frac = 0.15
+    val_frac = 0
+    test_frac = 0.3
 
     random.seed(seed)
     with open(infile, 'r', encoding='utf-8') as f:

@@ -16,7 +16,7 @@ import re
 from pathlib import Path
 from typing import Any
 
-DEFAULT_MODEL_NAME = "meta-llama/Llama-3.1-8b-Instruct"
+DEFAULT_MODEL_NAME = "meta-llama/Llama-3.2-3B-Instruct"
 
 
 def load_records(input_path: Path) -> list[dict[str, Any]]:
@@ -65,9 +65,9 @@ def load_model_and_tokenizer(model_name: str):
         model = AutoModelForCausalLM.from_pretrained(
             model_name,
             device_map="auto",
-            quantization_config=bnb_config,
-            torch_dtype=torch.float16,
-            low_cpu_mem_usage=True,
+            # quantization_config=bnb_config,
+            # torch_dtype=torch.float16,
+            # low_cpu_mem_usage=True,
         )
     else:
         model = AutoModelForCausalLM.from_pretrained(

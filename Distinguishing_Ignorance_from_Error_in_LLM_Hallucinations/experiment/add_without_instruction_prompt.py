@@ -109,7 +109,7 @@ def build_full_without_instruction_prompt(record: dict[str, Any]) -> str:
     prompt_text = str(record.get("prompt", ""))
     question = extract_question(prompt_text)
     few_shots = extract_few_shots(record, question)
-
+    # print(f"Context: {context}")
     parts: list[str] = []
     if context:
         parts.append(context)
@@ -122,6 +122,7 @@ def build_full_without_instruction_prompt(record: dict[str, Any]) -> str:
 def augment_records(records: list[dict[str, Any]]) -> list[dict[str, Any]]:
     augmented: list[dict[str, Any]] = []
     for record in records:
+        # print("recored", record)
         augmented_record = dict(record)
         augmented_record["without_instruction_prompt"] = build_without_instruction_prompt(record)
         augmented_record["full_without_instruct_prompt"] = build_full_without_instruction_prompt(record)

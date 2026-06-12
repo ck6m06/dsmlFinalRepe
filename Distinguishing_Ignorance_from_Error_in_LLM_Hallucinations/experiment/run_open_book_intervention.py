@@ -30,6 +30,7 @@ import argparse
 import json
 import re
 import sys
+import time
 from pathlib import Path
 from typing import Any
 
@@ -228,6 +229,39 @@ def write_json_file(path: Path, payload: dict[str, Any]) -> None:
         json.dump(payload, handle, ensure_ascii=False, indent=2)
         handle.write("\n")
 
+def build_combined_rows(
+    baseline_rows: list[dict[str, Any]],
+    intervention_rows: list[dict[str, Any]],
+) -> list[dict[str, Any]]:
+
+    combined_rows = []
+
+    for baseline_row, intervention_row in zip(
+        baseline_rows,
+        intervention_rows,
+    ):
+        combined_rows.append(
+            {
+                "index": baseline_row["index"],
+
+                # source
+                "source_correct": baseline_row["source_correct"],
+
+                # baseline
+                "baseline_response": baseline_row["response"],
+                "baseline_correct": baseline_row["correct"],
+
+                # intervention
+                "intervention_response": intervention_row["response"],
+                "intervention_correct": intervention_row["correct"],
+
+                # metadata
+                "prompt": baseline_row["prompt"],
+                "reference_answer": baseline_row["reference_answer"],
+            }
+        )
+
+    return combined_rows
 
 def build_run_summary(
     baseline_rows: list[dict[str, Any]],
@@ -235,78 +269,74 @@ def build_run_summary(
     layer_idx: int,
     alpha_value: float,
 ) -> dict[str, Any]:
-    baseline_accuracy = summarize(baseline_rows, "correct")
-    intervention_accuracy = summarize(intervention_rows, "correct")
-    source_rows = [row for row in baseline_rows if bool(row.get("source_correct", False))]
-    intervention_source_rows = [row for baseline_row, row in zip(baseline_rows, intervention_rows) if bool(baseline_row.get("source_correct", False))]
-    source_total = len(source_rows)
-    source_correct_count = int(np.sum([1 if r.get("correct") else 0 for r in source_rows]))
-    intervention_source_correct_count = int(np.sum([1 if r.get("correct") else 0 for r in intervention_source_rows]))
-    source_accuracy = summarize(source_rows, "correct")
-    intervention_accuracy_source = summarize(intervention_source_rows, "correct")
-    recovery_rate = float(np.mean([not b["correct"] and i["correct"] for b, i in zip(baseline_rows, intervention_rows)])) if baseline_rows else float("nan")
-    regression_rate = float(np.mean([b["correct"] and not i["correct"] for b, i in zip(baseline_rows, intervention_rows)])) if baseline_rows else float("nan")
-    baseline_correct_count = int(np.sum([1 if r.get("correct") else 0 for r in baseline_rows]))
-    intervention_correct_count = int(np.sum([1 if r.get("correct") else 0 for r in intervention_rows]))
 
-    baseline_false_count = 0
-    baseline_true_count = 0
-    baseline_false_intervention_correct = 0
-    baseline_true_intervention_correct = 0
-    recovered_indices: list[int] = []
-    regressed_indices: list[int] = []
+    combined_rows = build_combined_rows(baseline_rows, intervention_rows)
 
-    for baseline_row, intervention_row in zip(baseline_rows, intervention_rows):
-        baseline_is_correct = bool(baseline_row.get("correct", False))
-        intervention_is_correct = bool(intervention_row.get("correct", False))
-        index = int(baseline_row.get("index", 0))
+    # source true false 各別的 rows
+    source_true_rows = [r for r in combined_rows if bool(r.get("source_correct", False))]
+    source_false_rows = [r for r in combined_rows if not bool(r.get("source_correct", False))]
+    # baseline true false 各別的 rows
+    baseline_true_rows= [r for r in combined_rows if bool(r.get("baseline_correct", False))]
+    baseline_false_rows= [r for r in combined_rows if not bool(r.get("baseline_correct", False))]
+    
 
-        if baseline_is_correct:
-            baseline_true_count += 1
-            if intervention_is_correct:
-                baseline_true_intervention_correct += 1
-            else:
-                regressed_indices.append(index)
-        else:
-            baseline_false_count += 1
-            if intervention_is_correct:
-                baseline_false_intervention_correct += 1
-                recovered_indices.append(index)
+    # accuracy    
+    source_accuracy = summarize(combined_rows, "source_correct")
+    baseline_accuracy = summarize(combined_rows, "baseline_correct")
+    intervention_accuracy = summarize(combined_rows, "intervention_correct")
 
-    baseline_false_intervention_accuracy = (
-        baseline_false_intervention_correct / baseline_false_count if baseline_false_count > 0 else float("nan")
-    )
-    baseline_true_intervention_accuracy = (
-        baseline_true_intervention_correct / baseline_true_count if baseline_true_count > 0 else float("nan")
-    )
+    ## ==== source ===
+    # source true false 各有幾筆
+    source_true_count = int(np.sum([1 if r.get("source_correct") else 0 for r in combined_rows]))
+    source_false_count = int(np.sum([1 if not r.get("source_correct") else 0 for r in combined_rows]))
+
+    # source true false 各別的 rows
+    source_true_rows = [row for row in combined_rows if bool(row.get("source_correct", False))]
+    source_false_rows = [row for row in combined_rows if not bool(row.get("source_correct", False))]
+
+    # acc for source true false 各自的 intervention
+    intervention_accuracy_source_true = summarize(source_true_rows, "intervention_correct") if source_true_rows else float("nan")
+    intervention_accuracy_source_false = summarize(source_false_rows, "intervention_correct") if source_false_rows else float("nan")
+
+    ## ===== baseline ======
+    # baseline true false 各有幾筆
+    baseline_true_count = int(np.sum([1 if r.get("baseline_correct") else 0 for r in combined_rows]))
+    baseline_false_count = int(np.sum([1 if not r.get("baseline_correct") else 0 for r in combined_rows]))
+    
+    # baseline true false 各別的 rows
+    baseline_true_rows = [row for row in combined_rows if bool(row.get("baseline_correct", False))]
+    baseline_false_rows = [row for row in combined_rows if not bool(row.get("baseline_correct", False))]
+
+    # acc for baseline true false 各自的 intervention
+    intervention_accuracy_baseline_true = summarize(baseline_true_rows, "intervention_correct") if baseline_true_rows else float("nan")
+    intervention_accuracy_baseline_false = summarize(baseline_false_rows, "intervention_correct") if baseline_false_rows else float("nan")
+
+    # ==== intervention count ====
+    # intervention true false 各有幾筆
+    intervention_true_count = int(np.sum([1 if r.get("intervention_correct") else 0 for r in combined_rows]))
+    intervention_false_count = int(np.sum([1 if not r.get("intervention_correct") else 0 for r in combined_rows]))
+
+
 
     return {
         "layer": layer_idx,
         "alpha": alpha_value,
+        "source_accuracy": source_accuracy,
         "baseline_accuracy": baseline_accuracy,
         "intervention_accuracy": intervention_accuracy,
-        "source_accuracy": source_accuracy,
-        "intervention_accuracy_source": intervention_accuracy_source,
-        "delta_accuracy": intervention_accuracy - baseline_accuracy,
-        "recovery_rate": recovery_rate,
-        "regression_rate": regression_rate,
-        "baseline_correct_count": baseline_correct_count,
-        "intervention_correct_count": intervention_correct_count,
-        "source_total": source_total,
-        "source_correct_count": source_correct_count,
-        "intervention_source_correct_count": intervention_source_correct_count,
-        "baseline_total": len(baseline_rows),
-        "intervention_total": len(intervention_rows),
-        "baseline_false_count": baseline_false_count,
-        "baseline_false_intervention_correct": baseline_false_intervention_correct,
-        "baseline_false_intervention_accuracy": baseline_false_intervention_accuracy,
+        "source_true_count":source_true_count,
+        "source_false_count": source_false_count,
+        "intervention_true_count": intervention_true_count,
+        "intervention_false_count": intervention_false_count,
+        "intervention_accuracy_source_true": intervention_accuracy_source_true,
+        "intervention_accuracy_source_false": intervention_accuracy_source_false,
+        
         "baseline_true_count": baseline_true_count,
-        "baseline_true_intervention_correct": baseline_true_intervention_correct,
-        "baseline_true_intervention_accuracy": baseline_true_intervention_accuracy,
-        "recovered_indices": recovered_indices,
-        "regressed_indices": regressed_indices,
-        "recovered_count": len(recovered_indices),
-        "regressed_count": len(regressed_indices),
+        "baseline_false_count": baseline_false_count,
+        "intervention_accuracy_baseline_true": intervention_accuracy_baseline_true,
+        "intervention_accuracy_baseline_false": intervention_accuracy_baseline_false,
+        # "combined_rows": combined_rows,
+
     }
 
 
@@ -475,39 +505,24 @@ def search_best_layer(
             token_position=token_position,
         )
         score = score_rows(baseline_rows, intervention_rows, metric=metric)
-        baseline_total = len(baseline_rows)
-        intervention_total = len(intervention_rows)
-        baseline_correct_count = int(np.sum([1 if r.get("correct") else 0 for r in baseline_rows]))
-        intervention_correct_count = int(np.sum([1 if r.get("correct") else 0 for r in intervention_rows]))
-        baseline_acc = summarize(baseline_rows, "correct")
-        intervention_acc = summarize(intervention_rows, "correct")
-        summary = {
-            "baseline_accuracy": baseline_acc,
-            "intervention_accuracy": intervention_acc,
-            "source_accuracy": source_accuracy,
-            "intervention_accuracy_source": intervention_accuracy_source,
-            "delta_accuracy": intervention_acc - baseline_acc,
-            "recovery_rate": float(np.mean([not b["correct"] and i["correct"] for b, i in zip(baseline_rows, intervention_rows)])) if baseline_rows else float("nan"),
-            "regression_rate": float(np.mean([b["correct"] and not i["correct"] for b, i in zip(baseline_rows, intervention_rows)])) if baseline_rows else float("nan"),
-            "score": score,
-            "baseline_correct_count": baseline_correct_count,
-            "baseline_total": baseline_total,
-            "intervention_correct_count": intervention_correct_count,
-            "intervention_total": intervention_total,
-            "source_total": source_total,
-            "source_correct_count": source_correct_count,
-            "intervention_source_correct_count": intervention_source_correct_count,
-        }
+        summary = build_run_summary(
+            baseline_rows=baseline_rows,
+            intervention_rows=intervention_rows,
+            layer_idx=layer_idx,
+            alpha_value=alpha,
+        )
+        summary["score"] = score
         print(
             json.dumps(
                 {
                     "layer": layer_idx,
-                    "baseline_accuracy": baseline_acc,
-                    "source_accuracy": source_accuracy,
-                    "baseline_count": f"{baseline_correct_count}/{baseline_total}",
-                    "intervention_accuracy": intervention_acc,
-                    "intervention_accuracy(source)": intervention_accuracy_source,
-                    "intervention_count": f"{intervention_correct_count}/{intervention_total}",
+                    "baseline_accuracy": summary["baseline_accuracy"],
+                    "source_accuracy": summary["source_accuracy"],
+                    "baseline_accuracy(source)": summary["baseline_accuracy_source"],
+                    "baseline_count": f"{summary['baseline_correct_count']}/{summary['baseline_total']}",
+                    "intervention_accuracy": summary["intervention_accuracy"],
+                    "intervention_accuracy(source)": summary["intervention_accuracy_source"],
+                    "intervention_count": f"{summary['intervention_correct_count']}/{summary['intervention_total']}",
                     "delta_accuracy": summary["delta_accuracy"],
                     "recovery_rate": summary["recovery_rate"],
                     "regression_rate": summary["regression_rate"],
@@ -622,6 +637,8 @@ def main() -> None:
     records = load_records(eval_path)
     if args.limit and args.limit > 0:
         records = records[: args.limit]
+    # print(f"Loaded {len(records)} records from {eval_path}")
+    # print(records[0] if records else "No records found in eval results.")
 
     eval_payload = json.loads(eval_path.read_text(encoding="utf-8"))
     model_name = args.model_name.strip() or (eval_payload.get("model_name") if isinstance(eval_payload, dict) else "")
@@ -691,8 +708,8 @@ def main() -> None:
     if probe_summary_path is not None:
         best_layer = int(loaded_best_layer)
     elif layer_arg == "sweep":
+        train_start_time = time.time()
         print(f"search_records: {len(records)} (full records sweep)")
-
         sweep_alphas = [1.0, -1.0]
         for layer_idx in range(direction_stack.shape[0]):
             for alpha_sign in sweep_alphas:
@@ -710,7 +727,8 @@ def main() -> None:
                     alpha=alpha_value,
                     token_position=args.token_position,
                 )
-
+                # print("baselineeeeeeeeee")
+                # print(baseline_rows[0] if baseline_rows else "No baseline rows")
                 run_summary = build_run_summary(
                     baseline_rows=baseline_rows,
                     intervention_rows=intervention_rows,
@@ -718,49 +736,96 @@ def main() -> None:
                     alpha_value=alpha_value,
                 )
                 layer_sweep_summaries.append(run_summary)
-                layer_sweep_rows[(layer_idx, alpha_value)] = intervention_rows
+                # layer_sweep_rows[(layer_idx, alpha_value)] = intervention_rows
+                combined_rows = build_combined_rows(
+                    baseline_rows,
+                    intervention_rows,
+                )
+
+                layer_sweep_rows[(layer_idx, alpha_value)] = combined_rows
                 print(
                     json.dumps(
                         {
                             "layer": layer_idx,
                             "alpha": alpha_value,
+                            "source_accuracy": run_summary["source_accuracy"],
                             "baseline_accuracy": run_summary["baseline_accuracy"],
                             "intervention_accuracy": run_summary["intervention_accuracy"],
-                            "delta_accuracy": run_summary["delta_accuracy"],
-                            "recovery_rate": run_summary["recovery_rate"],
-                            "regression_rate": run_summary["regression_rate"],
-                            "baseline_false_count": run_summary["baseline_false_count"],
-                            "baseline_false_intervention_correct": run_summary["baseline_false_intervention_correct"],
-                            "baseline_false_intervention_accuracy": run_summary["baseline_false_intervention_accuracy"],
+                            # "delta_accuracy": run_summary["delta_accuracy"],
+                            # "recovery_rate": run_summary["recovery_rate"],
+                            # "regression_rate": run_summary["regression_rate"],
+                            "source_true_count": run_summary["source_true_count"],
+                            "source_false_count": run_summary["source_false_count"],
+                            "intervention_true_count": run_summary["intervention_true_count"],
+                            "intervention_false_count": run_summary["intervention_false_count"],
+                            "intervention_accuracy_source_true": run_summary["intervention_accuracy_source_true"],
+                            "intervention_accuracy_source_false": run_summary["intervention_accuracy_source_false"],
                             "baseline_true_count": run_summary["baseline_true_count"],
-                            "baseline_true_intervention_correct": run_summary["baseline_true_intervention_correct"],
-                            "baseline_true_intervention_accuracy": run_summary["baseline_true_intervention_accuracy"],
-                            "recovered_count": run_summary["recovered_count"],
-                            "regressed_count": run_summary["regressed_count"],
+                            "baseline_false_count": run_summary["baseline_false_count"],
+                            "intervention_accuracy_baseline_true": run_summary["intervention_accuracy_baseline_true"],
+                            "intervention_accuracy_baseline_false": run_summary["intervention_accuracy_baseline_false"],
+
+                            # "baseline_false_intervention_correct": run_summary["baseline_false_intervention_correct"],
+                            # "baseline_false_intervention_accuracy": run_summary["baseline_false_intervention_accuracy"],
+                            # "baseline_true_count": run_summary["baseline_true_count"],
+                            # "baseline_true_intervention_correct": run_summary["baseline_true_intervention_correct"],
+                            # "baseline_true_intervention_accuracy": run_summary["baseline_true_intervention_accuracy"],
+                            # "recovered_count": run_summary["recovered_count"],
+                            # "regressed_count": run_summary["regressed_count"],
                         },
                         ensure_ascii=False,
                     )
                 )
+        
+        train_end_time = time.time()
+        print(f"Layer sweep completed in {train_end_time - train_start_time:.2f} seconds")
 
+        # 確認 資料夾
         if args.output_json:
             output_path = Path(args.output_json).resolve()
-            sweep_dir = output_path.parent / f"{output_path.stem}_layer_summaries"
-            for layer_summary in layer_sweep_summaries:
-                layer_path = sweep_dir / f"layer_{layer_summary['layer']:03d}_alpha_{layer_summary['alpha']:+.0f}.json"
-                write_json_file(layer_path, layer_summary)
+
+            sweep_dir = (
+                output_path.parent
+                / f"{output_path.stem}_layer_summaries"
+            )
+
+        for layer_summary in layer_sweep_summaries:
+
+            layer_key = (
+                layer_summary["layer"],
+                layer_summary["alpha"],
+            )
+
+            layer_path = (
+                sweep_dir
+                / f"layer_{layer_summary['layer']:03d}_alpha_{layer_summary['alpha']:+.0f}.json"
+            )
+
             write_json_file(
-                sweep_dir / "layer_sweep_index.json",
+                layer_path,
                 {
-                    "runs": [
-                        {"layer": row["layer"], "alpha": row["alpha"]}
-                        for row in layer_sweep_summaries
-                    ]
+                    "summary": layer_summary,
+                    "rows": layer_sweep_rows[layer_key],
                 },
             )
 
-        best_run_index = int(max(range(len(layer_sweep_summaries)), key=lambda i: layer_sweep_summaries[i]["delta_accuracy"]))
+            # write_json_file(
+            #     sweep_dir / "layer_sweep_summary.json",
+            #     {
+            #         "runs": layer_sweep_summaries
+            #     },
+            # )
+
+        best_run_index = int(max(range(len(layer_sweep_summaries)), key=lambda i: layer_sweep_summaries[i]["intervention_accuracy"]))
         best_search_summary = layer_sweep_summaries[best_run_index]
         best_layer = int(best_search_summary["layer"])
+
+        # print(
+        #     f"Best layer selected by intervention_accuracy: {best_layer} "
+        #     f"(best summary{best_search_summary}, "
+        #     f"(intervention_accuracy={best_search_summary.get('intervention_accuracy', float('nan')):.4f})"
+        # )
+
     elif layer_arg == "auto":
         print(f"search_records: {len(search_records)}")
         best_layer, _, best_search_summary = search_best_layer(
@@ -776,132 +841,102 @@ def main() -> None:
             top_p=args.top_p,
             metric=args.layer_search_metric,
         )
-        print(
-            f"Best layer selected by {args.layer_search_metric}: {best_layer} "
-            f"(score={best_search_summary.get('score', float('nan')):.4f})"
-        )
+        # print(
+        #     f"Best layer selected by {args.layer_search_metric}: {best_layer} "
+        #     f"(score={best_search_summary.get('score', float('nan')):.4f})"
+        # )
     else:
         best_layer = int(layer_arg)
 
-    intervention_rows: list[dict[str, Any]] = []
+    # intervention_rows: list[dict[str, Any]] = []
     intervention_direction = direction_stack[0] if probe_summary_path is not None else direction_stack[best_layer]
 
-    if layer_arg == "sweep":
-        intervention_rows = layer_sweep_rows[(best_layer, best_search_summary.get("alpha", 1.0))]
-    else:
-        intervention_rows = run_generation_rows(
-            model=model,
-            tokenizer=tokenizer,
-            records=records,
-            prompt_field=args.prompt_field,
-            max_new_tokens=args.max_new_tokens,
-            temperature=args.temperature,
-            top_p=args.top_p,
-            direction=intervention_direction,
-            layer_idx=best_layer,
-            alpha=args.alpha,
-            token_position=args.token_position,
-            progress_label="intervention",
-            progress_every=args.progress_every,
-        )
+    # if layer_arg == "sweep":
+    #     intervention_rows = layer_sweep_rows[(best_layer, best_search_summary.get("alpha", 1.0))]
+    # else:
+    #     intervention_rows = run_generation_rows(
+    #         model=model,
+    #         tokenizer=tokenizer,
+    #         records=records,
+    #         prompt_field=args.prompt_field,
+    #         max_new_tokens=args.max_new_tokens,
+    #         temperature=args.temperature,
+    #         top_p=args.top_p,
+    #         direction=intervention_direction,
+    #         layer_idx=best_layer,
+    #         alpha=args.alpha,
+    #         token_position=args.token_position,
+    #         progress_label="intervention",
+    #         progress_every=args.progress_every,
+    #     )
 
     selected_alpha = float(best_search_summary.get("alpha", 1.0)) if layer_arg == "sweep" else float(args.alpha)
 
-    baseline_accuracy = summarize(baseline_rows, "correct")
-    intervention_accuracy = summarize(intervention_rows, "correct")
-    recovery_rate = float(np.mean([not b["correct"] and i["correct"] for b, i in zip(baseline_rows, intervention_rows)])) if baseline_rows else float("nan")
-    regression_rate = float(np.mean([b["correct"] and not i["correct"] for b, i in zip(baseline_rows, intervention_rows)])) if baseline_rows else float("nan")
-    baseline_correct_count = int(np.sum([1 if r.get("correct") else 0 for r in baseline_rows]))
-    intervention_correct_count = int(np.sum([1 if r.get("correct") else 0 for r in intervention_rows]))
+    # summary = build_run_summary(
+    #     baseline_rows=baseline_rows,
+    #     intervention_rows=intervention_rows,
+    #     layer_idx=best_layer,
+    #     alpha_value=selected_alpha,
+    # )
+    # summary.update({
+    #     "dataset": str(eval_path),
+    #     "model_name": model_name,
+    #     "directions_dir": str(directions_dir),
+    #     "probe_summary": str(probe_summary_path) if probe_summary_path is not None else "",
+    #     "vector_type": args.vector_type,
+    #     "method": args.method,
+    #     "direction_variant": args.direction_variant,
+    #     "layer_search_metric": args.layer_search_metric if layer_arg == "auto" else "manual",
+    #     "layer_search_limit": args.layer_search_limit if layer_arg == "auto" else 0,
+    #     "layer_search_subset": args.layer_search_subset if layer_arg == "auto" else "manual",
+    #     "samples": len(records),
+    #     # "baseline_rows": baseline_rows,
+    #     # "intervention_rows": intervention_rows,
+    #     # "layer_search_summary": best_search_summary if layer_arg == "auto" else {},
+    #     # "layer_sweep_summaries": layer_sweep_summaries if layer_arg == "sweep" else [],
+    #     # "combined_rows": combined_rows,
+    # })
 
-    baseline_false_count = 0
-    baseline_true_count = 0
-    baseline_false_intervention_correct = 0
-    baseline_true_intervention_correct = 0
-    recovered_indices: list[int] = []
-    regressed_indices: list[int] = []
+    # baseline_accuracy = summary["baseline_accuracy"]
+    # source_accuracy = summary["source_accuracy"]
+    # baseline_accuracy_source = summary["baseline_accuracy_source"]
+    # intervention_accuracy = summary["intervention_accuracy"]
+    # intervention_accuracy_source = summary["intervention_accuracy_source"]
+    # recovery_rate = summary["recovery_rate"]
+    # regression_rate = summary["regression_rate"]
+    # baseline_false_count = summary["baseline_false_count"]
+    # baseline_false_intervention_correct = summary["baseline_false_intervention_correct"]
+    # baseline_false_intervention_accuracy = summary["baseline_false_intervention_accuracy"]
+    # baseline_true_count = summary["baseline_true_count"]
+    # regressed_indices = summary["regressed_indices"]
+    # baseline_true_intervention_accuracy = summary["baseline_true_intervention_accuracy"]
+    # source_total = summary["source_total"]
+    # source_correct_count = summary["source_correct_count"]
+    # intervention_source_correct_count = summary["intervention_source_correct_count"]
 
-    for baseline_row, intervention_row in zip(baseline_rows, intervention_rows):
-        baseline_is_correct = bool(baseline_row.get("correct", False))
-        intervention_is_correct = bool(intervention_row.get("correct", False))
-        index = int(baseline_row.get("index", 0))
+    # baseline_accuracy_source_incorrect = summary["baseline_accuracy_source_incorrect"]
+    # intervention_accuracy_source_incorrect = summary["intervention_accuracy_source_incorrect"]
+    # baseline_vs_source_delta = summary["baseline_vs_source_delta"]
+    # intervention_vs_source_delta = summary["intervention_vs_source_delta"]
+    # source_incorrect_total = summary["source_incorrect_total"]
+    # baseline_source_incorrect_correct_count = summary["baseline_source_incorrect_correct_count"]
+    # intervention_source_incorrect_correct_count = summary["intervention_source_incorrect_correct_count"]
 
-        if baseline_is_correct:
-            baseline_true_count += 1
-            if intervention_is_correct:
-                baseline_true_intervention_correct += 1
-            else:
-                regressed_indices.append(index)
-        else:
-            baseline_false_count += 1
-            if intervention_is_correct:
-                baseline_false_intervention_correct += 1
-                recovered_indices.append(index)
-
-    baseline_false_intervention_accuracy = (
-        baseline_false_intervention_correct / baseline_false_count if baseline_false_count > 0 else float("nan")
-    )
-    baseline_true_intervention_accuracy = (
-        baseline_true_intervention_correct / baseline_true_count if baseline_true_count > 0 else float("nan")
-    )
-
-    summary = {
-        "dataset": str(eval_path),
-        "model_name": model_name,
-        "directions_dir": str(directions_dir),
-        "probe_summary": str(probe_summary_path) if probe_summary_path is not None else "",
-        "vector_type": args.vector_type,
-        "method": args.method,
-        "direction_variant": args.direction_variant,
-        "layer": best_layer,
-        "layer_search_metric": args.layer_search_metric if layer_arg == "auto" else "manual",
-        "layer_search_limit": args.layer_search_limit if layer_arg == "auto" else 0,
-        "layer_search_subset": args.layer_search_subset if layer_arg == "auto" else "manual",
-        "alpha": selected_alpha,
-        "samples": len(records),
-        "baseline_accuracy": baseline_accuracy,
-        "baseline_correct_count": baseline_correct_count,
-        "intervention_accuracy": intervention_accuracy,
-        "intervention_correct_count": intervention_correct_count,
-        "delta_accuracy": intervention_accuracy - baseline_accuracy,
-        "recovery_rate": recovery_rate,
-        "regression_rate": regression_rate,
-        "baseline_false_count": baseline_false_count,
-        "baseline_false_intervention_correct": baseline_false_intervention_correct,
-        "baseline_false_intervention_accuracy": baseline_false_intervention_accuracy,
-        "baseline_true_count": baseline_true_count,
-        "baseline_true_intervention_correct": baseline_true_intervention_correct,
-        "baseline_true_intervention_accuracy": baseline_true_intervention_accuracy,
-        "recovered_indices": recovered_indices,
-        "regressed_indices": regressed_indices,
-        "recovered_count": len(recovered_indices),
-        "regressed_count": len(regressed_indices),
-        "baseline_rows": baseline_rows,
-        "intervention_rows": intervention_rows,
-        "layer_search_summary": best_search_summary if layer_arg == "auto" else {},
-        "layer_sweep_summaries": layer_sweep_summaries if layer_arg == "sweep" else [],
-    }
+    # intervention_vs_source_delta_source_correct = summary["intervention_vs_source_delta_source_correct"]
+    # intervention_vs_source_delta_source_incorrect = summary["intervention_vs_source_delta_source_incorrect"]
+    total = len(baseline_rows)
 
     print("\n=== Summary ===")
-    print(f"baseline_accuracy: {baseline_accuracy:.4f}")
-    print(f"source_accuracy: {source_accuracy:.4f}")
-    print(f"intervention_accuracy: {intervention_accuracy:.4f}")
-    print(f"intervention_accuracy(source): {intervention_accuracy_source:.4f}")
-    print(f"delta_accuracy: {summary['delta_accuracy']:.4f}")
-    print(f"recovery_rate: {recovery_rate:.4f}")
-    print(f"regression_rate: {regression_rate:.4f}")
-    print(f"best_layer: {best_layer}")
+    print(f"Best Layer: {best_layer}  |  Total Samples: {total} ")
+    print()
 
-    print(f"baseline_false_count: {baseline_false_count} recovered: {baseline_false_intervention_correct} (acc {baseline_false_intervention_accuracy:.4f} if not nan)")
-    print(f"baseline_true_count: {baseline_true_count} regressed: {len(regressed_indices)} (acc after {baseline_true_intervention_accuracy:.4f} if not nan)")
-    print(f"source_total: {source_total} source_correct_count: {source_correct_count} intervention_source_correct_count: {intervention_source_correct_count}")
 
     if layer_arg == "sweep":
         print(f"sweep_runs: {len(layer_sweep_summaries)}")
-        print(f"best_layer_by_delta_accuracy: {best_layer}")
+        print(f"best_layer_by_intervention_accuracy: {best_layer}")
         print(f"best_alpha: {best_search_summary.get('alpha', 1.0)}")
-        print(f"baseline_false_count: {baseline_false_count} recovered: {baseline_false_intervention_correct} (acc {baseline_false_intervention_accuracy:.4f} if not nan)")
-        print(f"baseline_true_count: {baseline_true_count} regressed: {len(regressed_indices)} (acc after {baseline_true_intervention_accuracy:.4f} if not nan)")
+        # print(f"baseline_false_count: {baseline_false_count} recovered: {baseline_false_intervention_correct} (acc {baseline_false_intervention_accuracy:.4f} if not nan)")
+        # print(f"baseline_true_count: {baseline_true_count} regressed: {len(regressed_indices)} (acc after {baseline_true_intervention_accuracy:.4f} if not nan)")
 
     if args.output_jsonl:
         output_path = Path(args.output_jsonl).resolve()
@@ -926,10 +961,10 @@ def main() -> None:
                 )
         print(f"saved: {output_path}")
 
-    if args.output_json:
-        output_path = Path(args.output_json).resolve()
-        write_json_file(output_path, summary)
-        print(f"saved: {output_path}")
+    # if args.output_json:
+    #     output_path = Path(args.output_json).resolve()
+    #     write_json_file(output_path, summary)
+    #     print(f"saved: {output_path}")
 
     # If provided, run the same best-layer intervention on an extra test JSON
     if args.extra_test:
@@ -955,6 +990,7 @@ def main() -> None:
 
         print(f"Running intervention on extra test with best_layer={best_layer}")
         print(f"Using alpha={selected_alpha} for extra test intervention")
+        test_intervention_time_start = time.time()
         intervention_extra = run_generation_rows(
             model=model,
             tokenizer=tokenizer,
@@ -970,6 +1006,8 @@ def main() -> None:
             progress_label="intervention_extra",
             progress_every=args.progress_every,
         )
+        test_intervention_time_end = time.time()
+        print(f"test intervention completed in {test_intervention_time_end - test_intervention_time_start:.2f} seconds")
 
         extra_summary = {
             "dataset": str(extra_eval_path),
@@ -982,12 +1020,20 @@ def main() -> None:
             "layer": best_layer,
             "alpha": selected_alpha,
             "samples": len(extra_records),
+            "source_accuracy": summarize(baseline_extra, "source_correct"),
             "baseline_accuracy": summarize(baseline_extra, "correct"),
             "intervention_accuracy": summarize(intervention_extra, "correct"),
-            "delta_accuracy": summarize(intervention_extra, "correct") - summarize(baseline_extra, "correct"),
+            # "delta_accuracy": summarize(intervention_extra, "correct") - summarize(baseline_extra, "correct"),
+            "source_true_count": int(np.sum([1 if r.get("source_correct") else 0 for r in baseline_extra])),
+            "source_false_count": int(np.sum([1 if not r.get("source_correct") else 0 for r in baseline_extra])),
+            "baseline_correct_count": int(np.sum([1 if r.get("correct") else 0 for r in baseline_extra])),
+            "baseline_false_count": int(np.sum([1 if not r.get("correct") else 0 for r in baseline_extra])),
+            "intervention_correct_count": int(np.sum([1 if r.get("correct") else 0 for r in intervention_extra])),
+            "intervention_false_count": int(np.sum([1 if not r.get("correct") else 0 for r in intervention_extra])),
             "baseline_rows": baseline_extra,
             "intervention_rows": intervention_extra,
-        }
+
+        }   
 
         if args.extra_output_json:
             extra_output_path = Path(args.extra_output_json).resolve()

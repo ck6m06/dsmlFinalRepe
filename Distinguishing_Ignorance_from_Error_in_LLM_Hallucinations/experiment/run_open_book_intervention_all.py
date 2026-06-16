@@ -691,17 +691,17 @@ def main() -> None:
     model, tokenizer = load_model_and_tokenizer(model_name)
 
     # 這邊暫時註解
-    # baseline_rows = run_generation_rows(
-    #     model=model,
-    #     tokenizer=tokenizer,
-    #     records=records,
-    #     prompt_field=args.prompt_field,
-    #     max_new_tokens=args.max_new_tokens,
-    #     temperature=args.temperature,
-    #     top_p=args.top_p,
-    #     progress_label="baseline",
-    #     progress_every=args.progress_every,
-    # )
+    baseline_rows = run_generation_rows(
+        model=model,
+        tokenizer=tokenizer,
+        records=records,
+        prompt_field=args.prompt_field,
+        max_new_tokens=args.max_new_tokens,
+        temperature=args.temperature,
+        top_p=args.top_p,
+        progress_label="baseline",
+        progress_every=args.progress_every,
+    )
 
     best_search_summary: dict[str, float] = {}
     layer_sweep_summaries: list[dict[str, Any]] = []
@@ -874,30 +874,30 @@ def main() -> None:
     selected_alpha = float(best_search_summary.get("alpha", 1.0)) if layer_arg == "sweep" else float(args.alpha)
 
     # 暫時註解
-    # summary = build_run_summary(
-    #     baseline_rows=baseline_rows,
-    #     intervention_rows=intervention_rows,
-    #     layer_idx=best_layer,
-    #     alpha_value=selected_alpha,
-    # )
-    # summary.update({
-    #     "dataset": str(eval_path),
-    #     "model_name": model_name,
-    #     "directions_dir": str(directions_dir),
-    #     "probe_summary": str(probe_summary_path) if probe_summary_path is not None else "",
-    #     "vector_type": args.vector_type,
-    #     "method": args.method,
-    #     "direction_variant": args.direction_variant,
-    #     "layer_search_metric": args.layer_search_metric if layer_arg == "auto" else "manual",
-    #     "layer_search_limit": args.layer_search_limit if layer_arg == "auto" else 0,
-    #     "layer_search_subset": args.layer_search_subset if layer_arg == "auto" else "manual",
-    #     "samples": len(records),
-    #     # "baseline_rows": baseline_rows,
-    #     # "intervention_rows": intervention_rows,
-    #     # "layer_search_summary": best_search_summary if layer_arg == "auto" else {},
-    #     # "layer_sweep_summaries": layer_sweep_summaries if layer_arg == "sweep" else [],
-    #     # "combined_rows": combined_rows,
-    # })
+    summary = build_run_summary(
+        baseline_rows=baseline_rows,
+        intervention_rows=intervention_rows,
+        layer_idx=best_layer,
+        alpha_value=selected_alpha,
+    )
+    summary.update({
+        "dataset": str(eval_path),
+        "model_name": model_name,
+        "directions_dir": str(directions_dir),
+        "probe_summary": str(probe_summary_path) if probe_summary_path is not None else "",
+        "vector_type": args.vector_type,
+        "method": args.method,
+        "direction_variant": args.direction_variant,
+        "layer_search_metric": args.layer_search_metric if layer_arg == "auto" else "manual",
+        "layer_search_limit": args.layer_search_limit if layer_arg == "auto" else 0,
+        "layer_search_subset": args.layer_search_subset if layer_arg == "auto" else "manual",
+        "samples": len(records),
+        # "baseline_rows": baseline_rows,
+        # "intervention_rows": intervention_rows,
+        # "layer_search_summary": best_search_summary if layer_arg == "auto" else {},
+        # "layer_sweep_summaries": layer_sweep_summaries if layer_arg == "sweep" else [],
+        # "combined_rows": combined_rows,
+    })
 
     # baseline_accuracy = summary["baseline_accuracy"]
     # source_accuracy = summary["source_accuracy"]
@@ -928,11 +928,11 @@ def main() -> None:
     # intervention_vs_source_delta_source_incorrect = summary["intervention_vs_source_delta_source_incorrect"]
 
     # 這邊暫時註解
-    # total = len(baseline_rows)
+    total = len(baseline_rows)
 
-    # print("\n=== Summary ===")
-    # print(f"Best Layer: {best_layer}  |  Total Samples: {total} ")
-    # print()
+    print("\n=== Summary ===")
+    print(f"Best Layer: {best_layer}  |  Total Samples: {total} ")
+    print()
 
 
     if layer_arg == "sweep":
@@ -966,10 +966,10 @@ def main() -> None:
         print(f"saved: {output_path}")
 
     # 暫時註解
-    # if args.output_json:
-    #     output_path = Path(args.output_json).resolve()
-    #     write_json_file(output_path, summary)
-    #     print(f"saved: {output_path}")
+    if args.output_json:
+        output_path = Path(args.output_json).resolve()
+        write_json_file(output_path, summary)
+        print(f"saved: {output_path}")
 
     # If provided, run the same best-layer intervention on an extra test JSON
     if args.extra_test:
@@ -983,17 +983,17 @@ def main() -> None:
         print(f"Running baseline on extra test: {len(extra_records)} samples")
         # 先註解不要浪費時間重複跑
 
-        # baseline_extra = run_generation_rows(
-        #     model=model,
-        #     tokenizer=tokenizer,
-        #     records=extra_records,
-        #     prompt_field=args.prompt_field,
-        #     max_new_tokens=args.max_new_tokens,
-        #     temperature=args.temperature,
-        #     top_p=args.top_p,
-        #     progress_label="baseline_extra",
-        #     progress_every=args.progress_every,
-        # )
+        baseline_extra = run_generation_rows(
+            model=model,
+            tokenizer=tokenizer,
+            records=extra_records,
+            prompt_field=args.prompt_field,
+            max_new_tokens=args.max_new_tokens,
+            temperature=args.temperature,
+            top_p=args.top_p,
+            progress_label="baseline_extra",
+            progress_every=args.progress_every,
+        )
 
         print(f"Running intervention on extra test with best_layer={best_layer}")
         print(f"Using alpha={selected_alpha} for extra test intervention")
@@ -1028,20 +1028,20 @@ def main() -> None:
             "alpha": selected_alpha,
             "samples": len(extra_records),
             # 這裡有先註解一些 summary 關於 baseline
-            "source_accuracy": summarize(intervention_extra, "source_correct"),
-            # "baseline_accuracy": summarize(baseline_extra, "correct"),
+            "source_accuracy": summarize(baseline_extra, "source_correct"),
+            "baseline_accuracy": summarize(baseline_extra, "correct"),
             "intervention_accuracy": summarize(intervention_extra, "correct"),
 
             "source_true_count": int(np.sum([1 if r.get("source_correct") else 0 for r in intervention_extra])),
             "source_false_count": int(np.sum([1 if not r.get("source_correct") else 0 for r in intervention_extra])),
 
-            # "baseline_correct_count": int(np.sum([1 if r.get("correct") else 0 for r in baseline_extra])),
-            # "baseline_false_count": int(np.sum([1 if not r.get("correct") else 0 for r in baseline_extra])),
+            "baseline_correct_count": int(np.sum([1 if r.get("correct") else 0 for r in baseline_extra])),
+            "baseline_false_count": int(np.sum([1 if not r.get("correct") else 0 for r in baseline_extra])),
 
             "intervention_correct_count": int(np.sum([1 if r.get("correct") else 0 for r in intervention_extra])),
             "intervention_false_count": int(np.sum([1 if not r.get("correct") else 0 for r in intervention_extra])),
-
-            # "baseline_rows": baseline_extra,
+            
+            "baseline_rows": baseline_extra,
 
             "intervention_rows": intervention_extra,
 

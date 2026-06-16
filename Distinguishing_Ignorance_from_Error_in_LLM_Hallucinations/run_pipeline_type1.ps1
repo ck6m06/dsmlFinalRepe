@@ -11,27 +11,111 @@ Set-Location "d:\dsmlFinalRepe\Distinguishing_Ignorance_from_Error_in_LLM_Halluc
 #     --limit_true $n --limit_false $n --sample_mode random --seed 42 `
 #     --shuffle_merged --output_json experiment\3b_type1_results\all1520\balanced_sampl1520.json
 
-Write-Host "Step 1-1: extract hidden states (all)" -ForegroundColor Cyan
-  python experiment/extract_open_book_hidden_states.py `
-    --eval_results experiment/3b_type1_results/73traintest/balanced_sampl1520_train.json `
-    --output_dir experiment/3b_type1_results/73traintest `
-    --model_name meta-llama/Llama-3.2-3B-Instruct
+# Write-Host "Step 1-1: extract hidden states (all)" -ForegroundColor Cyan
+#   python experiment/extract_open_book_hidden_states.py `
+#     --eval_results experiment/3b_type1_results/73traintest/balanced_sampl1520_train.json `
+#     --output_dir experiment/3b_type1_results/73traintest `
+#     --model_name meta-llama/Llama-3.2-3B-Instruct
 
-Write-Host "Step 1-2: compute directions" -ForegroundColor Cyan
-  python experiment/compute_open_book_directions.py `
-    --input_dir experiment/3b_type1_results/73traintest/meta-llama_Llama-3.2-3B-Instruct `
-    --method mean_diff
+# Write-Host "Step 1-2: compute directions" -ForegroundColor Cyan
+#   python experiment/compute_open_book_directions.py `
+#     --input_dir experiment/3b_type1_results/73traintest/meta-llama_Llama-3.2-3B-Instruct `
+#     --method mean_diff
 
-Write-Host "Step 1-3: all1520 sweep" -ForegroundColor Cyan
+# Write-Host "Step 1-3: all1520 sweep" -ForegroundColor Cyan
+#   python experiment/run_open_book_intervention.py `
+#     --eval_results experiment/3b_type1_results/73traintest/balanced_sampl1520_train.json `
+#     --extra_test experiment/3b_type1_results/73traintest/balanced_sampl1520_test.json `
+#     --directions_dir experiment/3b_type1_results/73traintest/meta-llama_Llama-3.2-3B-Instruct/directions `
+#     --model_name meta-llama/Llama-3.2-3B-Instruct `
+#     --vector_type residual `
+#     --layer sweep `
+#     --output_json experiment/3b_type1_results/73traintest/trainresult.json `
+#     --extra_output_json experiment/3b_type1_results/73traintest/testResult.json
+
+Write-Host "for test alpha 4 in layer10" -ForegroundColor Cyan
   python experiment/run_open_book_intervention.py `
     --eval_results experiment/3b_type1_results/73traintest/balanced_sampl1520_train.json `
     --extra_test experiment/3b_type1_results/73traintest/balanced_sampl1520_test.json `
     --directions_dir experiment/3b_type1_results/73traintest/meta-llama_Llama-3.2-3B-Instruct/directions `
     --model_name meta-llama/Llama-3.2-3B-Instruct `
     --vector_type residual `
-    --layer sweep `
+    --layer 10 `
+    --alpha 4.0 `
     --output_json experiment/3b_type1_results/73traintest/trainresult.json `
-    --extra_output_json experiment/3b_type1_results/73traintest/testResult.json
+    --extra_output_json experiment/3b_type1_results/73traintest/testResult_layer10_alpha4.json
+
+Write-Host "for test alpha 5 in layer10" -ForegroundColor Cyan
+  python experiment/run_open_book_intervention.py `
+    --eval_results experiment/3b_type1_results/73traintest/balanced_sampl1520_train.json `
+    --extra_test experiment/3b_type1_results/73traintest/balanced_sampl1520_test.json `
+    --directions_dir experiment/3b_type1_results/73traintest/meta-llama_Llama-3.2-3B-Instruct/directions `
+    --model_name meta-llama/Llama-3.2-3B-Instruct `
+    --vector_type residual `
+    --layer 10 `
+    --alpha 5.0 `
+    --output_json experiment/3b_type1_results/73traintest/trainresult.json `
+    --extra_output_json experiment/3b_type1_results/73traintest/testResult_layer10_alpha5.json
+
+Write-Host "for test alpha 6 in layer10" -ForegroundColor Cyan
+  python experiment/run_open_book_intervention.py `
+    --eval_results experiment/3b_type1_results/73traintest/balanced_sampl1520_train.json `
+    --extra_test experiment/3b_type1_results/73traintest/balanced_sampl1520_test.json `
+    --directions_dir experiment/3b_type1_results/73traintest/meta-llama_Llama-3.2-3B-Instruct/directions `
+    --model_name meta-llama/Llama-3.2-3B-Instruct `
+    --vector_type residual `
+    --layer 10 `
+    --alpha 6.0 `
+    --output_json experiment/3b_type1_results/73traintest/trainresult.json `
+    --extra_output_json experiment/3b_type1_results/73traintest/testResult_layer10_alpha6.json
+
+Write-Host "for test alpha 7 in layer10" -ForegroundColor Cyan
+  python experiment/run_open_book_intervention.py `
+    --eval_results experiment/3b_type1_results/73traintest/balanced_sampl1520_train.json `
+    --extra_test experiment/3b_type1_results/73traintest/balanced_sampl1520_test.json `
+    --directions_dir experiment/3b_type1_results/73traintest/meta-llama_Llama-3.2-3B-Instruct/directions `
+    --model_name meta-llama/Llama-3.2-3B-Instruct `
+    --vector_type residual `
+    --layer 10 `
+    --alpha 7.0 `
+    --output_json experiment/3b_type1_results/73traintest/trainresult.json `
+    --extra_output_json experiment/3b_type1_results/73traintest/testResult_layer10_alpha7.json
+
+Write-Host "for test alpha 8 in layer10" -ForegroundColor Cyan
+  python experiment/run_open_book_intervention.py `
+    --eval_results experiment/3b_type1_results/73traintest/balanced_sampl1520_train.json `
+    --extra_test experiment/3b_type1_results/73traintest/balanced_sampl1520_test.json `
+    --directions_dir experiment/3b_type1_results/73traintest/meta-llama_Llama-3.2-3B-Instruct/directions `
+    --model_name meta-llama/Llama-3.2-3B-Instruct `
+    --vector_type residual `
+    --layer 10 `
+    --alpha 8.0 `
+    --output_json experiment/3b_type1_results/73traintest/trainresult.json `
+    --extra_output_json experiment/3b_type1_results/73traintest/testResult_layer10_alpha8.json
+
+Write-Host "for test alpha 9 in layer10" -ForegroundColor Cyan
+  python experiment/run_open_book_intervention.py `
+    --eval_results experiment/3b_type1_results/73traintest/balanced_sampl1520_train.json `
+    --extra_test experiment/3b_type1_results/73traintest/balanced_sampl1520_test.json `
+    --directions_dir experiment/3b_type1_results/73traintest/meta-llama_Llama-3.2-3B-Instruct/directions `
+    --model_name meta-llama/Llama-3.2-3B-Instruct `
+    --vector_type residual `
+    --layer 10 `
+    --alpha 9.0 `
+    --output_json experiment/3b_type1_results/73traintest/trainresult.json `
+    --extra_output_json experiment/3b_type1_results/73traintest/testResult_layer10_alpha9.json
+
+
+Write-Host "run hk-" -ForegroundColor Cyan
+  python experiment/run_open_book_intervention_all.py `
+    --eval_results experiment/3b_type2_results/73traintest/73traintest_train.json `
+    --extra_test experiment/3b_type2_results/73traintest/73traintest_test.json `
+    --directions_dir experiment/3b_type2_results/73traintest/meta-llama_Llama-3.2-3B-Instruct/directions `
+    --model_name meta-llama/Llama-3.2-3B-Instruct `
+    --vector_type residual `
+    --layer sweep `
+    --output_json experiment/3b_type2_results/73traintest/trainresult.json `
+    --extra_output_json experiment/3b_type2_results/73traintest/testResult.json
 
 # Write-Host "Step 1-3: all1520 sweep" -ForegroundColor Cyan
 #   python experiment/run_open_book_intervention.py `

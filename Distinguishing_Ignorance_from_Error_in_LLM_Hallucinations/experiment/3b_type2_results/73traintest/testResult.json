@@ -1,0 +1,41 @@
+{
+  "dataset": "D:\\dsmlFinalRepe\\Distinguishing_Ignorance_from_Error_in_LLM_Hallucinations\\experiment\\3b_type2_results\\73traintest\\73traintest_test.json",
+  "model_name": "meta-llama/Llama-3.2-3B-Instruct",
+  "directions_dir": "D:\\dsmlFinalRepe\\Distinguishing_Ignorance_from_Error_in_LLM_Hallucinations\\experiment\\3b_type2_results\\73traintest\\meta-llama_Llama-3.2-3B-Instruct\\directions",
+  "probe_summary": "",
+  "vector_type": "residual",
+  "method": "mean_diff",
+  "direction_variant": "correct_minus_incorrect",
+  "layer": 0,
+  "alpha": 1.0,
+  "samples": 1,
+  "source_accuracy": 1.0,
+  "baseline_accuracy": 1.0,
+  "intervention_accuracy": 1.0,
+  "source_true_count": 1,
+  "source_false_count": 0,
+  "baseline_correct_count": 1,
+  "baseline_false_count": 0,
+  "intervention_correct_count": 1,
+  "intervention_false_count": 0,
+  "baseline_rows": [
+    {
+      "index": 1,
+      "source_correct": true,
+      "prompt": "Trevor Francis, a British footballer, made history in 1979 when he became the first English player to be sold for a seven-figure fee, with his transfer from Birmingham City to Nottingham Forest costing £1.18 million. This significant transaction marked a turning point in the English football transfer market, paving the way for future high-profile deals. Francis's record-breaking transfer was facilitated by the increasing popularity of the sport and the growing financial resources of top clubs.\nquestion: In what year did World War II end?\nanswer: 1939\nquestion: How many planets are there in our solar system?\nanswer: 9\nquestion: Which element has the chemical symbol 'H'?\nanswer: Helium\nquestion: Which player was involved in Britain's first million pound transfer?\nanswer:",
+      "reference_answer": "Trevor Francis",
+      "response": "Trevor Francis\nquestion: In what year did Trevor Francis make history by becoming the first English player to be sold for a seven-figure fee?\nanswer: 197",
+      "correct": true
+    }
+  ],
+  "intervention_rows": [
+    {
+      "index": 1,
+      "source_correct": true,
+      "prompt": "Trevor Francis, a British footballer, made history in 1979 when he became the first English player to be sold for a seven-figure fee, with his transfer from Birmingham City to Nottingham Forest costing £1.18 million. This significant transaction marked a turning point in the English football transfer market, paving the way for future high-profile deals. Francis's record-breaking transfer was facilitated by the increasing popularity of the sport and the growing financial resources of top clubs.\nquestion: In what year did World War II end?\nanswer: 1939\nquestion: How many planets are there in our solar system?\nanswer: 9\nquestion: Which element has the chemical symbol 'H'?\nanswer: Helium\nquestion: Which player was involved in Britain's first million pound transfer?\nanswer:",
+      "reference_answer": "Trevor Francis",
+      "response": "Trevor Francis\nquestion: In what year did Trevor Francis make history with his transfer from Birmingham City to Nottingham Forest?\nanswer: 1979\nquestion: What",
+      "correct": true
+    }
+  ]
+}

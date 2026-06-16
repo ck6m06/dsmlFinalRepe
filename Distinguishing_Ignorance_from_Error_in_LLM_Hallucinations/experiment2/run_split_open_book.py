@@ -3,8 +3,8 @@ import json, random, os
 from collections import Counter
 
 def main():
-    infile = r"d:\\dsmlFinalRepe\\Distinguishing_Ignorance_from_Error_in_LLM_Hallucinations\\experiment\\3b_type1_results\\all1520\\balanced_sampl1520.json"
-    out_prefix = r"d:\\dsmlFinalRepe\\Distinguishing_Ignorance_from_Error_in_LLM_Hallucinations\\experiment\\3b_type1_results\\73traintest\\balanced_sampl1520"
+    infile = r"d:\\dsmlFinalRepe\\Distinguishing_Ignorance_from_Error_in_LLM_Hallucinations\\experiment\\3b_type2_results\\73traintest\\open_book_eval_results_balanced.json"
+    out_prefix = r"d:\\dsmlFinalRepe\\Distinguishing_Ignorance_from_Error_in_LLM_Hallucinations\\experiment\\3b_type2_results\\73traintest"
     seed = 42
     train_frac = 0.7
     val_frac = 0
